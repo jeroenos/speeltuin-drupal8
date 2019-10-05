@@ -1,0 +1,4 @@
+name: Obama Soap Webservice
+type: module
+description: Provides SOAP webservice for Obama toezichtsobjecten.
+core: 8.x

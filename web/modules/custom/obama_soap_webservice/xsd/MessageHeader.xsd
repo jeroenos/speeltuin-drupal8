@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mhdr="http://www.minez.nl/xml/schema/gen/header/1.0" targetNamespace="http://www.minez.nl/xml/schema/gen/header/1.0" elementFormDefault="qualified" version="1.0">
+	<xs:element name="messageHeader" type="mhdr:messageHeaderType"/>
+	<xs:complexType name="messageHeaderType">
+		<xs:sequence>
+			<xs:element name="messageID" type="xs:string"/>
+			<xs:element name="senderCode" type="xs:string"/>
+			<xs:element name="targetCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="userID" type="xs:string" minOccurs="0"/>
+			<xs:element name="correlationID" type="xs:string" minOccurs="0"/>
+			<xs:element name="trackingID" type="xs:string"/>
+			<xs:element name="creationTimestamp" type="xs:dateTime"/>
+			<xs:element name="messageType" type="xs:string"/>
+			<xs:element name="testFlag" type="xs:boolean"/>
+			<xs:element name="mutatingMessageFlag" type="xs:boolean"/>
+			<xs:element name="environmentCode" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
