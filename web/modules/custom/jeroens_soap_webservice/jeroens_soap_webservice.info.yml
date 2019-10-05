@@ -1,0 +1,4 @@
+name: Jeroens Soap Webservice
+type: module
+description: Provides SOAP webservice to practice and learn.
+core: 8.x
