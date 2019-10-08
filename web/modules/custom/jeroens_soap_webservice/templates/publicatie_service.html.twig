@@ -16,21 +16,40 @@
   <message name="publicatieOordelenRequest">
     <part name="payload" element="types:drupalPublicatie"/>
   </message>
+    
+  <message name="statusrapportResponse">
+    <part name="payload" element="types:drupalStatusrapport"/>
+  </message>  
 
   <portType name="soap_server_port_type">
+      
     <operation name="publicatie">
       <input message="tns:publicatieOordelenRequest"/>
     </operation>
+    
+    <operation name="statusrapport">
+      <output message="tns:statusrapportResponse"/>
+    </operation>
+      
   </portType>
 
-  <binding name="soap_server_binding" type="tns:soap_server_port_type">
+  <binding name="soap_server_binding" type="tns:soap_server_port_type">      
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    
     <operation name="publicatie">
       <soap:operation soapAction="publicatie"/>
       <input>
         <soap:body use="literal"/>
       </input>
     </operation>
+    
+    <operation name="statusrapport">
+      <soap:operation soapAction="statusrapport"/>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    
   </binding>
 
   <service name="soap_server_service">
