@@ -5,6 +5,7 @@ namespace Drupal\access_soap_module\Controller;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Controller\ControllerBase;
 
 class SoapController extends ControllerBase {
@@ -103,17 +104,22 @@ class SoapController extends ControllerBase {
   public function handleGetRequest($endpoint, Request $request) {
     $baseUrl = \Drupal::request()->getSchemeAndHttpHost();
     return [
-      '#theme' => 'publicatie_service',
-      //  '#xsd_url' => $baseUrl . '/' . drupal_get_path('module', 'access_soap_module') . '/xsd/obaDrupal.xsd',
+      '#theme' => 'calculator_service',
+      '#xsd_url' => NULL,
       '#service_endpoint' => $baseUrl . '/services/access_soap_module/soap/' . $endpoint,
     ];
   }
 
   public function handleSoapRequest($endpoint, $request) {
     // Construct the WSDL file location.
-    $wsdlUri = \Drupal::request()->getSchemeAndHttpHost() . '/services/access_soap_module/soap/mysoapendpoint?wsdl=true';
-    $soapClass = 'Drupal\access_soap_module\Soap\MySoapClass';
+    $wsdlUri = \Drupal::request()->getSchemeAndHttpHost() . '/services/access_soap_module/soap/' . $endpoint . '/?wsdl=true';
+    $soapClass = 'Drupal\access_soap_module\Soap\CalculatorClass';
 
+    $classmap = [
+      'AddResultType' => 'Drupal\jeroens_soap_webservice\Soap\Types\AddResultType',     
+    ];
+    
+    
     try {
       // Create some options for the SoapServer.
       $serverOptions = [
@@ -122,11 +128,12 @@ class SoapController extends ControllerBase {
         'wsdl_cache' => WSDL_CACHE_DISK,
         'wsdl_cache_ttl' => 604800,
         'wsdl_cache_limit' => 10,
-        'send_errors' => FALSE,
+        'send_errors' => TRUE,
+      //  'classmap' => $classmap,
       ];
 
       // Instantiate the SoapServer.
-      $soapServer = new \SoapServer(wsdlUri, $serverOptions);
+      $soapServer = new \SoapServer($wsdlUri, $serverOptions);
       $soapServer->setClass($soapClass);
 
       // Turn output buffering on.

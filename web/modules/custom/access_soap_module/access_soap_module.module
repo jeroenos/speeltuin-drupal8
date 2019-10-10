@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Contains the module file for the Jeroens SOAP Webservice.
+ */
+
+/**
+ * Implements hook_theme().
+ *
+ * Since we have a lot to explain, we're going to use Twig to do it.
+ */
+function access_soap_module_theme() {
+  return [
+    'calculator_service' => [
+      'template' => 'calculator_service',
+      'variables' => [
+        'xsd_url' => NULL,
+        'service_endpoint' => NULL,
+      ],
+    ],
+  ];
+}
