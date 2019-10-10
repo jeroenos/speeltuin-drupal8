@@ -1,0 +1,18 @@
+uuid: 44b0ad5f-64e8-42dd-9b2f-4d8ae942abd9
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Media page'
+type: media_page
+description: 'Basis page with some media elements.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

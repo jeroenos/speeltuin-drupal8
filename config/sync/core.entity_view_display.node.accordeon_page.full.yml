@@ -1,0 +1,116 @@
+uuid: c2b0aeb2-e011-4f97-9b70-96573900676f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.accordeon_page.body
+    - field.field.node.accordeon_page.field_item
+    - field.field.node.accordeon_page.field_item_2
+    - field.field.node.accordeon_page.field_item_3
+    - field.field.node.accordeon_page.field_item_4
+    - node.type.accordeon_page
+  module:
+    - field_group
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_accordeain_item_label:
+      children:
+        - field_item
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        description: ''
+        id: ''
+        classes: ''
+        open: false
+      label: 'Meer informatie'
+      region: content
+    group_accordeon_1:
+      children:
+        - field_item_2
+      parent_name: group_item_4_accordeon
+      weight: 3
+      format_type: accordion_item
+      format_settings:
+        formatter: closed
+        id: ''
+        classes: ''
+      label: 'Accordion item grp 1'
+      region: content
+    group_accorden_item_grp:
+      children:
+        - field_item_3
+        - field_item_4
+      parent_name: group_item_4_accordeon
+      weight: 4
+      format_type: accordion_item
+      format_settings:
+        formatter: closed
+        id: ''
+        classes: ''
+      label: 'Accordion item grp 2'
+      region: content
+    group_item_4_accordeon:
+      children:
+        - group_accordeon_1
+        - group_accorden_item_grp
+      parent_name: ''
+      weight: 4
+      format_type: accordion
+      format_settings:
+        effect: none
+        id: ''
+        classes: ''
+      label: 'Accordion group'
+      region: content
+id: node.accordeon_page.full
+targetEntityType: node
+bundle: accordeon_page
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_item:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_item_2:
+    type: text_default
+    weight: 4
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_item_3:
+    type: text_default
+    weight: 4
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_item_4:
+    type: string
+    weight: 5
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: 9a4902a9-7e5a-4430-9bc9-3f0d4ae9f7bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_item_3
+    - node.type.accordeon_page
+  module:
+    - text
+id: node.accordeon_page.field_item_3
+field_name: field_item_3
+entity_type: node
+bundle: accordeon_page
+label: 'Item 3'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -5,7 +5,6 @@ namespace Drupal\access_soap_module\Soap;
 class CalculatorClass {
 
   public function add($data) {
-
     $response = new \stdClass;
     $response->AddResult = $data->intA + $data->intB;
     return $response;

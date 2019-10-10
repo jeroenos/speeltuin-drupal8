@@ -1,0 +1,28 @@
+uuid: c7eb8723-a01f-4210-87b2-d78c143f15ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_media_2
+    - media.type.image
+    - node.type.media_page
+id: node.media_page.field_image_media_2
+field_name: field_image_media_2
+entity_type: node
+bundle: media_page
+label: image_media_2
+description: "Media veld met Media Library widget. \r\n(Media Library module moet worden aangezet)"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

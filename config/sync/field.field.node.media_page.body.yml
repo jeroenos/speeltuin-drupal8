@@ -1,0 +1,22 @@
+uuid: 9a97d27e-9511-4aa1-9eb2-31029eb055d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.media_page
+  module:
+    - text
+id: node.media_page.body
+field_name: body
+entity_type: node
+bundle: media_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

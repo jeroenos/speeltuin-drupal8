@@ -1,4 +1,6 @@
 name: Access soap module
 type: module
-description: Provides SOAP webservice to practice and learn.
+description: Provides a calculator SOAP webservice. 
+             Project can be used as a kickstart. 
+             Inspired by https://www.weareaccess.co.uk/blog/2018/02/creating-soap-server-drupal-8
 core: 8.x
