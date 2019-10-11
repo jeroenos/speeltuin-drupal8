@@ -1,0 +1,72 @@
+<?php
+
+function csvtotable($fid, $delimiter) {
+
+  /*
+   * Open the csv file
+   */
+  $file_storage = \Drupal::entityTypeManager()->getStorage('file');
+  $file = $file_storage->load($fid);
+  $filename = $file->getFileUri();
+  if (!file_exists($filename) || !is_readable($filename))
+    return FALSE;
+  $file->setPermanent();
+  $file->save();
+
+  $header = NULL;
+  $data = array();
+
+  /*
+   * Read rows from the csv file into an array
+   */
+  if (($handle = fopen($filename, 'r')) !== FALSE) {
+    while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
+   //   $row =dostounix($row);
+      if (!$header) {
+        $header = $row;
+      }
+      else {
+        $data[] = array_combine($header, $row);
+      }
+    }
+    fclose($handle);
+  }
+
+  /*
+   * Insert the rows from the array into the database table
+   */
+  foreach ($data as $row) {
+    \Drupal::database()->insert('jeroen_probeersels_nodes')
+      ->fields([
+        'nid' => $row['nid'],
+        'title' => $row['title'],
+        'verwerkt' => 0,
+      ])
+      ->execute();
+  }
+  return TRUE;
+}
+
+
+function dostounix($old) {
+    $new = preg_replace('/\r\n?/', "\n", $old);
+    return $new;
+}
+
+function tabletoqueue() {
+  /*
+   * Put the items in a cron queue for later batch processing.  
+   */
+  $queue = \Drupal::queue('jeroenos_runner');
+  $query = \Drupal::database()->select('jeroen_probeersels_nodes', 'tma')
+    ->fields('tma', ['nid'])
+    ->condition('tma.verwerkt', 0, '=');
+  $result = $query->execute()->fetchAll();
+
+  foreach ($result as $record) {
+    $queue->createItem($record->nid);
+  }
+
+  $num_rows = $query->countQuery()->execute()->fetchField();
+  return $num_rows;
+}

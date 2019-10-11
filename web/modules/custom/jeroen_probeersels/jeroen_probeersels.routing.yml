@@ -1,0 +1,24 @@
+jeroen_probeersels.jeroen_probeersels_controller_1:
+    path: '/helloworld'
+    defaults:
+        _controller: '\Drupal\jeroen_probeersels\Controller\JeroenProbeerselsController::sayhello'
+        _title: 'Hello World from routing yml'
+    requirements:
+        _permission: 'access content'
+        
+jeroen_probeersels.jeroen_probeersels_controller_2:
+    path: '/getusers'
+    defaults:
+        _controller: '\Drupal\jeroen_probeersels\Controller\JeroenProbeerselsController::getusers'
+        _title: 'Users info'
+    requirements:
+        _permission: 'access content'
+        _role: 'administrator'
+        
+jeroen_probeersels.jeroen_probeersels_controller_3:
+    path: 'tools/bewerknodes'
+    defaults:
+        _form: '\Drupal\jeroen_probeersels\Form\CsvUploadForm'
+        _title: 'Bewerk nodes'
+    requirements:
+        _role: 'administrator' 

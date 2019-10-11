@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the tcmg_migratie_atabix module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function jeroen_probeersels_schema() {
+
+  $schema['jeroen_probeersels_nodes'] = [
+    'description' => 'Stores the data about migrated and to migrate dossier ).',
+    'fields' => [
+      'nid' => [
+        'description' => "Nid from the dossier",
+        'type' => 'int',
+        'default' => 0,
+        'not null' => FALSE,
+      ],
+      'title' => [
+        'description' => "Dossier nr.",
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+        'not null' => FALSE,
+      ],
+      'verwerkt' => [
+        'description' => 'Status of the migration,',
+        'type' => 'int',
+        'length' => 1,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+  ];
+
+  return $schema;
+}
