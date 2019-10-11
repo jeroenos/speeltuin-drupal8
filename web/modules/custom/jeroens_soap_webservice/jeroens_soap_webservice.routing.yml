@@ -1,9 +1,0 @@
-jeroens_soap_webservice.soap_server:
-  path: '/services/jeroens_webservice/soap/{endpoint}'
-  defaults:
-    _controller: '\Drupal\jeroens_soap_webservice\Controller\SoapController::soap'
-  requirements:
-    _access: 'TRUE'
-    _method: 'GET|POST'
-  options:
-    no_cache: 'TRUE'
