@@ -28,4 +28,10 @@ class CalculatorClass {
     return $response;
   }
 
+  public function random() {
+     $response = new \stdClass;
+     $response->RandomResult = rand();
+    return $response;
+  }
+
 }
