@@ -106,19 +106,14 @@ class SoapController extends ControllerBase {
     return [
       '#theme' => 'calculator_service',
       '#xsd_url' => NULL,
-      '#service_endpoint' => $baseUrl . '/services/access_soap_module/soap/' . $endpoint,
+      '#service_endpoint' => $baseUrl . '/services/access_soap_module/soap/' . $endpoint ,
     ];
   }
 
   public function handleSoapRequest($endpoint, $request) {
     // Construct the WSDL file location.
-    $wsdlUri = \Drupal::request()->getSchemeAndHttpHost() . '/services/access_soap_module/soap/' . $endpoint . '/?wsdl=true';
+    $wsdlUri = \Drupal::request()->getSchemeAndHttpHost() . '/services/access_soap_module/soap/' . $endpoint . '?wsdl=true';
     $soapClass = 'Drupal\access_soap_module\Soap\CalculatorClass';
-
-    $classmap = [
-      'AddResultType' => 'Drupal\jeroens_soap_webservice\Soap\Types\AddResultType',     
-    ];
-    
     
     try {
       // Create some options for the SoapServer.
