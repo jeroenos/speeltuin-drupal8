@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bts="http://www.minez.nl/xml/schema/oba/basistypes/1.0" targetNamespace="http://www.minez.nl/xml/schema/oba/basistypes/1.0" elementFormDefault="qualified" version="1.0">
+	<xs:complexType name="referentieLijstType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer"/>
+			<xs:element name="soort" type="xs:string"/>
+			<xs:element name="alias" type="xs:string" minOccurs="0"/>
+			<xs:element name="waarde" type="xs:string"/>
+			<xs:element name="omschrijving" type="xs:string"/>
+			<xs:element name="toelichting" type="xs:string" minOccurs="0"/>
+			<xs:element name="geldigVan" type="xs:date"/>
+			<xs:element name="geldigTM" type="xs:date" minOccurs="0"/>
+			<xs:element name="volgorde" type="xs:string" minOccurs="0"/>
+			<xs:element name="bovenliggendDomein" type="bts:referentieType" minOccurs="0"/>
+			<xs:element name="subReferentieLijst" type="bts:referentieType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="referentieType">
+		<xs:choice>
+			<xs:element name="id" type="xs:integer"/>
+			<xs:sequence>
+				<xs:element name="soort" type="xs:string"/>
+				<xs:element name="alias" type="xs:string" minOccurs="0"/>
+				<xs:element name="waarde" type="xs:string"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:simpleType name="jnIndicatorType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="J"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="bedrijfTypeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="horeca"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="locatieType">
+		<xs:sequence>
+			<xs:element name="breedtegraad" type="xs:string"/>
+			<xs:element name="lengtegraad" type="xs:string"/>
+			<xs:element name="nauwkeurigheid" type="bts:nauwkeurigheidType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="adresType">
+		<xs:sequence>
+			<xs:element name="straatnaam" type="xs:string" minOccurs="0"/>
+			<xs:element name="huisnummer" type="xs:string"/>
+			<xs:element name="huisnummertoevoeging" type="xs:string" minOccurs="0"/>
+			<xs:element name="huisletter" type="xs:string" minOccurs="0"/>
+			<xs:element name="postcode" type="xs:string"/>
+			<xs:element name="woonplaatsNaam" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="nauwkeurigheidType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="geen"/>
+			<xs:enumeration value="hoog"/>
+			<xs:enumeration value="laag"/>
+			<xs:enumeration value="boven gemiddeld"/>
+			<xs:enumeration value="beneden gemiddeld"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="decimalType">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="10"/>
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
