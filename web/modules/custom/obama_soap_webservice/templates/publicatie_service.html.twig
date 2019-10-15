@@ -5,35 +5,28 @@
   xmlns:tns="http://www.minez.nl/xml/wsdl/oba/PublicatieService/v2"
   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
   targetNamespace="http://www.minez.nl/xml/wsdl/oba/PublicatieService/v2"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
   name="PublicatieService">
 
-  <types>
-    <xs:schema>
-       <xs:import namespace="http://www.minez.nl/xml/schema/oba/publicatie/v2" schemaLocation="{{xsd_url}}"/>
-    </xs:schema>
-    
- 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bte="http://www.minez.nl/xml/schema/oba/basistypes/1.0" xmlns:pub="http://www.minez.nl/xml/schema/oba/publicatie/v2" xmlns:mhdr="http://www.minez.nl/xml/schema/gen/header/1.0" xmlns:odl="http://www.minez.nl/xml/schema/oba/oordeel/1.0" targetNamespace="http://www.minez.nl/xml/schema/oba/publicatie/v2" elementFormDefault="qualified" version="1.0">
-        
-	<xs:element name="statusrapportage">
-		<xs:complexType>
-			<xs:sequence>
-                <xs:element minOccurs="1" maxOccurs="1" name="batchID" type="xs:int"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-        
-      <xs:complexType name="statusrapportageResponse">
-         <xs:sequence>
-             <xs:element minOccurs="1" maxOccurs="1" name="RandomResult" type="xs:int"/>
-         </xs:sequence>
-      </xs:complexType>      
+   <wsdl:types>
+      <xs:schema elementFormDefault="qualified" targetNamespace="http://www.minez.nl/xml/wsdl/oba/PublicatieService/v2">
+         <xs:element name="statusrapportage">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="1" name="batchID" type="xs:int"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="drupalStatusrapportageResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="1" name="batchID" type="xs:int"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+   </wsdl:types>
 
-    </xs:schema>
-    
-    
-    
-  </types>
 
   <message name="publicatieOordelenRequest">
     <part name="payload" element="types:drupalPublicatie"/>
@@ -44,7 +37,7 @@
   </message>  
   
   <message name="statusrapportageResponse">
-    <part name="payload" element="tns:statusrapportageResponse"/>
+    <part name="payload" element="tns:drupalStatusrapportageResponse"/>
   </message>  
 
 
@@ -55,8 +48,9 @@
     </operation>
     
     <operation name="statusrapportage">
+     <documentation>Generates a status report.</documentation>
       <input message="tns:statusrapportageRequest"/>
-      <input message="tns:statusrapportageResponse"/>
+      <output message="tns:statusrapportageResponse"/>
     </operation>
     
   </portType>

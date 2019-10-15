@@ -69,4 +69,12 @@ class PublicatieServiceClass {
     return 10;
   }
 
+  public function statusrapportage($data) {
+      
+       $s = serialize($data);
+        \Drupal::logger('obama_soap_webservice')->notice('We zijn in de functie statusrapportage ' . $s );
+      $response = new \stdClass;
+      $response->batchID = rand();
+     return $response;
+  }
 }
