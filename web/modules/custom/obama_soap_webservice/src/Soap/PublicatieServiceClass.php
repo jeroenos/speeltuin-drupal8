@@ -67,28 +67,25 @@ class PublicatieServiceClass {
       }
       \Drupal::logger('obama_soap_webservice')->notice($message);
     }
-
     return 10;
   }
+  /**
+   * Status rapportage
+   *
+   * @param String $data
+   */
+  public function statusrapportage( $data ) {
+    $response = new DrupalStatusrapportage();
 
-  public function statusrapportage($data) {
-
-    $arrayOftellingType = array();
-    
     for ($i = 1; $i <= 3; $i++) {
-      $telling = new TellingType(); 
+      $telling = new TellingType();
       $telling->batchId = $i;
       $telling->sector = 'HORECA';
       $telling->programma = 'Veilig eten en drinken';
       $telling->status = 0;
       $telling->aantal = $i * $i;
-      $arrayOftellingType [] = $telling;
+      $response->ListOfTellingen[] = $telling;
     }
-
-     $response = new DrupalStatusrapportage();
-  //   $response = new \stdClass;
-     $response->ListOfTellingen;
-     $response->ListOfTellingen = $arrayOftellingType;
     return $response;
   }
 

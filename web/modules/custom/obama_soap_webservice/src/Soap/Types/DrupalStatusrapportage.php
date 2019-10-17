@@ -12,7 +12,7 @@ class DrupalStatusrapportage {
   
 
   /**
-   * PublicatiesType.
+   * Tellingen list.
    *
    * @var TellingType[]
    */
