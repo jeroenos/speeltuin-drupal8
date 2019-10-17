@@ -22,35 +22,24 @@
 
             <xs:complexType name="tellingType">                   
                 <xs:sequence>
+                    <xs:element minOccurs="0" name="batchId" type="xs:int"/> 
                     <xs:element minOccurs="0" name="sector" type="xs:string"/>
                     <xs:element minOccurs="0" name="programma" type="xs:string"/>
-                    <xs:element minOccurs="0" name="aantal" type="xs:int"/> 
-                </xs:sequence>
-            </xs:complexType>         
-
-            <xs:complexType name="arrayOftellingType">
-                <xs:sequence>
-                    <xs:element name="tellingen" type="tns:tellingType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
-                </xs:sequence>
-            </xs:complexType>
-                                                
-            <xs:complexType name="batchType">                   
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="batchId" type="xs:int"/> 
-                    <xs:element minOccurs="0" name="ListOftellingen" type="tns:arrayOftellingType"/>
+                    <xs:element minOccurs="0" name="status" type="xs:int"/>   
+                    <xs:element minOccurs="0" name="aantal" type="xs:int"/>                    
                 </xs:sequence>
             </xs:complexType>
 
-            <xs:complexType name="arrayOfbatchType">
+            <xs:complexType name="arrayOfTellingType">
                 <xs:sequence>
-                    <xs:element name="batch" type="tns:batchType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                    <xs:element name="telling" type="tns:tellingType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
                 </xs:sequence>
             </xs:complexType>
 
             <xs:element name="statusrapportageResponse">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="ListOfBatches" type="tns:arrayOfbatchType"/>
+                        <xs:element name="ListOfTellingen" type="tns:arrayOfTellingType"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>    

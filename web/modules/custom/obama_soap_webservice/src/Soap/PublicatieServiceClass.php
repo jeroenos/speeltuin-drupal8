@@ -4,6 +4,7 @@ namespace Drupal\obama_soap_webservice\Soap;
 
 use Drupal\obama_soap_webservice\Soap\Types\DrupalPublicatie;
 use Drupal\obama_soap_webservice\Soap\Types\TellingType;
+use Drupal\obama_soap_webservice\Soap\Types\DrupalStatusrapportage;
 
 /**
  * PublicatieServiceClass.
@@ -71,43 +72,23 @@ class PublicatieServiceClass {
   }
 
   public function statusrapportage($data) {
-    $telling = new TellingType();
-    
-    $s = serialize($data);
-    \Drupal::logger('obama_soap_webservice')->notice('We zijn in de functie statusrapportage ' . $s);
 
-    $arrayOfbatchType = array();
     $arrayOftellingType = array();
-
-    // Build up an array with SquareResultTypes
+    
     for ($i = 1; $i <= 3; $i++) {
-      
-      $arrayOftellingType = array();
-      
-      $telling = new TellingType();
-      $telling->sector = 'HORECA';   
-      $telling->programma ='Veilig eten en drinken';
-      $telling->aantal = $i;      
-      $arrayOftellingType [] =  $telling;
-      
-      $telling = new TellingType();
-      $telling->sector = 'VISVER';   
-      $telling->programma ='Visverwerkende bedrijven';
-      $telling->aantal = $i;      
-      $arrayOftellingType [] =  $telling;
-      
-         
-      $batchType = new \stdClass;
-      $batchType->batchId = $i;
-      $batchType->ListOftellingen = $arrayOftellingType; 
-      
-      $arrayOfbatchType[] = $batchType;
+      $telling = new TellingType(); 
+      $telling->batchId = $i;
+      $telling->sector = 'HORECA';
+      $telling->programma = 'Veilig eten en drinken';
+      $telling->status = 0;
+      $telling->aantal = $i * $i;
+      $arrayOftellingType [] = $telling;
     }
 
-
-    $response = new \stdClass;
-    $response->ListOfBatches = $arrayOfbatchType;
-
+     $response = new DrupalStatusrapportage();
+  //   $response = new \stdClass;
+     $response->ListOfTellingen;
+     $response->ListOfTellingen = $arrayOftellingType;
     return $response;
   }
 

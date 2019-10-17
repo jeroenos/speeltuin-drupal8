@@ -10,6 +10,13 @@ namespace Drupal\obama_soap_webservice\Soap\Types;
 class TellingType {
 
   /**
+   * batchID.
+   *
+   * @var integer
+   */
+  public $batchId;
+
+  /**
    * Sector.
    *
    * @var string
@@ -22,6 +29,13 @@ class TellingType {
    * @var string
    */
   public $programma;
+
+  /**
+   * Status.
+   *
+   * @var integer
+   */
+  public $status;
 
   /**
    * Aantal.
