@@ -3,6 +3,7 @@
 namespace Drupal\obama_soap_webservice\Soap;
 
 use Drupal\obama_soap_webservice\Soap\Types\DrupalPublicatie;
+use Drupal\obama_soap_webservice\Soap\Types\TellingType;
 
 /**
  * PublicatieServiceClass.
@@ -70,7 +71,8 @@ class PublicatieServiceClass {
   }
 
   public function statusrapportage($data) {
-
+    $telling = new TellingType();
+    
     $s = serialize($data);
     \Drupal::logger('obama_soap_webservice')->notice('We zijn in de functie statusrapportage ' . $s);
 
@@ -81,26 +83,19 @@ class PublicatieServiceClass {
     for ($i = 1; $i <= 3; $i++) {
       
       $arrayOftellingType = array();
-      $tellingType = new \stdClass;
-      $tellingType->sector = 'HORECA';
-      $tellingType->programma ='Veilig eten en drinken';
-      $tellingType->aantal = $i;
       
-      $arrayOftellingType [] =  $tellingType;
+      $telling = new TellingType();
+      $telling->sector = 'HORECA';   
+      $telling->programma ='Veilig eten en drinken';
+      $telling->aantal = $i;      
+      $arrayOftellingType [] =  $telling;
       
-      $tellingType = new \stdClass;
-      $tellingType->sector = 'HORECA';
-      $tellingType->programma ='Veilig eten en drinken';
-      $tellingType->aantal = 123;
+      $telling = new TellingType();
+      $telling->sector = 'VISVER';   
+      $telling->programma ='Visverwerkende bedrijven';
+      $telling->aantal = $i;      
+      $arrayOftellingType [] =  $telling;
       
-      $arrayOftellingType [] =  $tellingType;
-      
-      $tellingType = new \stdClass;
-      $tellingType->sector = 'VISVER';
-      $tellingType->programma ='Visverwerkende bedrijven';
-      $tellingType->aantal = $i;
-      
-      $arrayOftellingType [] =  $tellingType;
          
       $batchType = new \stdClass;
       $batchType->batchId = $i;
