@@ -29,8 +29,28 @@ class CalculatorClass {
   }
 
   public function random() {
-     $response = new \stdClass;
-     $response->RandomResult = rand();
+    $response = new \stdClass;
+    $response->RandomResult = rand();
+    return $response;
+  }
+
+  public function square($data) {
+    
+    $result=$data->intA; 
+    $ArrayOfSquareResultType = array();
+   
+    // Build up an array with SquareResultTypes
+    for ($i = 1; $i <=10 ; $i++) {
+       $result = $result * $data->intA;          
+       $SquareResultType = new \stdClass;
+       $SquareResultType->SquareResult = $result;
+       $ArrayOfSquareResultType[] = $SquareResultType;
+    }
+    
+    // Assign the array with the results to the response type
+    $response = new \stdClass;
+    $response->ListOfSquares = $ArrayOfSquareResultType;
+    
     return $response;
   }
 
