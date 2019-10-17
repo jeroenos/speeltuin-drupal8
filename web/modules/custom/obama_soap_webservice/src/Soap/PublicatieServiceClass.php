@@ -3,6 +3,8 @@
 namespace Drupal\obama_soap_webservice\Soap;
 
 use Drupal\obama_soap_webservice\Soap\Types\DrupalPublicatie;
+use Drupal\obama_soap_webservice\Soap\Types\TellingType;
+use Drupal\obama_soap_webservice\Soap\Types\DrupalStatusrapportage;
 
 /**
  * PublicatieServiceClass.
@@ -65,8 +67,26 @@ class PublicatieServiceClass {
       }
       \Drupal::logger('obama_soap_webservice')->notice($message);
     }
-
     return 10;
+  }
+  /**
+   * Status rapportage
+   *
+   * @param String $data
+   */
+  public function statusrapportage( $data ) {
+    $response = new DrupalStatusrapportage();
+
+    for ($i = 1; $i <= 3; $i++) {
+      $telling = new TellingType();
+      $telling->batchId = $i;
+      $telling->sector = 'HORECA';
+      $telling->programma = 'Veilig eten en drinken';
+      $telling->status = 0;
+      $telling->aantal = $i * $i;
+      $response->ListOfTellingen[] = $telling;
+    }
+    return $response;
   }
 
 }

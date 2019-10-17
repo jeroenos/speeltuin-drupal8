@@ -71,7 +71,7 @@
                 </s:complexType>
             </s:element>
             <s:element name="Random">
-                
+
             </s:element>
             <s:element name="RandomResponse">
                 <s:complexType>
@@ -79,7 +79,36 @@
                         <s:element minOccurs="1" maxOccurs="1" name="RandomResult" type="s:int"/>
                     </s:sequence>
                 </s:complexType>
-            </s:element>       
+            </s:element>  
+
+            <s:element name="Square">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>                       
+                    </s:sequence>
+                </s:complexType>
+            </s:element>            
+
+            <s:complexType name="SquareResultType">
+                <s:sequence>
+                    <s:element name="SquareResult" type="s:int"/>
+                </s:sequence>
+            </s:complexType>
+
+            <s:complexType name="ArrayOfSquareResultType">
+                <s:sequence>
+                    <s:element name="SquareResultType" type="tns:SquareResultType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </s:sequence>
+            </s:complexType>
+
+            <s:element name="SquareResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="ListOfSquares" type="tns:ArrayOfSquareResultType"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>                        
+
         </s:schema>
     </wsdl:types>
 
@@ -113,6 +142,12 @@
     <wsdl:message name="RandomSoapOut">
         <wsdl:part name="parameters" element="tns:RandomResponse"/>
     </wsdl:message>
+    <wsdl:message name="SquareSoapIn">
+        <wsdl:part name="parameters" element="tns:Square"/>
+    </wsdl:message>
+    <wsdl:message name="SquareSoapOut">
+        <wsdl:part name="parameters" element="tns:SquareResponse"/>
+    </wsdl:message>    
 
     <wsdl:portType name="CalculatorSoap">
         <wsdl:operation name="Add">
@@ -135,13 +170,16 @@
             <wsdl:input message="tns:DivideSoapIn"/>
             <wsdl:output message="tns:DivideSoapOut"/>
         </wsdl:operation>
-
         <wsdl:operation name="Random">
             <wsdl:documentation>Generate a random number.</wsdl:documentation> 
             <wsdl:input message="tns:RandomSoapIn"/>
             <wsdl:output message="tns:RandomSoapOut"/>
         </wsdl:operation>       
-
+        <wsdl:operation name="Square">
+            <wsdl:documentation>Generate a list of squares of an integer.</wsdl:documentation> 
+            <wsdl:input message="tns:SquareSoapIn"/>
+            <wsdl:output message="tns:SquareSoapOut"/>
+        </wsdl:operation> 
     </wsdl:portType>
 
     <wsdl:binding name="CalculatorSoap" type="tns:CalculatorSoap">
@@ -189,6 +227,16 @@
 
         <wsdl:operation name="Random">
             <soap:operation soapAction="http://tempuri.org/Random" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="Square">
+            <soap:operation soapAction="http://tempuri.org/Square" style="document"/>
             <wsdl:input>
                 <soap:body use="literal"/>
             </wsdl:input>
