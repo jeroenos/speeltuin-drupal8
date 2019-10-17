@@ -1,87 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:types="http://www.minez.nl/xml/schema/oba/publicatie/v2"
-  xmlns:tns="http://www.minez.nl/xml/wsdl/oba/PublicatieService/v2"
-  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-  targetNamespace="http://www.minez.nl/xml/wsdl/oba/PublicatieService/v2"
-    
-  name="PublicatieService">
+             xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:types="http://www.minez.nl/xml/schema/oba/publicatie/v2"
+             xmlns:tns="http://www.minez.nl/xml/wsdl/oba/PublicatieService/v2"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             targetNamespace="http://www.minez.nl/xml/wsdl/oba/PublicatieService/v2"
 
-   <types>
-      <xs:schema elementFormDefault="qualified" targetNamespace="http://www.minez.nl/xml/wsdl/oba/PublicatieService/v2">
-         <xs:import namespace="http://www.minez.nl/xml/schema/oba/publicatie/v2" schemaLocation="{{xsd_url}}"/>
-         <xs:element name="statusrapportage">
-            <xs:complexType>
-               <xs:sequence>
-                  <xs:element minOccurs="0" maxOccurs="1" name="batchID" type="xs:int"/>
-               </xs:sequence>
+             name="PublicatieService">
+
+    <types>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://www.minez.nl/xml/wsdl/oba/PublicatieService/v2">
+            <xs:import namespace="http://www.minez.nl/xml/schema/oba/publicatie/v2" schemaLocation="{{xsd_url}}"/>
+
+            <xs:element name="statusrapportage">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="batchID" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:complexType name="tellingType">                   
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="sector" type="xs:string"/>
+                    <xs:element minOccurs="0" name="programma" type="xs:string"/>
+                    <xs:element minOccurs="0" name="aantal" type="xs:int"/> 
+                </xs:sequence>
+            </xs:complexType>         
+
+            <xs:complexType name="arrayOftellingType">
+                <xs:sequence>
+                    <xs:element name="tellingen" type="tns:tellingType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
             </xs:complexType>
-         </xs:element>
-         <xs:element name="statusrapportageResponse">
-            <xs:complexType>
-               <xs:sequence>
-                  <xs:element minOccurs="0" maxOccurs="1" name="batchID" type="xs:int"/>
-               </xs:sequence>
+                                                
+            <xs:complexType name="batchType">                   
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="batchId" type="xs:int"/> 
+                    <xs:element minOccurs="0" name="ListOftellingen" type="tns:arrayOftellingType"/>
+                </xs:sequence>
             </xs:complexType>
-         </xs:element>
-      </xs:schema>
-  </types>
+
+            <xs:complexType name="arrayOfbatchType">
+                <xs:sequence>
+                    <xs:element name="batch" type="tns:batchType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:element name="statusrapportageResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ListOfBatches" type="tns:arrayOfbatchType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>    
+
+        </xs:schema>
+    </types>
 
 
-  <message name="publicatieOordelenRequest">
-    <part name="payload" element="types:drupalPublicatie"/>
-  </message>
-  
-  <message name="statusrapportageRequest">
-    <part name="payload" element="tns:statusrapportage"/>
-  </message>  
-  
-  <message name="statusrapportageResponse">
-    <part name="payload" element="tns:statusrapportageResponse"/>
-  </message>  
+    <message name="publicatieOordelenRequest">
+        <part name="payload" element="types:drupalPublicatie"/>
+    </message>
+
+    <message name="statusrapportageRequest">
+        <part name="payload" element="tns:statusrapportage"/>
+    </message>  
+
+    <message name="statusrapportageResponse">
+        <part name="payload" element="tns:statusrapportageResponse"/>
+    </message>  
 
 
-  <portType name="soap_server_port_type">
-      
-    <operation name="publicatie">
-      <input message="tns:publicatieOordelenRequest"/>
-    </operation>
-    
-    <operation name="statusrapportage">
-     <documentation>Generates a status report.</documentation>
-      <input message="tns:statusrapportageRequest"/>
-      <output message="tns:statusrapportageResponse"/>
-    </operation>
-    
-  </portType>
+    <portType name="soap_server_port_type">
 
-  <binding name="soap_server_binding" type="tns:soap_server_port_type">
-    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
-    
-    <operation name="publicatie">
-      <soap:operation soapAction="publicatie"/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-    </operation>
-    
-    <operation name="statusrapportage">
-      <soap:operation soapAction="statusrapportage"/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    
-  </binding>
+        <operation name="publicatie">
+            <input message="tns:publicatieOordelenRequest"/>
+        </operation>
 
-  <service name="soap_server_service">
-    <port name="soap_server_port" binding="tns:soap_server_binding">
-      <soap:address location="{{service_endpoint}}"/>
-    </port>
-  </service>
+        <operation name="statusrapportage">
+            <documentation>Generates a status report.</documentation>
+            <input message="tns:statusrapportageRequest"/>
+            <output message="tns:statusrapportageResponse"/>
+        </operation>
+
+    </portType>
+
+    <binding name="soap_server_binding" type="tns:soap_server_port_type">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <operation name="publicatie">
+            <soap:operation soapAction="publicatie"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+        </operation>
+
+        <operation name="statusrapportage">
+            <soap:operation soapAction="statusrapportage"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+    </binding>
+
+    <service name="soap_server_service">
+        <port name="soap_server_port" binding="tns:soap_server_binding">
+            <soap:address location="{{service_endpoint}}"/>
+        </port>
+    </service>
 
 </definitions>

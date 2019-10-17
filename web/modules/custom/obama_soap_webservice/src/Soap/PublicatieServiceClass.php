@@ -70,11 +70,50 @@ class PublicatieServiceClass {
   }
 
   public function statusrapportage($data) {
+
+    $s = serialize($data);
+    \Drupal::logger('obama_soap_webservice')->notice('We zijn in de functie statusrapportage ' . $s);
+
+    $arrayOfbatchType = array();
+    $arrayOftellingType = array();
+
+    // Build up an array with SquareResultTypes
+    for ($i = 1; $i <= 3; $i++) {
       
-       $s = serialize($data);
-        \Drupal::logger('obama_soap_webservice')->notice('We zijn in de functie statusrapportage ' . $s );
-      $response = new \stdClass;
-      $response->batchID = rand();
-     return $response;
+      $arrayOftellingType = array();
+      $tellingType = new \stdClass;
+      $tellingType->sector = 'HORECA';
+      $tellingType->programma ='Veilig eten en drinken';
+      $tellingType->aantal = $i;
+      
+      $arrayOftellingType [] =  $tellingType;
+      
+      $tellingType = new \stdClass;
+      $tellingType->sector = 'HORECA';
+      $tellingType->programma ='Veilig eten en drinken';
+      $tellingType->aantal = 123;
+      
+      $arrayOftellingType [] =  $tellingType;
+      
+      $tellingType = new \stdClass;
+      $tellingType->sector = 'VISVER';
+      $tellingType->programma ='Visverwerkende bedrijven';
+      $tellingType->aantal = $i;
+      
+      $arrayOftellingType [] =  $tellingType;
+         
+      $batchType = new \stdClass;
+      $batchType->batchId = $i;
+      $batchType->ListOftellingen = $arrayOftellingType; 
+      
+      $arrayOfbatchType[] = $batchType;
+    }
+
+
+    $response = new \stdClass;
+    $response->ListOfBatches = $arrayOfbatchType;
+
+    return $response;
   }
+
 }
