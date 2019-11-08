@@ -1,0 +1,21 @@
+uuid: 3559a38f-eb5c-4308-8d0e-54d6fafdc71f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titel_boek
+    - paragraphs.paragraphs_type.boeken
+  module:
+    - text
+id: paragraph.boeken.field_titel_boek
+field_name: field_titel_boek
+entity_type: paragraph
+bundle: boeken
+label: titel_boek
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

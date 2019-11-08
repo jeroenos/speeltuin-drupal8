@@ -1,0 +1,21 @@
+uuid: fd51a62c-1fd2-4dd8-b976-a1bea0b414d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_auteur_boek
+    - paragraphs.paragraphs_type.boeken
+  module:
+    - text
+id: paragraph.boeken.field_auteur_boek
+field_name: field_auteur_boek
+entity_type: paragraph
+bundle: boeken
+label: auteur_boek
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

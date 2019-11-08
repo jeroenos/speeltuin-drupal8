@@ -1,0 +1,22 @@
+uuid: ef2a75c8-871a-43e8-aeb2-6b48e9f87b66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.onderwerp
+  module:
+    - text
+id: node.onderwerp.body
+field_name: body
+entity_type: node
+bundle: onderwerp
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

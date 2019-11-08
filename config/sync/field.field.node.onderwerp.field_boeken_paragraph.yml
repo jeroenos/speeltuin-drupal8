@@ -1,0 +1,29 @@
+uuid: 5d45de99-867a-4170-bf13-bbcf57fa57ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_boeken_paragraph
+    - node.type.onderwerp
+  module:
+    - entity_reference_revisions
+id: node.onderwerp.field_boeken_paragraph
+field_name: field_boeken_paragraph
+entity_type: node
+bundle: onderwerp
+label: boeken_paragraph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+    target_bundles_drag_drop:
+      boeken:
+        weight: 2
+        enabled: false
+field_type: entity_reference_revisions

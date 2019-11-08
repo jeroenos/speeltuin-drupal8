@@ -1,0 +1,30 @@
+uuid: 17ec1e08-7695-49f1-abef-af0cdd732342
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.boeken.field_auteur_boek
+    - field.field.paragraph.boeken.field_titel_boek
+    - paragraphs.paragraphs_type.boeken
+  module:
+    - text
+id: paragraph.boeken.default
+targetEntityType: paragraph
+bundle: boeken
+mode: default
+content:
+  field_auteur_boek:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_titel_boek:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }
