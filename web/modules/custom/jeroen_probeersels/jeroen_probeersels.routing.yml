@@ -22,3 +22,11 @@ jeroen_probeersels.jeroen_probeersels_controller_3:
         _title: 'Bewerk nodes'
     requirements:
         _role: 'administrator' 
+
+jeroen_probeersels.jeroen_probeersels_controller_3:
+    path: 'tools/removeorphanparagraphs'
+    defaults:
+        _form: '\Drupal\jeroen_probeersels\Form\RemoveOrphanParagraphsForm'
+        _title: 'Verwijder wees paragrafen.'
+    requirements:
+        _role: 'administrator' 

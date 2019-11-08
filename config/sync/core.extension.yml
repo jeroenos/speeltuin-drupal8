@@ -24,6 +24,7 @@ module:
   help: 0
   history: 0
   image: 0
+  jeroen_probeersels: 0
   jsonapi: 0
   jsonapi_extras: 0
   link: 0

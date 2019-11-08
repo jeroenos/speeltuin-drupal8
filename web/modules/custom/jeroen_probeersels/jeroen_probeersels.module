@@ -21,7 +21,7 @@ function csvtotable($fid, $delimiter) {
    */
   if (($handle = fopen($filename, 'r')) !== FALSE) {
     while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
-   //   $row =dostounix($row);
+      //   $row =dostounix($row);
       if (!$header) {
         $header = $row;
       }
@@ -47,10 +47,9 @@ function csvtotable($fid, $delimiter) {
   return TRUE;
 }
 
-
 function dostounix($old) {
-    $new = preg_replace('/\r\n?/', "\n", $old);
-    return $new;
+  $new = preg_replace('/\r\n?/', "\n", $old);
+  return $new;
 }
 
 function tabletoqueue() {
@@ -69,4 +68,23 @@ function tabletoqueue() {
 
   $num_rows = $query->countQuery()->execute()->fetchField();
   return $num_rows;
+}
+
+function removeOrphanParagraphs($range) {
+
+  $query = \Drupal::entityQuery('paragraph')->range(0, $range);
+  $entity_ids = $query->execute();
+  $aantal = 0;
+
+  foreach ($entity_ids as $paragraphId) {
+
+    $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($paragraphId);
+    $parent = $paragraph->getParentEntity();
+
+    if (is_null($parent)) {
+      $paragraph->delete();
+      $aantal++;
+    }
+  }
+  return $aantal;
 }
