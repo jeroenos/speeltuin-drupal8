@@ -25,6 +25,7 @@
         "drupal/field_group": "^3.0",
         "drupal/graphql": "^3.0@RC",
         "drupal/jsonapi_extras": "^3.8",
+        "drupal/paragraphs": "^1.10",
         "drupal/queue_ui": "^2.0",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
