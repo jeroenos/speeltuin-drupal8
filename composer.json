@@ -22,6 +22,7 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
+        "drupal/easychart": "^3.4",
         "drupal/field_group": "^3.0",
         "drupal/graphql": "^3.0@RC",
         "drupal/jsonapi_extras": "^3.8",

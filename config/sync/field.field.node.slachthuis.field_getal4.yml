@@ -1,0 +1,23 @@
+uuid: 703cb839-e872-4b62-8f72-a6a7aacd72bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_getal4
+    - node.type.slachthuis
+id: node.slachthuis.field_getal4
+field_name: field_getal4
+entity_type: node
+bundle: slachthuis
+label: getal4
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

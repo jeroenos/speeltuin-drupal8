@@ -1,0 +1,68 @@
+uuid: 964dcfd5-71ea-4084-a4b2-cf5a5b2aafe2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.slachthuis.body
+    - field.field.node.slachthuis.field_getal1
+    - field.field.node.slachthuis.field_getal2
+    - field.field.node.slachthuis.field_getal3
+    - field.field.node.slachthuis.field_getal4
+    - node.type.slachthuis
+  module:
+    - text
+    - user
+id: node.slachthuis.default
+targetEntityType: node
+bundle: slachthuis
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_getal1:
+    weight: 102
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_getal2:
+    weight: 103
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_getal3:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_getal4:
+    weight: 105
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }
