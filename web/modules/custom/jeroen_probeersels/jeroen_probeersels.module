@@ -72,19 +72,28 @@ function tabletoqueue() {
 
 function removeOrphanParagraphs($range) {
 
-  $query = \Drupal::entityQuery('paragraph')->range(0, $range);
+  
+      \Drupal::database()->insert('jeroen_probeersels_nodes')
+      ->fields([
+        'nid' => $row['nid'],
+        'title' => $row['title'],
+        'verwerkt' => 0,
+      ])
+      ->execute();
+  
+  
+  //alle zwevende paragrafen ophalen.
+  //
+  $query = \Drupal::entityQuery('paragraph');
+  $query->range(0, $range);
+  $query->condition('parent_id', '-1', '=');
   $entity_ids = $query->execute();
+
   $aantal = 0;
-
   foreach ($entity_ids as $paragraphId) {
-
     $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($paragraphId);
-    $parent = $paragraph->getParentEntity();
-
-    if (is_null($parent)) {
-      $paragraph->delete();
-      $aantal++;
-    }
+    $paragraph->delete();
+    $aantal = $aantal + 1;
   }
   return $aantal;
 }

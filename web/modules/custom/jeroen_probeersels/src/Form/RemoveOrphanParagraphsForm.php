@@ -33,9 +33,9 @@ class RemoveOrphanParagraphsForm implements FormInterface {
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
     $batchSize = $form_state->getValue('batch_size');
-    removeOrphanParagraphs($batchSize);
+    $aantal = removeOrphanParagraphs($batchSize);
 
-    $message = 'Batch removeOrphanParagraphs ' . date("d-m-Y_H:i:s") . ' with ' . $batchSize . ' was started.';
+    $message = 'Batch removeOrphanParagraphs ' . date("d-m-Y_H:i:s") . ' with ' . $batchSize . ' was started. Removed items :'. $aantal;
 
     drupal_set_message($message);
     \Drupal::logger('jeroen_probeersels')->info(t($message));

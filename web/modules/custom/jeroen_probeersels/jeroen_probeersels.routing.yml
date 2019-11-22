@@ -23,7 +23,7 @@ jeroen_probeersels.jeroen_probeersels_controller_3:
     requirements:
         _role: 'administrator' 
 
-jeroen_probeersels.jeroen_probeersels_controller_3:
+jeroen_probeersels.jeroen_probeersels_controller_4:
     path: 'tools/removeorphanparagraphs'
     defaults:
         _form: '\Drupal\jeroen_probeersels\Form\RemoveOrphanParagraphsForm'
