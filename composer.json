@@ -74,7 +74,9 @@
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/{$name}": ["type:drupal-library",
+                                      "type:bower-asset",
+                                      "type:npm-asset"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
@@ -85,6 +87,15 @@
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "merge-plugin": {
+            "include": [
+                "web/modules/contrib/charts/modules/charts_highcharts/composer.json"
+            ]
         }
     }
 }
