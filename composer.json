@@ -20,6 +20,7 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/charts": "^3.1",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/field_group": "^3.0",
@@ -28,9 +29,11 @@
         "drupal/paragraphs": "^1.10",
         "drupal/queue_ui": "^2.0",
         "drush/drush": "^9.0.0",
+        "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
+        "wikimedia/composer-merge-plugin": "^1.4",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
