@@ -1,17 +1,16 @@
-uuid: 776815be-3c24-4d23-8857-db8962ff0703
+uuid: 95a95cee-8f37-4dba-adb6-7d1669e1c935
 langcode: en
 status: true
 dependencies:
   module:
+    - easychart
     - node
-id: node.field_getal1
-field_name: field_getal1
+id: node.field_grafiek
+field_name: field_grafiek
 entity_type: node
-type: integer
-settings:
-  unsigned: false
-  size: normal
-module: core
+type: easychart
+settings: {  }
+module: easychart
 locked: false
 cardinality: 1
 translatable: true

@@ -28,6 +28,7 @@
         "drupal/jsonapi_extras": "^3.8",
         "drupal/paragraphs": "^1.10",
         "drupal/queue_ui": "^2.0",
+        "drupal/views_data_export": "^1.0@beta",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",

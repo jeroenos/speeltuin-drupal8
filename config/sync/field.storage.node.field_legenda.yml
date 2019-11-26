@@ -1,17 +1,16 @@
-uuid: 6e476c67-66d0-481d-9a91-d82a49860992
+uuid: 02bb8a17-7d57-45ac-8f21-2edca8af174e
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_getal3
-field_name: field_getal3
+    - text
+id: node.field_legenda
+field_name: field_legenda
 entity_type: node
-type: integer
-settings:
-  unsigned: false
-  size: normal
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true
