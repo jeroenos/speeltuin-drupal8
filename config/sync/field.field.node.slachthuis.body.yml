@@ -1,0 +1,22 @@
+uuid: aa2fe9b4-28c3-415d-ac62-c63ef45dd241
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.slachthuis
+  module:
+    - text
+id: node.slachthuis.body
+field_name: body
+entity_type: node
+bundle: slachthuis
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary
