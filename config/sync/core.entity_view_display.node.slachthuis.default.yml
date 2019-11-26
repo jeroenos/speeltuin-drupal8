@@ -1,0 +1,53 @@
+uuid: 964dcfd5-71ea-4084-a4b2-cf5a5b2aafe2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.slachthuis.body
+    - field.field.node.slachthuis.field_gemiddelde
+    - field.field.node.slachthuis.field_grafiek
+    - field.field.node.slachthuis.field_legenda
+    - node.type.slachthuis
+  module:
+    - easychart
+    - text
+    - user
+id: node.slachthuis.default
+targetEntityType: node
+bundle: slachthuis
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_gemiddelde:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_grafiek:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: easychart_default
+    region: content
+  field_legenda:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,30 @@
+uuid: 93368af4-3349-497b-8945-26f6bc404e31
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.slachthuis.body
+    - node.type.slachthuis
+  module:
+    - text
+    - user
+id: node.slachthuis.teaser
+targetEntityType: node
+bundle: slachthuis
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

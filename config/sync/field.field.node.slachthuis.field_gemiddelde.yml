@@ -1,0 +1,21 @@
+uuid: 99dca117-7bf0-49df-a0a5-9142f160659b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gemiddelde
+    - node.type.slachthuis
+  module:
+    - text
+id: node.slachthuis.field_gemiddelde
+field_name: field_gemiddelde
+entity_type: node
+bundle: slachthuis
+label: Gemiddelde
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
