@@ -13,9 +13,9 @@ dependencies:
     - node
     - user
 id: voorbeeld_chart_spl_ine
-label: 'voorbeeld chart spl;ine'
+label: 'voorbeeld chart spline'
 module: views
-description: 'voorbeeld chart gauge'
+description: 'voorbeeld chart spline'
 tag: ''
 base_table: node_field_data
 base_field: nid

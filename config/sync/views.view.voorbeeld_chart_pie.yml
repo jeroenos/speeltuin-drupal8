@@ -15,7 +15,7 @@ dependencies:
 id: voorbeeld_chart_pie
 label: 'voorbeeld chart pie'
 module: views
-description: 'voorbeeld chart gauge'
+description: 'voorbeeld chart pie'
 tag: ''
 base_table: node_field_data
 base_field: nid

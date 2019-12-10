@@ -15,7 +15,7 @@ dependencies:
 id: voorbeeld_chart_line
 label: 'voorbeeld chart line'
 module: views
-description: 'voorbeeld chart gauge'
+description: 'voorbeeld chart line'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -74,7 +74,7 @@ display:
         type: chart
         options:
           grouping: {  }
-          allow_advanced_rendering: 0
+          allow_advanced_rendering: 1
           library: highcharts
           type: line
           label_field: title
@@ -112,7 +112,7 @@ display:
           red_from: '0'
           red_to: '50'
           xaxis_title: HORIZONTAL
-          xaxis_labels_rotation: '0'
+          xaxis_labels_rotation: '30'
           yaxis_title: VERTICAL
           yaxis_min: ''
           yaxis_max: ''

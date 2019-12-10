@@ -15,7 +15,7 @@ dependencies:
 id: voorbeeld_chart_column
 label: 'voorbeeld chart Column'
 module: views
-description: 'voorbeeld chart bar'
+description: 'voorbeeld chart Column'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -399,7 +399,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'voorbeeld chart Column'
+      title: 'voorbeeld chart column'
       header: {  }
       footer: {  }
       empty: {  }
