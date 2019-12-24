@@ -13,24 +13,142 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "highcharts/highcharts",
+                "version": "6.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "highcharts"
+                },
+                "dist": {
+                    "url": "https://code.highcharts.com/6.1.0/highcharts.js",
+                    "type": "file"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "highcharts/more",
+                "version": "6.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "highcharts_more"
+                },
+                "dist": {
+                    "url": "https://code.highcharts.com/6.1.0/highcharts-more.js",
+                    "type": "file"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "highcharts/exporting",
+                "version": "6.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "highcharts_exporting"
+                },
+                "dist": {
+                    "url": "https://code.highcharts.com/6.1.0/modules/exporting.js",
+                    "type": "file"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "highcharts/export-data",
+                "version": "6.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "highcharts_export-data"
+                },
+                "dist": {
+                    "url": "https://code.highcharts.com/6.1.0/modules/export-data.js",
+                    "type": "file"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "highcharts/accessibility",
+                "version": "6.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "highcharts_accessibility"
+                },
+                "dist": {
+                    "url": "https://code.highcharts.com/6.1.0/modules/accessibility.js",
+                    "type": "file"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+                "package": {
+                "name": "highcharts/3d",
+                "version": "6.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "highcharts_3d"
+                },
+                "dist": {
+                    "url": "https://code.highcharts.com/6.1.0/highcharts-3d.js",
+                    "type": "file"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
         }
     ],
     "require": {
         "php": ">=5.6",
-        "composer/installers": "^1.2",
+        "composer/installers": "^1.7",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/charts": "^3.1",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/field_group": "^3.0",
         "drupal/graphql": "^3.0@RC",
         "drupal/jsonapi_extras": "^3.8",
+        "drupal/nothing": "^1.0",
         "drupal/paragraphs": "^1.10",
         "drupal/queue_ui": "^2.0",
         "drush/drush": "^9.0.0",
+        "highcharts/3d": "6.1.0",
+        "highcharts/accessibility": "6.1.0",
+        "highcharts/export-data": "6.1.0",
+        "highcharts/exporting": "6.1.0",
+        "highcharts/highcharts": "6.1.0",
+        "highcharts/more": "6.1.0",
+        "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
+        "wikimedia/composer-merge-plugin": "^1.4",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
@@ -71,7 +189,9 @@
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/{$name}": ["type:drupal-library",
+                                      "type:bower-asset",
+                                      "type:npm-asset"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
@@ -82,6 +202,15 @@
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "merge-plugin": {
+            "include": [
+                "web/modules/contrib/charts/modules/charts_highcharts/composer.json"
+            ]
         }
     }
 }

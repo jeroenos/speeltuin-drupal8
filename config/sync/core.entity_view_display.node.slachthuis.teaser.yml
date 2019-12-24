@@ -1,17 +1,17 @@
-uuid: c6754c01-3d60-4163-8b47-3fed6ce0ab57
+uuid: 133671bd-1dce-474d-974f-c9aeec3c9e24
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.onderwerp.body
-    - node.type.onderwerp
+    - field.field.node.slachthuis.body
+    - node.type.slachthuis
   module:
     - text
     - user
-id: node.onderwerp.teaser
+id: node.slachthuis.teaser
 targetEntityType: node
-bundle: onderwerp
+bundle: slachthuis
 mode: teaser
 content:
   body:
@@ -28,4 +28,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_boeken_paragraph: true
+  field_getal_1: true
+  field_getal_2: true
+  field_getal_3: true

@@ -1,0 +1,18 @@
+uuid: 037f6b02-31b2-4cf1-8ed9-51a87ba7df35
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: slachthuis
+type: slachthuis
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

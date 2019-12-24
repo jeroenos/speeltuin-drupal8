@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "199efa9dd99d4cd8ac8d8bd50cc0cd83",
+    "content-hash": "8501dd103fc63dc6a4be198d46863191",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1154,6 +1154,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
+            "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
@@ -2105,6 +2106,73 @@
             "time": "2019-03-30T10:41:38+00:00"
         },
         {
+            "name": "drupal/charts",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/charts.git",
+                "reference": "8.x-3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/charts-8.x-3.1.zip",
+                "reference": "8.x-3.1",
+                "shasum": "b68d303173b2dd761cd9ffa9926ab537e88d7ac0"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.1",
+                    "datestamp": "1570850584",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pierre.Vriens",
+                    "homepage": "https://www.drupal.org/user/1689304"
+                },
+                {
+                    "name": "andileco",
+                    "homepage": "https://www.drupal.org/user/2054544"
+                },
+                {
+                    "name": "brmassa",
+                    "homepage": "https://www.drupal.org/user/67164"
+                },
+                {
+                    "name": "kenorb",
+                    "homepage": "https://www.drupal.org/user/191974"
+                },
+                {
+                    "name": "quicksketch",
+                    "homepage": "https://www.drupal.org/user/35821"
+                },
+                {
+                    "name": "rashad612",
+                    "homepage": "https://www.drupal.org/user/319686"
+                }
+            ],
+            "description": "A charting API for Drupal that provides chart elements and integration with Views.",
+            "homepage": "https://www.drupal.org/project/charts",
+            "support": {
+                "source": "https://git.drupalcode.org/project/charts"
+            }
+        },
+        {
             "name": "drupal/console",
             "version": "1.9.3",
             "source": {
@@ -2849,6 +2917,57 @@
             }
         },
         {
+            "name": "drupal/nothing",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/nothing.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/nothing-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "c3329c304a3ad08d443b858bc597c07486ad2077"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1547805180",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "yuseferi",
+                    "homepage": "https://www.drupal.org/user/1942142"
+                }
+            ],
+            "description": "This Module will never do nothing.",
+            "homepage": "https://www.drupal.org/project/nothing",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/nothing",
+                "issues": "https://www.drupal.org/project/issues/nothing"
+            }
+        },
+        {
             "name": "drupal/paragraphs",
             "version": "1.10.0",
             "source": {
@@ -3590,6 +3709,96 @@
             "time": "2019-07-01T23:21:34+00:00"
         },
         {
+            "name": "highcharts/3d",
+            "version": "6.1.0",
+            "dist": {
+                "type": "file",
+                "url": "https://code.highcharts.com/6.1.0/highcharts-3d.js"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "highcharts_3d"
+            }
+        },
+        {
+            "name": "highcharts/accessibility",
+            "version": "6.1.0",
+            "dist": {
+                "type": "file",
+                "url": "https://code.highcharts.com/6.1.0/modules/accessibility.js"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "highcharts_accessibility"
+            }
+        },
+        {
+            "name": "highcharts/export-data",
+            "version": "6.1.0",
+            "dist": {
+                "type": "file",
+                "url": "https://code.highcharts.com/6.1.0/modules/export-data.js"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "highcharts_export-data"
+            }
+        },
+        {
+            "name": "highcharts/exporting",
+            "version": "6.1.0",
+            "dist": {
+                "type": "file",
+                "url": "https://code.highcharts.com/6.1.0/modules/exporting.js"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "highcharts_exporting"
+            }
+        },
+        {
+            "name": "highcharts/highcharts",
+            "version": "6.1.0",
+            "dist": {
+                "type": "file",
+                "url": "https://code.highcharts.com/6.1.0/highcharts.js"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "highcharts"
+            }
+        },
+        {
+            "name": "highcharts/more",
+            "version": "6.1.0",
+            "dist": {
+                "type": "file",
+                "url": "https://code.highcharts.com/6.1.0/highcharts-more.js"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "highcharts_more"
+            }
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "v0.2",
             "source": {
@@ -3926,6 +4135,48 @@
                 "php"
             ],
             "time": "2019-11-08T13:50:10+00:00"
+        },
+        {
+            "name": "oomphinc/composer-installers-extender",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oomphinc/composer-installers-extender.git",
+                "reference": "ca1c4b16b0905c81d1e77e608f36a2eff1a56f56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oomphinc/composer-installers-extender/zipball/ca1c4b16b0905c81d1e77e608f36a2eff1a56f56",
+                "reference": "ca1c4b16b0905c81d1e77e608f36a2eff1a56f56",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "composer/installers": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "OomphInc\\ComposerInstallersExtender\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "OomphInc\\ComposerInstallersExtender\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Beemsterboer",
+                    "email": "stephen@oomphinc.com",
+                    "homepage": "https://github.com/balbuf"
+                }
+            ],
+            "description": "Extend the composer/installers plugin to accept any arbitrary package type.",
+            "homepage": "http://www.oomphinc.com/",
+            "time": "2017-03-31T16:57:39+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -6524,6 +6775,55 @@
                 "graphql"
             ],
             "time": "2018-09-02T14:59:54+00:00"
+        },
+        {
+            "name": "wikimedia/composer-merge-plugin",
+            "version": "v1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wikimedia/composer-merge-plugin.git",
+                "reference": "81c6ac72a24a67383419c7eb9aa2b3437f2ab100"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/81c6ac72a24a67383419c7eb9aa2b3437f2ab100",
+                "reference": "81c6ac72a24a67383419c7eb9aa2b3437f2ab100",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0.0",
+                "jakub-onderka/php-parallel-lint": "~0.8",
+                "phpunit/phpunit": "~4.8|~5.0",
+                "squizlabs/php_codesniffer": "~2.1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                },
+                "class": "Wikimedia\\Composer\\MergePlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wikimedia\\Composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bryan Davis",
+                    "email": "bd808@wikimedia.org"
+                }
+            ],
+            "description": "Composer plugin to merge multiple composer.json files",
+            "time": "2017-04-25T02:31:25+00:00"
         },
         {
             "name": "zaporylie/composer-drupal-optimizations",
