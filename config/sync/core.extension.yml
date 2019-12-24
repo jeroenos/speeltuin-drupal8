@@ -7,7 +7,11 @@ module:
   breakpoint: 0
   charts: 0
   charts_api_example: 0
+  charts_billboard: 0
   charts_blocks: 0
+  charts_c3: 0
+  charts_chartjs: 0
+  charts_google: 0
   charts_highcharts: 0
   ckeditor: 0
   color: 0

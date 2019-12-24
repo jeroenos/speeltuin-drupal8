@@ -9,7 +9,7 @@ dependencies:
     - node.type.slachthuis
   module:
     - charts
-    - charts_highcharts
+    - charts_chartjs
     - node
     - user
 id: voorbeeld_chart
@@ -75,7 +75,7 @@ display:
         options:
           grouping: {  }
           allow_advanced_rendering: 0
-          library: highcharts
+          library: chartjs
           type: bar
           label_field: title
           fields:
