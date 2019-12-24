@@ -1,5 +1,5 @@
 charts_default_settings:
-  library: ''
+  library: highcharts
   type: bar
   title: ''
   colors:
@@ -33,7 +33,7 @@ charts_default_settings:
   yellow_to: '85'
   red_from: '0'
   red_to: '50'
-  xaxis_title: ''
+  xaxis_title: 'Jeroens Custom title'
   xaxis_labels_rotation: '0'
   yaxis_title: ''
   yaxis_min: ''
