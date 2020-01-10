@@ -1,0 +1,29 @@
+uuid: d2dc1faa-5ff2-47a2-be9c-08a9243e0afc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_maand
+    - paragraphs.paragraphs_type.uren_per_week
+    - taxonomy.vocabulary.maanden
+id: paragraph.uren_per_week.field_maand
+field_name: field_maand
+entity_type: paragraph
+bundle: uren_per_week
+label: maand
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      maanden: maanden
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

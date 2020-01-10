@@ -1,0 +1,21 @@
+uuid: 435b2057-0c2a-477d-b173-d7b0b2bc9936
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_uren_pw_para
+field_name: field_uren_pw_para
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

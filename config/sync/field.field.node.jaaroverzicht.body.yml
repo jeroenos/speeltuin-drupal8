@@ -1,0 +1,23 @@
+uuid: 8729a56e-5515-4624-aa85-f8132bfba1d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.jaaroverzicht
+  module:
+    - text
+id: node.jaaroverzicht.body
+field_name: body
+entity_type: node
+bundle: jaaroverzicht
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
