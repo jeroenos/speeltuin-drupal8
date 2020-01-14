@@ -1,0 +1,42 @@
+uuid: 1b1f1d7e-95f0-428d-a01c-1c8d6ab233dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uren_per_week.field_aantal
+    - field.field.paragraph.uren_per_week.field_maand
+    - field.field.paragraph.uren_per_week.field_weeknr
+    - paragraphs.paragraphs_type.uren_per_week
+id: paragraph.uren_per_week.default
+targetEntityType: paragraph
+bundle: uren_per_week
+mode: default
+content:
+  field_aantal:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_maand:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_weeknr:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

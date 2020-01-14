@@ -1,0 +1,34 @@
+uuid: a986917c-bd81-4f08-938c-5aa8547b5bf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_uren_pw_para
+    - node.type.jaaroverzicht
+    - paragraphs.paragraphs_type.uren_per_week
+  module:
+    - entity_reference_revisions
+id: node.jaaroverzicht.field_uren_pw_para
+field_name: field_uren_pw_para
+entity_type: node
+bundle: jaaroverzicht
+label: uren_pw_para
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      uren_per_week: uren_per_week
+    target_bundles_drag_drop:
+      boeken:
+        weight: 3
+        enabled: false
+      uren_per_week:
+        enabled: true
+        weight: 4
+field_type: entity_reference_revisions

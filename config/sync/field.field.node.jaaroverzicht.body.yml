@@ -1,18 +1,16 @@
-uuid: ba5448b5-cded-44cc-a605-ad665f0c8e8e
+uuid: 8729a56e-5515-4624-aa85-f8132bfba1d3
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.easychart
+    - node.type.jaaroverzicht
   module:
     - text
-_core:
-  default_config_hash: zzhepAm1tkSXk8_Cm0UoW06DZofXrubNTOxF_hw9Bk4
-id: node.easychart.body
+id: node.jaaroverzicht.body
 field_name: body
 entity_type: node
-bundle: easychart
+bundle: jaaroverzicht
 label: Body
 description: ''
 required: false
@@ -20,5 +18,6 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: false
+  display_summary: true
+  required_summary: false
 field_type: text_with_summary

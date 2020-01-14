@@ -1,10 +1,13 @@
-uuid: 93368af4-3349-497b-8945-26f6bc404e31
+uuid: 133671bd-1dce-474d-974f-c9aeec3c9e24
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.slachthuis.body
+    - field.field.node.slachthuis.field_getal_1
+    - field.field.node.slachthuis.field_getal_2
+    - field.field.node.slachthuis.field_getal_3
     - node.type.slachthuis
   module:
     - text
@@ -27,4 +30,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_getal_1: true
+  field_getal_2: true
+  field_getal_3: true

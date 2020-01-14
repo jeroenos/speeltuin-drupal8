@@ -1,0 +1,19 @@
+uuid: 40d8b8d6-42f2-47b9-b960-e4aefd37270d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_weeknr
+    - paragraphs.paragraphs_type.uren_per_week
+id: paragraph.uren_per_week.field_weeknr
+field_name: field_weeknr
+entity_type: paragraph
+bundle: uren_per_week
+label: weeknr
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

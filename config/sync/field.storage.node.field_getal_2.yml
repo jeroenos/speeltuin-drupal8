@@ -1,16 +1,17 @@
-uuid: 2f8bfee5-0611-4c11-b6b0-a7da47f11b18
+uuid: 6ab8ea22-71f1-412f-89ea-6a9c0d389e89
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - text
-id: node.field_gemiddelde
-field_name: field_gemiddelde
+id: node.field_getal_2
+field_name: field_getal_2
 entity_type: node
-type: text_long
-settings: {  }
-module: text
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
 locked: false
 cardinality: 1
 translatable: true

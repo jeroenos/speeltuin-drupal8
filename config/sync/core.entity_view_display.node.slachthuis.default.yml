@@ -1,15 +1,14 @@
-uuid: 964dcfd5-71ea-4084-a4b2-cf5a5b2aafe2
+uuid: def31a71-8411-463b-ae35-b455c45bad00
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.slachthuis.body
-    - field.field.node.slachthuis.field_gemiddelde
-    - field.field.node.slachthuis.field_grafiek
-    - field.field.node.slachthuis.field_legenda
+    - field.field.node.slachthuis.field_getal_1
+    - field.field.node.slachthuis.field_getal_2
+    - field.field.node.slachthuis.field_getal_3
     - node.type.slachthuis
   module:
-    - easychart
     - text
     - user
 id: node.slachthuis.default
@@ -24,26 +23,32 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_gemiddelde:
-    weight: 108
+  field_getal_1:
+    weight: 102
     label: above
-    settings: {  }
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
-    type: text_default
+    type: number_integer
     region: content
-  field_grafiek:
-    weight: 106
+  field_getal_2:
+    weight: 103
     label: above
-    settings: {  }
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
-    type: easychart_default
+    type: number_integer
     region: content
-  field_legenda:
-    weight: 107
+  field_getal_3:
+    weight: 104
     label: above
-    settings: {  }
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
-    type: text_default
+    type: number_integer
     region: content
   links:
     weight: 100

@@ -1,15 +1,14 @@
-uuid: e7cc22f4-583d-4e5f-94c5-c2b02fe3ca7c
+uuid: 895da4a0-c53e-4a33-8a4f-b486f944da13
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.slachthuis.body
-    - field.field.node.slachthuis.field_gemiddelde
-    - field.field.node.slachthuis.field_grafiek
-    - field.field.node.slachthuis.field_legenda
+    - field.field.node.slachthuis.field_getal_1
+    - field.field.node.slachthuis.field_getal_2
+    - field.field.node.slachthuis.field_getal_3
     - node.type.slachthuis
   module:
-    - easychart
     - path
     - text
 id: node.slachthuis.default
@@ -24,6 +23,7 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
     region: content
   created:
@@ -32,27 +32,26 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_gemiddelde:
-    weight: 128
+  field_getal_1:
+    weight: 122
     settings:
-      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
+    type: number
     region: content
-  field_grafiek:
-    weight: 126
-    settings: {  }
-    third_party_settings: {  }
-    type: easychart_default
-    region: content
-  field_legenda:
-    weight: 127
+  field_getal_2:
+    weight: 123
     settings:
-      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
+    type: number
+    region: content
+  field_getal_3:
+    weight: 124
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   path:
     type: path
@@ -96,6 +95,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
 hidden: {  }

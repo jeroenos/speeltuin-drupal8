@@ -1,0 +1,32 @@
+uuid: acaf1c6a-6f09-4879-ad90-4543ba21783a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.voorbeeld_chart
+  module:
+    - node
+    - views
+  theme:
+    - bartik
+id: views_block__voorbeeld_chart_block_4
+theme: bartik
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:voorbeeld_chart-block_4'
+settings:
+  id: 'views_block:voorbeeld_chart-block_4'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      slachthuis: slachthuis
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

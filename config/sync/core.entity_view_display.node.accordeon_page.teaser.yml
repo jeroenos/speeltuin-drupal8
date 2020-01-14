@@ -27,4 +27,8 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_item: true
+  field_item_2: true
+  field_item_3: true
+  field_item_4: true

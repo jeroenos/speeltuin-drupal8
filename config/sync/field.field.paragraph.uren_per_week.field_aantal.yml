@@ -1,0 +1,23 @@
+uuid: a52ced77-2464-4627-b8d7-f47730ca3e24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_aantal
+    - paragraphs.paragraphs_type.uren_per_week
+id: paragraph.uren_per_week.field_aantal
+field_name: field_aantal
+entity_type: paragraph
+bundle: uren_per_week
+label: aantal
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

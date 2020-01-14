@@ -1,0 +1,9 @@
+uuid: 668c57cc-06ee-4d4c-91ec-1835ec95fb0f
+langcode: en
+status: true
+dependencies: {  }
+id: uren_per_week
+label: 'uren per week'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
