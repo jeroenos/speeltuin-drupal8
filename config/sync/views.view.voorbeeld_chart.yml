@@ -9,7 +9,11 @@ dependencies:
     - node.type.slachthuis
   module:
     - charts
+<<<<<<< HEAD
     - charts_chartjs
+=======
+    - charts_highcharts
+>>>>>>> feature/highcharts_experiment
     - node
     - user
 id: voorbeeld_chart
@@ -72,9 +76,19 @@ display:
       style:
         type: chart
         options:
+<<<<<<< HEAD
           grouping: {  }
           allow_advanced_rendering: 0
           library: chartjs
+=======
+          grouping:
+            -
+              field: title
+              rendered: true
+              rendered_strip: false
+          allow_advanced_rendering: 0
+          library: highcharts
+>>>>>>> feature/highcharts_experiment
           type: bar
           label_field: title
           fields:
