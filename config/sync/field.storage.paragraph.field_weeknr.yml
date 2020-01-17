@@ -1,4 +1,4 @@
-uuid: 338b30b2-e190-4bf6-82df-ec869ad28b40
+uuid: 5ad37f82-ffec-4e96-94fb-a5888b53782d
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,10 @@ dependencies:
 id: paragraph.field_weeknr
 field_name: field_weeknr
 entity_type: paragraph
-type: string
+type: integer
 settings:
-  max_length: 2
-  is_ascii: false
-  case_sensitive: false
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

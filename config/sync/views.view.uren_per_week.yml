@@ -1,11 +1,10 @@
 uuid: 70899d82-15a6-4c85-919f-73ae78aa803c
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.paragraph.field_aantal
     - field.storage.paragraph.field_maand
-    - field.storage.paragraph.field_weeknr
     - node.type.jaaroverzicht
   module:
     - node
@@ -57,8 +56,6 @@ display:
           offset: 0
       style:
         type: default
-<<<<<<< HEAD
-=======
         options:
           grouping:
             -
@@ -67,7 +64,6 @@ display:
               rendered_strip: false
           row_class: ''
           default_row_class: true
->>>>>>> feature/highcharts_experiment
       row:
         type: fields
       fields:
@@ -75,21 +71,11 @@ display:
           id: title
           table: node_field_data
           field: title
-<<<<<<< HEAD
-          settings:
-            link_to_entity: true
-          plugin_id: field
-=======
->>>>>>> feature/highcharts_experiment
           relationship: none
           group_type: group
           admin_label: ''
           label: ''
-<<<<<<< HEAD
-          exclude: false
-=======
           exclude: true
->>>>>>> feature/highcharts_experiment
           alter:
             alter_text: false
             text: ''
@@ -121,11 +107,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-<<<<<<< HEAD
-          element_label_colon: true
-=======
           element_label_colon: false
->>>>>>> feature/highcharts_experiment
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -135,11 +117,8 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-<<<<<<< HEAD
-=======
           settings:
             link_to_entity: true
->>>>>>> feature/highcharts_experiment
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -150,10 +129,7 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-<<<<<<< HEAD
-=======
           plugin_id: field
->>>>>>> feature/highcharts_experiment
         field_maand:
           id: field_maand
           table: paragraph__field_maand
@@ -217,12 +193,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_weeknr:
-          id: field_weeknr
-          table: paragraph__field_weeknr
-          field: field_weeknr
-          plugin_id: field
-          relationship: field_uren_pw_para
         field_aantal:
           id: field_aantal
           table: paragraph__field_aantal
@@ -355,9 +325,6 @@ display:
       tags:
         - 'config:field.storage.paragraph.field_aantal'
         - 'config:field.storage.paragraph.field_maand'
-        - 'config:field.storage.paragraph.field_weeknr'
-<<<<<<< HEAD
-=======
   attachment_1:
     display_plugin: attachment
     id: attachment_1
@@ -641,7 +608,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
->>>>>>> feature/highcharts_experiment
   block_1:
     display_plugin: block
     id: block_1
@@ -650,8 +616,6 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
-<<<<<<< HEAD
-=======
       fields:
         title:
           id: title
@@ -779,12 +743,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_weeknr:
-          id: field_weeknr
-          table: paragraph__field_weeknr
-          field: field_weeknr
-          plugin_id: field
-          relationship: field_uren_pw_para
         field_aantal:
           id: field_aantal
           table: paragraph__field_aantal
@@ -911,7 +869,6 @@ display:
       row:
         type: fields
         options: {  }
->>>>>>> feature/highcharts_experiment
     cache_metadata:
       max-age: -1
       contexts:
@@ -922,4 +879,3 @@ display:
       tags:
         - 'config:field.storage.paragraph.field_aantal'
         - 'config:field.storage.paragraph.field_maand'
-        - 'config:field.storage.paragraph.field_weeknr'

@@ -12,7 +12,7 @@ dependencies:
 id: views_block__voorbeeld_chart_spl_ine_block_4
 theme: bartik
 region: content
-weight: 2
+weight: 3
 provider: null
 plugin: 'views_block:voorbeeld_chart_spl_ine-block_4'
 settings:

@@ -5,12 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.slachthuis.body
-<<<<<<< HEAD
-=======
     - field.field.node.slachthuis.field_getal_1
     - field.field.node.slachthuis.field_getal_2
     - field.field.node.slachthuis.field_getal_3
->>>>>>> feature/highcharts_experiment
     - node.type.slachthuis
   module:
     - text

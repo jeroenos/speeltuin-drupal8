@@ -12,7 +12,7 @@ dependencies:
 id: views_block__duplicate_of_voorbeeld_chart_gauge_block_4
 theme: bartik
 region: content
-weight: -2
+weight: -3
 provider: null
 plugin: 'views_block:duplicate_of_voorbeeld_chart_gauge-block_4'
 settings:

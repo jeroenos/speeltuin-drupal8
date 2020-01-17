@@ -358,11 +358,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-<<<<<<< HEAD
-          separator: ', '
-=======
           separator: ;
->>>>>>> feature/highcharts_experiment
           field_api_classes: false
           plugin_id: field
       filters:

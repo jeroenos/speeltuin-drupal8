@@ -4,16 +4,19 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_aantal
+    - field.storage.paragraph.field_maand
     - field.storage.paragraph.field_weeknr
     - node.type.jaaroverzicht
+    - taxonomy.vocabulary.maanden
   module:
     - charts
     - charts_highcharts
     - node
     - paragraphs
+    - taxonomy
     - user
 id: jaaroverzicht
-label: jaaroverzicht
+label: 'jaaroverzicht qry'
 module: views
 description: ''
 tag: ''
@@ -45,7 +48,7 @@ display:
         type: basic
         options:
           submit_button: Apply
-          reset_button: false
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -54,7 +57,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 5
+          items_per_page: 0
           offset: 0
       style:
         type: default
@@ -69,8 +72,66 @@ display:
           id: field_weeknr
           table: paragraph__field_weeknr
           field: field_weeknr
-          plugin_id: field
           relationship: field_uren_pw_para
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_aantal:
           id: field_aantal
           table: paragraph__field_aantal
@@ -161,22 +222,66 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-      sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          order: DESC
-          entity_type: node
-          entity_field: created
-          plugin_id: date
-          relationship: none
+        field_maand_target_id:
+          id: field_maand_target_id
+          table: paragraph__field_maand
+          field: field_maand_target_id
+          relationship: field_uren_pw_para
           group_type: group
           admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_maand_target_id_op
+            label: maand
+            description: ''
+            use_operator: false
+            operator: field_maand_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_maand_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: maanden
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      sorts:
+        field_weeknr_value:
+          id: field_weeknr_value
+          table: paragraph__field_weeknr
+          field: field_weeknr_value
+          relationship: field_uren_pw_para
+          group_type: group
+          admin_label: ''
+          order: ASC
           exposed: false
           expose:
             label: ''
-          granularity: second
+          plugin_id: standard
       title: jaaroverzicht
       header: {  }
       footer: {  }
@@ -229,21 +334,23 @@ display:
           entity_field: nid
           plugin_id: node_nid
       display_extenders: {  }
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.paragraph.field_aantal'
         - 'config:field.storage.paragraph.field_weeknr'
-  block_1:
-    display_plugin: block
-    id: block_1
-    display_title: 'Block jaaroverzicht'
+  attachment_1:
+    display_plugin: attachment
+    id: attachment_1
+    display_title: 'Attachment jaaroverzicht graph'
     position: 1
     display_options:
       display_extenders: {  }
@@ -251,22 +358,26 @@ display:
       style:
         type: chart
         options:
-          grouping: {  }
+          grouping:
+            -
+              field: nothing
+              rendered: true
+              rendered_strip: false
           allow_advanced_rendering: 0
           library: highcharts
           type: line
-          label_field: title
+          label_field: field_weeknr
           fields:
             table: ''
           data_fields:
-            field_weeknr: field_weeknr
+            nothing: 0
+            field_weeknr: 0
             field_aantal: field_aantal
-            title: 0
           field_colors:
+            nothing: '#910000'
             field_weeknr: '#2f7ed8'
             field_aantal: '#0d233a'
-            title: '#8bbc21'
-          title: ''
+          title: 'Chart title Bruh'
           title_position: out
           tooltips: ''
           data_labels: ''
@@ -287,9 +398,9 @@ display:
           yellow_to: '85'
           red_from: '0'
           red_to: '50'
-          xaxis_title: 'Jeroens Custom title'
+          xaxis_title: 'Jeroens Custom HORIZONTAL AXIS'
           xaxis_labels_rotation: '0'
-          yaxis_title: ''
+          yaxis_title: 'Jeroens Custom VERTICAL AXIS'
           yaxis_min: ''
           yaxis_max: ''
           yaxis_prefix: ''
@@ -300,16 +411,128 @@ display:
         style: false
         row: false
         fields: false
+        title: false
       row:
         type: fields
-        options: {  }
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
       fields:
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '1'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
         field_weeknr:
           id: field_weeknr
           table: paragraph__field_weeknr
           field: field_weeknr
-          plugin_id: field
           relationship: field_uren_pw_para
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_aantal:
           id: field_aantal
           table: paragraph__field_aantal
@@ -374,11 +597,124 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
+      title: 'In een line grafiek'
+      displays:
+        block_2: block_2
+      attachment_position: after
+      inherit_exposed_filters: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.paragraph.field_aantal'
+        - 'config:field.storage.paragraph.field_weeknr'
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: 'Block jaaroverzicht qry'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+      defaults:
+        style: false
+        row: false
+        title: false
+        fields: false
+        filters: false
+        filter_groups: false
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline:
+            field_weeknr: field_weeknr
+            field_aantal: field_aantal
+            field_maand: field_maand
+          separator: ' - '
+          hide_empty: false
+      title: 'Per week het aantal uren'
+      fields:
+        field_maand:
+          id: field_maand
+          table: paragraph__field_maand
+          field: field_maand
+          relationship: field_uren_pw_para
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_weeknr:
+          id: field_weeknr
+          table: paragraph__field_weeknr
+          field: field_weeknr
+          relationship: field_uren_pw_para
           group_type: group
           admin_label: ''
           label: ''
@@ -423,9 +759,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
+          type: number_integer
           settings:
-            link_to_entity: true
+            thousand_separator: ''
+            prefix_suffix: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -436,52 +773,158 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: title
           plugin_id: field
+        field_aantal:
+          id: field_aantal
+          table: paragraph__field_aantal
+          field: field_aantal
+          relationship: field_uren_pw_para
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            jaaroverzicht: jaaroverzicht
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_maand_target_id:
+          id: field_maand_target_id
+          table: paragraph__field_maand
+          field: field_maand_target_id
+          relationship: field_uren_pw_para
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_maand_target_id_op
+            label: maand
+            description: ''
+            use_operator: false
+            operator: field_maand_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_maand_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: maanden
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.paragraph.field_aantal'
-        - 'config:field.storage.paragraph.field_weeknr'
-  block_2:
-    display_plugin: block
-    id: block_2
-    display_title: 'Block jaaroverzicht'
-    position: 1
-    display_options:
-      display_extenders: {  }
-      display_description: ''
-      style:
-        type: default
-        options:
-          grouping:
-            -
-              field: title
-              rendered: true
-              rendered_strip: false
-          row_class: ''
-          default_row_class: true
-      defaults:
-        style: false
-        row: false
-      row:
-        type: fields
-        options: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.paragraph.field_aantal'
+        - 'config:field.storage.paragraph.field_maand'
         - 'config:field.storage.paragraph.field_weeknr'

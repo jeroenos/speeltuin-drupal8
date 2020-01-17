@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.jaaroverzicht.field_uren_pw_para
     - node.type.jaaroverzicht
   module:
-    - entity_reference_revisions
     - text
     - user
 id: node.jaaroverzicht.default
@@ -19,12 +18,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_jaartal:
-    weight: 102
+    weight: 2
     label: above
     settings:
       thousand_separator: ''
@@ -32,18 +31,10 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
-  field_uren_pw_para:
-    type: entity_reference_revisions_entity_view
-    weight: 103
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   links:
-    weight: 100
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
-hidden: {  }
+hidden:
+  field_uren_pw_para: true

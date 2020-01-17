@@ -12,7 +12,7 @@ dependencies:
 id: views_block__voorbeeld_chart_line_block_4
 theme: bartik
 region: content
-weight: 1
+weight: 2
 provider: null
 plugin: 'views_block:voorbeeld_chart_line-block_4'
 settings:

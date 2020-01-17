@@ -12,7 +12,7 @@ dependencies:
 id: views_block__voorbeeld_chart_pie_block_4_2
 theme: bartik
 region: content
-weight: -1
+weight: -2
 provider: null
 plugin: 'views_block:voorbeeld_chart_pie-block_4'
 settings:
