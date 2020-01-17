@@ -121,6 +121,24 @@
                     "composer/installers": "~1.0"
                 }
             }
+        },
+       {
+            "type": "package",
+            "package": {
+                "name": "google/charts",
+                "version": "45",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "google_charts"
+                },
+                "dist": {
+                    "url": "https://www.gstatic.com/charts/loader.js",
+                    "type": "file"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
         }
     ],
     "require": {
@@ -131,8 +149,8 @@
         "drupal/charts": "^3.1",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
-        "drupal/examples": "^1.0",
         "drupal/easychart": "^3.4",
+        "drupal/examples": "^1.0",
         "drupal/field_group": "^3.0",
         "drupal/graphql": "^3.0@RC",
         "drupal/jsonapi_extras": "^3.8",
@@ -141,6 +159,7 @@
         "drupal/queue_ui": "^2.0",
         "drupal/views_data_export": "^1.0@beta",
         "drush/drush": "^9.0.0",
+        "google/charts": "45",
         "highcharts/3d": "6.1.0",
         "highcharts/accessibility": "6.1.0",
         "highcharts/export-data": "6.1.0",
