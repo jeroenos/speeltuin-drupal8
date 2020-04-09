@@ -243,6 +243,7 @@
         "drupal/flot": "^1.0",
         "drupal/graphql": "^3.0@RC",
         "drupal/jsonapi_extras": "^3.8",
+        "drupal/magnific_popup": "^1.4",
         "drupal/nothing": "^1.0",
         "drupal/paragraphs": "^1.10",
         "drupal/queue_ui": "^2.0",
