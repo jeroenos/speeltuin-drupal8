@@ -7,6 +7,9 @@ dependencies:
     - field.field.node.slachthuis.field_getal_1
     - field.field.node.slachthuis.field_getal_2
     - field.field.node.slachthuis.field_getal_3
+    - field.field.node.slachthuis.field_percentage_1
+    - field.field.node.slachthuis.field_percentage_2
+    - field.field.node.slachthuis.field_percentage_3
     - node.type.slachthuis
   module:
     - path
@@ -48,6 +51,27 @@ content:
     region: content
   field_getal_3:
     weight: 124
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_percentage_1:
+    weight: 125
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_percentage_2:
+    weight: 126
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_percentage_3:
+    weight: 127
     settings:
       placeholder: ''
     third_party_settings: {  }

@@ -30,6 +30,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  flot: 0
   graphql: 0
   help: 0
   history: 0
@@ -59,6 +60,7 @@ module:
   tour: 0
   update: 0
   user: 0
+  views_simplechart: 0
   views_ui: 0
   menu_link_content: 1
   views: 10

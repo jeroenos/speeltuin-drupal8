@@ -1,4 +1,4 @@
-uuid: acaf1c6a-6f09-4879-ad90-4543ba21783a
+uuid: 7aab7415-7946-45b9-84fe-db7d61625af0
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ dependencies:
 id: views_block__voorbeeld_chart_block_4
 theme: bartik
 region: content
-weight: -5
+weight: 0
 provider: null
 plugin: 'views_block:voorbeeld_chart-block_4'
 settings:

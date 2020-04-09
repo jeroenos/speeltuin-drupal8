@@ -1,0 +1,25 @@
+uuid: bba4a80d-47c9-4950-a4f7-eb7d7dc99d1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_percentage_1
+    - node.type.slachthuis
+id: node.slachthuis.field_percentage_1
+field_name: field_percentage_1
+entity_type: node
+bundle: slachthuis
+label: percentage_1
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

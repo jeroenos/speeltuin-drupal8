@@ -1,0 +1,23 @@
+uuid: 7ba1da03-f623-463c-8e87-73984ed421cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_percentage_3
+    - node.type.slachthuis
+id: node.slachthuis.field_percentage_3
+field_name: field_percentage_3
+entity_type: node
+bundle: slachthuis
+label: percentage_3
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

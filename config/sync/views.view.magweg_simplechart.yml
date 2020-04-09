@@ -1,4 +1,4 @@
-uuid: d6a46c41-e601-4251-b920-b9855dde743e
+uuid: accf7cf8-1010-40b5-893b-20d824ae303c
 langcode: en
 status: true
 dependencies:
@@ -8,14 +8,13 @@ dependencies:
     - field.storage.node.field_percentage_3
     - node.type.slachthuis
   module:
-    - charts
-    - charts_c3
     - node
     - user
-id: voorbeeld_chart
-label: 'voorbeeld chart bar'
+    - views_simplechart
+id: magweg_simplechart
+label: magweg_simplechart
 module: views
-description: 'voorbeeld chart bar'
+description: ''
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -70,61 +69,18 @@ display:
             previous: ‹‹
             next: ››
       style:
-        type: chart
+        type: default
         options:
-          grouping:
-            -
-              field: title
-              rendered: true
-              rendered_strip: false
-          allow_advanced_rendering: 0
-          library: c3
-          type: bar
-          label_field: title
-          fields:
-            table: ''
-          data_fields:
-            title: 0
-            field_percentage_1: field_percentage_1
-            field_percentage_2: field_percentage_2
-            field_percentage_3: field_percentage_3
-          field_colors:
-            title: '#2f7ed8'
-            field_percentage_1: '#0033ff'
-            field_percentage_2: '#6699cc'
-            field_percentage_3: '#99ccff'
-          title: 'Dit is de title'
-          title_position: top
-          tooltips: 'TRUE'
-          data_labels: 'TRUE'
-          data_markers: 'TRUE'
-          legend_position: top
-          background: ''
-          three_dimensional: 0
-          polar: 0
-          width: ''
-          width_units: '%'
-          height: ''
-          height_units: px
-          max: '100'
-          min: '0'
-          green_from: '85'
-          green_to: '100'
-          yellow_from: '50'
-          yellow_to: '85'
-          red_from: '0'
-          red_to: '50'
-          xaxis_title: ''
-          xaxis_labels_rotation: '0'
-          yaxis_title: ''
-          yaxis_min: ''
-          yaxis_max: ''
-          yaxis_prefix: ''
-          yaxis_suffix: ''
-          yaxis_decimal_count: '0'
-          yaxis_labels_rotation: '0'
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
       row:
         type: fields
+        options:
+          inline: {  }
+          separator: ''
+          hide_empty: false
+          default_field_elements: true
       fields:
         title:
           id: title
@@ -180,7 +136,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: VB
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -222,12 +178,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: number_decimal
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-            decimal_separator: .
-            scale: 2
+          type: number_unformatted
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -246,7 +198,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: NV
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -288,12 +240,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: number_decimal
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-            decimal_separator: .
-            scale: 2
+          type: number_unformatted
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -312,7 +260,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: SW
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -354,12 +302,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: number_decimal
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-            decimal_separator: .
-            scale: 2
+          type: number_unformatted
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -389,14 +333,44 @@ display:
           id: type
           table: node_field_data
           field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
           value:
             slachthuis: slachthuis
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
           entity_type: node
           entity_field: type
           plugin_id: bundle
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
       sorts:
         created:
           id: created
@@ -413,7 +387,6 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'voorbeeld chart bar'
       header: {  }
       footer: {  }
       empty: {  }
@@ -432,15 +405,57 @@ display:
         - 'config:field.storage.node.field_percentage_1'
         - 'config:field.storage.node.field_percentage_2'
         - 'config:field.storage.node.field_percentage_3'
-  block_4:
+  block_1:
     display_plugin: block
-    id: block_4
-    display_title: 'voorbeeld chart bar 3'
-    position: 4
+    id: block_1
+    display_title: Block
+    position: 1
     display_options:
       display_extenders: {  }
-      block_description: 'voorbeeld chart bar'
-      display_description: ''
+      style:
+        type: views_simplechart
+        options:
+          grouping:
+            -
+              field: title
+              rendered: true
+              rendered_strip: false
+          chart_title: 'Simple Chart'
+          chart_axis_mapping: 'percentage_1, percentage_2, percentage_3'
+          chart_type: BarChart
+          chart_type_stacked: 'no'
+          chart_legend_position: bottom
+          chart_width: '400'
+          chart_height: '300'
+      defaults:
+        style: false
+        row: false
+      row:
+        type: fields
+        options:
+          inline: {  }
+          separator: ''
+          hide_empty: false
+          default_field_elements: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_percentage_1'
+        - 'config:field.storage.node.field_percentage_2'
+        - 'config:field.storage.node.field_percentage_3'
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: Block
+    position: 1
+    display_options:
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:

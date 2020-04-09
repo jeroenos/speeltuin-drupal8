@@ -10,7 +10,7 @@ dependencies:
     - taxonomy.vocabulary.maanden
   module:
     - charts
-    - charts_highcharts
+    - charts_chartjs
     - node
     - paragraphs
     - taxonomy
@@ -364,7 +364,7 @@ display:
               rendered: true
               rendered_strip: false
           allow_advanced_rendering: 0
-          library: highcharts
+          library: chartjs
           type: line
           label_field: field_weeknr
           fields:
@@ -379,16 +379,16 @@ display:
             field_aantal: '#0d233a'
           title: 'Chart title Bruh'
           title_position: out
-          tooltips: ''
+          tooltips: 'TRUE'
           data_labels: ''
-          data_markers: 'FALSE'
-          legend_position: right
+          data_markers: 'TRUE'
+          legend_position: top
           background: ''
-          three_dimensional: 0
+          three_dimensional: 1
           polar: 0
           width: ''
           width_units: '%'
-          height: ''
+          height: '600'
           height_units: px
           max: '100'
           min: '0'
@@ -476,7 +476,7 @@ display:
           relationship: field_uren_pw_para
           group_type: group
           admin_label: ''
-          label: ''
+          label: 'Uren per week'
           exclude: false
           alter:
             alter_text: false
@@ -521,7 +521,7 @@ display:
           type: number_integer
           settings:
             thousand_separator: ''
-            prefix_suffix: true
+            prefix_suffix: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -540,7 +540,7 @@ display:
           relationship: field_uren_pw_para
           group_type: group
           admin_label: ''
-          label: ''
+          label: Aantalen
           exclude: false
           alter:
             alter_text: false
@@ -717,7 +717,7 @@ display:
           relationship: field_uren_pw_para
           group_type: group
           admin_label: ''
-          label: ''
+          label: weeknr
           exclude: false
           alter:
             alter_text: false
