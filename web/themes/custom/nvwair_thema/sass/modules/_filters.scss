@@ -1,0 +1,158 @@
+.inspectiersultaten-filters {
+    .formWrapper {
+        background-color: #FFF;
+        padding: 0;
+        margin-bottom: 1em;
+        .inputfield-wrapper {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+    }
+    form {
+        h2,
+        .formWrapper,
+        form>p,
+        form>h3 {
+            @media (min-width: $breakpoint-min-992px) {
+                margin-left: 0;
+            }
+        }
+    }
+    .filters-wrapper {
+        display: block;
+        position: relative;
+        margin: 1.2em 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .form-item {
+            flex-basis: 100%;
+            margin: 1.2em 0;
+            @media (min-width: $breakpoint-min-640px) {
+              flex-basis: 25%;
+              margin: 0;
+            }
+        }
+        input[type=text] {
+            background: #f8f8f8 url(images/svg/loep.svg) no-repeat right .5em center;
+            background-size: 1em auto;
+            padding-right: 2em;
+        }
+    }
+    label {
+        left: auto;
+        float: none;
+        position: relative;
+        margin-bottom: .4em;
+    }
+    ul {
+        margin-bottom: 0.8em;
+        display: table;
+    }
+}
+
+.formWrapper {
+    padding: 0 0 0 15px;
+    background-color: #f3f3f3;
+    overflow: hidden;
+    margin: 0 0 1.875em 0;
+    position: relative;
+    @media (min-width: $breakpoint-min-768px) {
+        margin: 0 0 30px 0;
+        padding: 0 0 0 15px;
+    }
+    @media (min-width: $breakpoint-min-992px) {
+        margin: 0 0 30px 0;
+        padding: 0 0 0 20px;
+    }
+}
+
+.filters-wrapper,
+.productonderzoek-filter {
+    clear: both;
+
+    .form-item,
+    .form-actions {
+        align-self: end;
+        align-self: flex-end;
+        flex-basis: 100%;
+        margin: 15px 0;
+        @media (min-width: $breakpoint-min-640px) {
+          flex-basis: 100px;
+          margin: 0;
+        }
+
+        .button {
+          margin: 0;
+          width: 100%;
+          @media (min-width: $breakpoint-min-640px) {
+            width: auto;;
+          }
+
+        }
+    }
+    .view {
+        flex-basis: 100%;
+        margin: 25px 0;
+        @media (min-width: $breakpoint-min-640px) {
+          margin: 20px 0 30px auto;
+          flex-basis: 50%;
+        }
+        .list {
+            background-image: url('/themes/custom/nvwair_thema/presentation/images/svg/list.svg');
+            background-repeat: no-repeat;
+            background-position: right 1em center;
+            background-size: auto .8em;
+        }
+        .map {
+            background-image: url('/themes/custom/nvwair_thema/presentation/images/svg/map-pin.svg');
+            background-repeat: no-repeat;
+            background-position: right 1em center;
+            background-size: auto 1em;
+        }
+        a {
+                background-color: #f8f8f8;
+                text-decoration: none;
+                color: #000;
+                display: block;
+                width: 50%;
+                min-height: 1.8em;
+                height: auto;
+                float: left;
+                padding: .3em .5em 0;
+                border: 0;
+                border-bottom: 2px solid $border-color-blue;
+                font-size: 1em;
+                line-height: 1.2;
+                &.is-active {
+                    background-color: $primary-color;
+                }
+        }
+    }
+}
+
+//Productonderzoek + inspectieresultaten keuren filters
+#views-exposed-form-inspectieresultaten-keuren-block-1,
+#views-exposed-form-product-onderzoeken-block-1,
+#views-exposed-form-inspectieresultaten-keuren-eva-tab-cijfers-overzicht {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 35px 0;
+
+  label {
+    float: none;
+    left: auto;
+  }
+  .form-item {
+    flex-basis: 100%;
+    @media (min-width: $breakpoint-min-640px) {
+      flex-basis: calc(50% - 70px);
+    }
+  }
+}

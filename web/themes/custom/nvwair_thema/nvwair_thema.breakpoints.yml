@@ -1,0 +1,24 @@
+nvwair.mobile:
+  label: mobile
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+nvwair.narrow:
+  label: narrow
+  mediaQuery: 'all and (min-width: 576px) and (max-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+nvwair.middle:
+  label: middle
+  mediaQuery: 'all and (min-width: 768px) and (max-width: 992px)'
+  weight: 2
+  multipliers:
+    - 1x
+nvwair.wide:
+  label: wide
+  mediaQuery: 'all and (min-width: 992px)'
+  weight: 3
+  multipliers:
+    - 1x

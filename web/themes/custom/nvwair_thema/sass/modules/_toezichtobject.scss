@@ -1,0 +1,579 @@
+.overview {
+    .inspected {
+        padding: .4em 0;
+        @media (min-width: $breakpoint-min-640px) {
+            padding: .4em 15px;
+            width: 70%;
+            float: right;
+        }
+        h1 {
+            margin: 0 0 .33em;
+        }
+        p {
+            margin: 0 0 .8em;
+        }
+    }
+    .inspected_keuren {
+        padding: .4em 0;
+        @media (min-width: $breakpoint-min-640px) {
+            padding: .4em 15px;
+            width: 50%;
+            float: left;
+        }
+        h1 {
+            margin: 0 0 .33em;
+        }
+        p {
+            margin: 0 0 .8em;
+        }
+    }    
+    .conclusion {
+        min-height: 8em;
+        position: relative;
+        background-color: $tertairy-color;
+
+        @media (min-width: $breakpoint-min-640px) {
+            min-height: 10em;
+            width: 30%;
+        }
+        h2 {
+            position: absolute;
+            bottom: .5em;
+            margin: 0;
+            padding: 0 15px;
+            font-size: 1.6em;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+    .field--name-field-postcode,
+    .field--name-field-plaats,
+    .field--name-field-tzo-keuren-postcode,
+    .field--name-field-tzo-keuren-plaats 
+     {
+        display: inline-block;
+    }
+    @extend %before-after-table;
+}
+
+#mainwrapper.toon-kleur {
+  .conclusion {
+    &.red {
+        background-color:$color-result-alarming;
+        color:white;
+    }
+    &.green {
+        background-color: $color-result-positive;
+    }
+    &.yellow {
+        background-color: $color-result-warning;
+    }
+    &.orange {
+        background-color: $color-result-supervised;
+    }
+    &.white {
+        background-color:white;
+    }
+  }
+}
+
+.details-front {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 20px;
+    margin: 30px 0;
+    @media (min-width: 640px) {
+        overflow: hidden;
+    }
+    &:before {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        background-color: $secundary-color;
+        width: 100%;
+        height: 400px;
+        top: 0;
+        left: 0;
+        display: block;
+        @media (min-width: 640px) {
+          height: 100%;
+          z-index: auto;
+        }
+    }
+    &:after {
+        clear:both;
+        display:block;
+        width: 100%;
+    }
+    .report,
+    .visual {
+        @media (min-width: 640px) {
+            position: relative;
+            z-index: 2;
+            width: 40%;
+        }
+    }
+    .report {
+      background: #fff;
+      padding: 10px;
+      h2 {
+         margin-top : 0px;
+       }
+        @media (min-width: 640px) {
+                z-index: 100;
+                width: 53%;
+                top: 0;
+        }
+    }
+    .criterium {
+        padding: 0.5em 0;
+        h3 {
+            /*  margin-top: -2.5em;
+            padding-left: 2.667em; */
+            color: $dark-blue;
+        }
+        p,
+        .field--name-field-grondslag,
+        .field--name-field-datum-grondslag {
+            font-size: 0.9em;
+            padding-left: 3.333em;
+            margin-bottom: 0;
+        }
+        h3,
+        .oordeel {
+            font-size: 1.125em;
+            padding-left: 2.667em;
+            font-size: 1em;
+            padding-left: 3em;
+            font-weight: bold;
+        }
+    }
+    @extend %before-after-table;
+    .field--name-field-thema {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+}
+
+.report {
+    .sheet {
+        @media (min-width: 640px) {
+            background-color: #FFF;
+            padding: .8em 15px;
+        }
+        position: relative;
+        padding: 0.8em 15px 2.4em;
+    }
+}
+
+p.oordeel,
+.details-front .sheet p.oordeel,
+.details-front .sheet .klacht p.oordeel {
+    font-weight: bold;
+}
+
+.oordeel {
+    .content-item {
+        position: relative;
+        &:before {
+            display: block;
+            width: 2.5em;
+            height: 2.5em;
+            position: absolute;
+            left: -2.77em;
+            background-size: 2.5em;
+            top: -1.3em;
+        }
+    }
+    .voldoet {
+        &:before {
+            content: '';
+            background-image: url(../presentation/images/svg/vink.svg);
+        }
+    }
+    .voldoet-niet {
+        &:before {
+            content: '';
+            background-image: url(../presentation/images/svg/kruis.svg);
+        }
+    }
+    .niet-beoordeeld {
+        &:before {
+          content: '';
+          background-image: url(../presentation/images/svg/vierkant.svg);
+        }
+    }
+}
+
+.maatregel {
+    background-color: $secundary-color;
+    padding: .5em 10px;
+}
+
+
+/* by Jeroenos for time being*/
+.reactie-ondernemer-importeur-titel {
+  display: flex;
+  font-weight: bold;
+}
+.page-node-type-toezichtsobject #block-views-block-bedrijfsoordeeel-legenda-block-1 .reactie-ondernemer-importeur-titel, 
+ .page-node-type-product #block-views-block-productoordelen-legenda-block-1 .reactie-ondernemer-importeur-titel,
+ .page-node-type-product #block-views-block-productoordelen-legenda-block-2 .reactie-ondernemer-importeur-titel,
+ .page-node-type-product #block-views-block-product-legenda-block-1 .reactie-ondernemer-importeur-titel  {
+  display: none; }
+
+.reactie-ondernemer-importeur-titel img {
+  height: 35px;
+  margin-right: 10px;
+}
+
+
+
+/* Legenda */
+
+.extras {
+    background-color: $secundary-color;
+    margin-top: 4em;
+    h2 {
+        font-family: $font-style-sec;
+        font-size: 1.6em;
+        margin: 0 0 .6em;
+    }
+    #block-views-block-productoordelen-legenda-block-1,
+    #block-views-block-productoordelen-legenda-block-2,
+    #block-views-block-product-legenda-block-1,
+    #block-views-block-bedrijfsoordeeel-legenda-block-1,
+    #block-views-block-inspectieonderwerpen-legenda-block-2 {
+        padding: .8em 15px;
+    }
+    #block-views-block-productoordelen-legenda-block-1,
+    #block-views-block-productoordelen-legenda-block-2,
+    #block-views-block-product-legenda-block-1,
+    #block-views-block-bedrijfsoordeeel-legenda-block-1{
+        @media (min-width: $breakpoint-min-640px) {
+            width: 40%;
+            float: left;
+        }
+        @media (min-width: $breakpoint-min-992px) {
+            width: 26.666%;
+            float: left;
+            margin-left: 16.667%;
+        }
+    }
+    #block-views-block-maatregel-keuren-legenda-block-1{
+        @media (min-width: $breakpoint-min-640px) {            
+            float: left;
+        }
+        @media (min-width: $breakpoint-min-992px) {            
+            float: left;
+            margin-left: 16.667%;
+        }
+    }
+    #block-views-block-inspectieonderwerpen-legenda-block-2 {
+        @media (min-width: $breakpoint-min-640px) {
+            width: 50%;
+            float: right;
+        }
+        @media (min-width: $breakpoint-min-992px) {
+            width: 33.333%;
+            float: right;
+            margin-right: 16.667%;
+        }
+        .beoordeling-row:first-child dt {
+            margin-top: 2.9em;
+        }
+        .beoordeling-row dl {
+            margin-bottom: 0;
+        }
+        .beoordeling-row:last-child dl {
+            margin: .5em 0 20px;
+            @media (min-width: $breakpoint-min-992px) {
+                margin: .5em 0 30px;
+            }
+        }
+    }
+}
+
+.legend {
+    display: block;
+    dt,
+    dd {
+        display: block;
+        width: auto;
+        position: relative;
+        float: none;
+        margin: 0;
+        padding: 0;
+        line-height: 1.4;
+    }
+    dt {
+        font-size: 1em;
+    }
+    dd {
+        margin-bottom: 1em;
+        font-size: .8em;
+    }
+}
+
+dl.testresults {
+    padding-left: 3em;
+    @media (min-width: $breakpoint-min-640px) {
+        margin-top: 1.1em;
+        padding-left: 0;
+    }
+}
+
+.testresults.bedrijf {
+    dt.voldoet,
+    dt.voldoetniet,
+    dt.nietbeoordeeld {
+        margin-top: 1em;
+    }
+    dt.voldoet {
+        &:before {
+            background-color: transparent;
+            background-image: url(../presentation/images/svg/vink.svg);
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-size: 2em;
+        }
+    }
+    dt.voldoetniet {
+        &:before {
+            background-color: transparent;
+            background-image: url(../presentation/images/svg/kruis.svg);
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-size: 2em;
+        }
+    }
+    dt.nietbeoordeeld {
+        &:before {
+            background-color: transparent;
+            background-image: url(../presentation/images/svg/vierkant.svg);
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-size: 2em;
+        }
+    }
+}
+
+.testresults {
+    dt {
+        &:before {
+            content: " ";
+            display: block;
+            width: 2em;
+            height: 2em;
+            position: absolute;
+            left: -2.6667em;
+            top: .25em;
+        }
+    }
+}
+
+#mainwrapper.toon-kleur {
+  dl.testresults {
+    padding-left:3em
+  }
+
+  .testresults dt {
+    &:before {
+      content:" ";
+      display:block;
+      width:2em;
+      height:2em;
+      position:absolute;
+      left:-2.6667em;
+      top:.25em;
+    }
+    &.blue::before {
+      background-color: #EEF7FB;
+      border: 1px black solid;
+    }
+    &.Rood::before,
+    &.red::before {
+      background-color:$color-result-alarming;
+      border: 1px black solid;
+    }
+    &.Groen::before,
+    &.green::before {
+      background-color: $color-result-positive;
+      border: 1px black solid;
+    }
+    &.Geel::before,
+    &.yellow::before {
+      background-color: $color-result-warning;
+      border: 1px black solid;
+    }
+    &.orange::before {
+      background-color: $color-result-supervised;
+      border: 1px black solid;
+    }
+    &.white::before {
+      background-color:white;
+      border: 1px black solid;
+    }
+  }
+}
+
+#block-views-block-inspectieresultaten-block-1 {
+    form {
+        margin: 0;
+        background-color: #FFF;
+        padding: 0;
+        margin-bottom: 1em;
+    }
+}
+
+/** Accordion **/
+.accordion-content {
+  display:none;
+
+  &.nested-not {
+    margin-left: 2rem;
+  }
+  &.nested-first {
+    border: 2px solid $primary-color;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+  }
+  .paragraph-header > span {
+    display: inline-block;
+    width: 31%;
+    font-weight: bold;
+    font-size: 1.12rem;
+
+    &:first-of-type {
+      margin-left: 25px;
+    }
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.12rem;
+  }
+}
+
+.accordion-head {
+  text-decoration:none;
+  color:#000;
+
+  &.nested-first {
+    &.open label
+    ,  &.open span {
+      color: $color-result-alarming
+    }
+    > label, span > div {
+      width: 31%;
+    }
+  }
+  &.nested-second:last-of-type label {
+    margin-bottom: 10px;
+  }
+  label, span {
+    font-family: $font-style-sec;
+    margin: 0 -8px;
+    position: relative;
+    display: block;
+    height: 17px;
+    line-height: 33px;
+    background: none;
+    float: none;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    width: auto;
+    padding-bottom: 30px;
+
+    div {
+      display:inline-block;
+    }
+    &:before {
+      font-weight: normal;
+      font-family: $font-style-icon;
+      vertical-align: middle;
+      content: "";
+      -webkit-font-smoothing: antialiased;
+      color: rgb(0, 0, 0);
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0 4px 0 8px;
+      margin: -3px 0 0;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out 0s;
+    }
+  }
+  &.open label, &.open span {
+    &:before {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.field--name-field-motivering,
+.field--name-field-motivering-maatregel-produ {
+  margin-left: 2rem;
+}
+
+/* Jeroen, 17-09-2019 */
+.paragraph--type--formule-oordeel,
+.paragraph--view-mode--formule-oordelen {
+   margin-bottom: 10px;
+   display: flex;
+   justify-content: space-between;
+
+}
+div.field.field--name-field-oordeel-formule-oordeel.field-container {
+   flex-basis: 50%;
+}
+/* einde Jeroen, 17-09-2019 */
+
+
+.paragraph--type--overtreding,
+.paragraph--type--overtreding-product {
+  margin-bottom: 10px;
+  margin-left: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    font-size: 1rem;
+  }
+  .field--name-field-bedrag-overtreding.field-container,
+  .field--name-field-bedrag-overtreding-product.field-container {
+    flex-basis: 15%;
+    order: 1;
+  }
+  .field--name-field-overtreding.field-container,
+  .field--name-field-overtreding-product.field-container {
+    flex-basis: 37%;
+  }
+  .field--name-field-feit.field-container,
+  .field--name-field-feit-overtreding-product.field-container {
+    flex-basis: 37%;
+  }
+  .field--name-field-bedrag-overtreding.content-item,
+  .field--name-field-bedrag-overtreding-product.content-item {
+    &:before {
+      content: '€';
+    }
+  }
+}
+
+.details-front .criterium {
+.field--name-field-grondslag {
+    p {
+        padding:0;
+    }
+}
+}
+.wrapper-niet-beoordeeld {
+  .field--name-field-grondslag,
+  .field--name-field-datum-grondslag {
+    display: none;
+  }
+}

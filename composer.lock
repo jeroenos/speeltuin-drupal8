@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74901ee532a75ab6d19e2ff4a601426b",
+    "content-hash": "6b2d1accd91ab9f172a52687f1a14912",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3518,6 +3518,57 @@
             "homepage": "https://www.drupal.org/project/queue_ui",
             "support": {
                 "source": "https://git.drupalcode.org/project/queue_ui"
+            }
+        },
+        {
+            "name": "drupal/simple_popup_blocks",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/simple_popup_blocks.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/simple_popup_blocks-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "455a4ef1d3060d8f778c6c011688afb00d301cc0"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1520605080",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Ameer Khan",
+                    "homepage": "https://www.drupal.org/user/3087149"
+                },
+                {
+                    "name": "vengatjove",
+                    "homepage": "https://www.drupal.org/user/3555715"
+                }
+            ],
+            "description": "Enable Simple popup blocks to show any block contents, forms or custom div in popup.",
+            "homepage": "https://www.drupal.org/project/simple_popup_blocks",
+            "support": {
+                "source": "https://git.drupalcode.org/project/simple_popup_blocks"
             }
         },
         {
@@ -7786,16 +7837,16 @@
     "packages-dev": [
         {
             "name": "behat/mink",
-            "version": "dev-master",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minkphp/Mink.git",
-                "reference": "07c6a9fe3fa98c2de074b25d9ed26c22904e3887"
+                "reference": "e1772aabb6b654464264a6cc72158c8b3409d8bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minkphp/Mink/zipball/07c6a9fe3fa98c2de074b25d9ed26c22904e3887",
-                "reference": "07c6a9fe3fa98c2de074b25d9ed26c22904e3887",
+                "url": "https://api.github.com/repos/minkphp/Mink/zipball/e1772aabb6b654464264a6cc72158c8b3409d8bc",
+                "reference": "e1772aabb6b654464264a6cc72158c8b3409d8bc",
                 "shasum": ""
             },
             "require": {
@@ -7843,7 +7894,7 @@
                 "testing",
                 "web"
             ],
-            "time": "2020-03-11T15:45:53+00:00"
+            "time": "2020-03-11T15:26:34+00:00"
         },
         {
             "name": "behat/mink-browserkit-driver",
@@ -7959,16 +8010,16 @@
         },
         {
             "name": "behat/mink-selenium2-driver",
-            "version": "1.3.x-dev",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minkphp/MinkSelenium2Driver.git",
-                "reference": "0a09c4341621fca937a726827611b20ce3e2c259"
+                "reference": "312a967dd527f28980cce40850339cd5316da092"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minkphp/MinkSelenium2Driver/zipball/0a09c4341621fca937a726827611b20ce3e2c259",
-                "reference": "0a09c4341621fca937a726827611b20ce3e2c259",
+                "url": "https://api.github.com/repos/minkphp/MinkSelenium2Driver/zipball/312a967dd527f28980cce40850339cd5316da092",
+                "reference": "312a967dd527f28980cce40850339cd5316da092",
                 "shasum": ""
             },
             "require": {
@@ -7982,7 +8033,7 @@
             "type": "mink-driver",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
@@ -8016,7 +8067,7 @@
                 "testing",
                 "webdriver"
             ],
-            "time": "2019-09-02T09:46:54+00:00"
+            "time": "2020-03-11T14:43:21+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -8351,6 +8402,134 @@
                 "standards"
             ],
             "time": "2020-03-08T19:03:35+00:00"
+        },
+        {
+            "name": "drupal/core-dev",
+            "version": "8.8.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drupal/core-dev.git",
+                "reference": "2dffabdcee78b36d513978424ac220da1fe2e11f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drupal/core-dev/zipball/2dffabdcee78b36d513978424ac220da1fe2e11f",
+                "reference": "2dffabdcee78b36d513978424ac220da1fe2e11f",
+                "shasum": ""
+            },
+            "require": {
+                "behat/mink": "1.8.0 | 1.7.1.1 | 1.7.x-dev",
+                "behat/mink-goutte-driver": "^1.2",
+                "behat/mink-selenium2-driver": "1.4.0 | 1.3.1.1 | 1.3.x-dev",
+                "composer/composer": "^1.9.1",
+                "drupal/coder": "^8.3.2",
+                "jcalderonzumba/gastonjs": "^1.0.2",
+                "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
+                "justinrainbow/json-schema": "^5.2",
+                "mikey179/vfsstream": "^1.6.8",
+                "phpspec/prophecy": "^1.7",
+                "phpunit/phpunit": "^6.5 || ^7",
+                "symfony/browser-kit": "^3.4.0",
+                "symfony/css-selector": "^3.4.0",
+                "symfony/debug": "^3.4.0",
+                "symfony/filesystem": "~3.4.0",
+                "symfony/finder": "~3.4.0",
+                "symfony/lock": "~3.4.0",
+                "symfony/phpunit-bridge": "^3.4.3"
+            },
+            "conflict": {
+                "webflo/drupal-core-require-dev": "*"
+            },
+            "type": "metapackage",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
+            "time": "2019-11-05T11:06:10+00:00"
+        },
+        {
+            "name": "drupal/devel",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/devel.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/devel-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "01f3349ef75f6e21fceef24be9d3d6506ca29647"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "suggest": {
+                "symfony/var-dumper": "Pretty print complex values better with var-dumper available"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1507197844",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Moshe Weitzman",
+                    "homepage": "https://github.com/weitzman",
+                    "email": "weitzman@tejasa.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Hans Salvisberg",
+                    "homepage": "https://www.drupal.org/u/salvis",
+                    "email": "drupal@salvisberg.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Luca Lusso",
+                    "homepage": "https://www.drupal.org/u/lussoluca",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Marco (willzyx)",
+                    "homepage": "https://www.drupal.org/u/willzyx",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/3236/committers"
+                },
+                {
+                    "name": "pcambra",
+                    "homepage": "https://www.drupal.org/user/122101"
+                },
+                {
+                    "name": "salvis",
+                    "homepage": "https://www.drupal.org/user/82964"
+                },
+                {
+                    "name": "willzyx",
+                    "homepage": "https://www.drupal.org/user/1043862"
+                }
+            ],
+            "description": "Various blocks, pages, and functions for developers.",
+            "homepage": "http://drupal.org/project/devel",
+            "support": {
+                "source": "http://cgit.drupalcode.org/devel",
+                "issues": "http://drupal.org/project/devel",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
         },
         {
             "name": "fabpot/goutte",
@@ -10260,50 +10439,6 @@
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "time": "2019-06-13T22:48:21+00:00"
-        },
-        {
-            "name": "webflo/drupal-core-require-dev",
-            "version": "8.8.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webflo/drupal-core-require-dev.git",
-                "reference": "296206d6009f13fbc7a6c96725108ec41a711290"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webflo/drupal-core-require-dev/zipball/296206d6009f13fbc7a6c96725108ec41a711290",
-                "reference": "296206d6009f13fbc7a6c96725108ec41a711290",
-                "shasum": ""
-            },
-            "require": {
-                "behat/mink": "1.7.x-dev",
-                "behat/mink-goutte-driver": "^1.2",
-                "behat/mink-selenium2-driver": "1.3.x-dev",
-                "composer/composer": "^1.9.1",
-                "drupal/coder": "^8.3.2",
-                "drupal/core": "8.8.5",
-                "jcalderonzumba/gastonjs": "^1.0.2",
-                "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
-                "justinrainbow/json-schema": "^5.2",
-                "mikey179/vfsstream": "^1.6.8",
-                "phpspec/prophecy": "^1.7",
-                "phpunit/phpunit": "^6.5 || ^7",
-                "symfony/browser-kit": "^3.4.0",
-                "symfony/css-selector": "^3.4.0",
-                "symfony/debug": "^3.4.0",
-                "symfony/filesystem": "~3.4.0",
-                "symfony/finder": "~3.4.0",
-                "symfony/lock": "~3.4.0",
-                "symfony/phpunit-bridge": "^3.4.3"
-            },
-            "type": "metapackage",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "require-dev dependencies from drupal/core",
-            "abandoned": "drupal/core-dev",
-            "time": "2020-04-02T21:32:02+00:00"
         }
     ],
     "aliases": [],

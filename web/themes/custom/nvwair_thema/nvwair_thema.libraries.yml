@@ -1,0 +1,28 @@
+global:
+  css:
+    theme:
+      #presentation/nvwa-basis.css: {}
+      #presentation/nvwa-inspectierapporten.css: {}
+      #presentation/adjustments.css: {}
+      stylesheets/style.css: {}
+  js:
+    js/script.js: {}
+    # behaviour/libs/require.js: {}
+    # behaviour/core.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - leaflet/leaflet
+
+tzo-list:
+  js:
+    js/tzoList.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - leaflet/leaflet
+    - leaflet/leaflet-drupal
+    - leaflet_markercluster/leaflet-markercluster
+    - leaflet_pdok/proj4js-compressed
+    - leaflet_pdok/proj4leaflet
+    - leaflet_pdok/leaflet-pdok

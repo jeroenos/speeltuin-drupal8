@@ -1,0 +1,28 @@
+@keyframes showSearch {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 40%;
+    }
+}
+
+@keyframes showSearchMobile {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes showButton {
+    0% {
+        color: #FFFFFF;
+        background-color: #d52b1e;
+    }
+    100% {
+        background-color: #000000;
+        color: #FFFFFF;
+    }
+}

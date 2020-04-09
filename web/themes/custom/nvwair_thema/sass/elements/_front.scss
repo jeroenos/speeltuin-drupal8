@@ -1,0 +1,165 @@
+.editorialNavigation {
+    background-color: transparent;
+    .wrapper {
+        padding-top: 40px;
+        padding-bottom: 15px;
+        @media (min-width: $breakpoint-min-992px) {
+            padding-top: 60px;
+            padding-bottom: 0;
+        }
+        .navItem {
+            position: relative;
+            margin: 0 0 -5px;
+            /* @media (min-width: $breakpoint-min-992px) {
+                padding-top: 60px;
+                padding-bottom: 0;
+            } */
+            a {
+                display: block;
+                text-decoration: none;
+                color: #000;
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
+                .content {
+                    position: relative;
+                    display: block;
+                    width: auto;
+                    padding: 0;
+                    margin-left: 45px;
+                    margin-bottom: 0;
+                    p {
+                        color: #000;
+                        margin-bottom: 0;
+                        @media (min-width: $breakpoint-min-992px) {
+                            line-height: 1.375em;
+                        }
+                    }
+                }
+                h3 {
+                    color: #000;
+                    @media (min-width: $breakpoint-min-768px) {
+                        margin-bottom: 5px;
+                    }
+                    @media (min-width: $breakpoint-min-992px) {
+                        font-size: 1.25em;
+                        line-height: 1.2em;
+                    }
+                }
+            }
+        }
+        .twoItems {
+            @media (min-width: $breakpoint-min-768px) {
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                li {
+                    -ms-flex-preferred-size: 50%;
+                    flex-basis: 50%;
+                    max-width: 50%;
+                }
+            }
+            .navItem {
+                position: relative;
+                min-height: 1px;
+                padding-left: 15px;
+                padding-right: 15px;
+                position: relative;
+                min-height: 1px;
+                padding-left: 15px;
+                padding-right: 15px;
+                &.hasIcon {
+                    .icon {
+                        position: absolute;
+                        top: -6px;
+                        text-align: center;
+                        width: 35px;
+                        height: 35px;
+                        top: .9em;
+                        img {
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            transform: translateY(-50%);
+                            max-width: 35px;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+            li:nth-child(even) {
+                .navItem {
+                    &:after {
+                        content: '';
+                        clear: both;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#main {
+    .editorialNavigation {
+        @extend %before-after-table;
+        &:before,
+        &:after {
+            clear: both;
+        }
+        .wrapper {
+            @media (min-width: $breakpoint-min-992px) {
+                width: 66.667%;
+                min-width: 66.667%;
+                float: left;
+                margin-left: 16.667%;
+                padding: 10px 0 20px;
+                .navItem {
+                    min-height: 5em;
+                    margin-bottom: .1em;
+                }
+            }
+            .wideItem {
+                width: 80%;
+                padding: 0 0 15px;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+            h2 {
+                font-family: $font-style-sec;
+                font-size: 1.5em;
+                margin: 0 0 .5em;
+                @media (min-width: $breakpoint-min-992px) {
+                    font-size: 2em;
+                    margin: 0 0 .2em;
+                }
+            }
+        }
+        .navItem {
+            a {
+                border-top: 2px solid #000;
+                padding: 1em 0;
+            }
+        }
+        .more-link {
+            display: block;
+            float: right;
+            margin-right: 10%;
+            a {
+                padding: .4em 1em;
+                background-color: #e4e4e4;
+                color: #000;
+                text-decoration: none;
+            }
+            @media (min-width: $breakpoint-min-992px) {
+                float: left;
+                position: relative;
+                left: 100%;
+            }
+        }
+    }
+}
+
+.wideItem p {
+    font-family: $font-style-sec;
+}

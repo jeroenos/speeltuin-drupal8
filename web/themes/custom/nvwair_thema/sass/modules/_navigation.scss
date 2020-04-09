@@ -1,0 +1,211 @@
+#navBar {
+    background-color: $primary-color;
+    min-height: 60px;
+    .wrapper {
+        position: relative;
+        .platformTitle {
+            position: relative;
+            min-height: 1px;
+            padding-left: 0;
+            padding-right: 0;
+            font-size: 1.25rem;
+            line-height: 1.4em;
+            letter-spacing: 0.03rem;
+            text-decoration: none;
+            font-weight: normal;
+            padding: 12px 0px 0px 0px;
+            @media (min-width: $breakpoint-min-768px) {
+                float: left;
+                width: 100%;
+                padding: 18px 48px 18px 0px;
+                line-height: 1.6em;
+            }
+            a {
+                text-decoration: none;
+                color: #000;
+                @media (min-width: $breakpoint-min-768px) {
+                    font-size: 1.375rem;
+                }
+                @media (min-width: $breakpoint-min-1200) {
+                    font-size: 1.625rem;
+                }
+            }
+        }
+    }
+}
+
+#navBar,
+#breadCrumbBar {
+    @include margin-minus-padding(-15px, -15px);
+    @extend %before-after-table;
+    .wrapper {
+        margin-right: auto;
+        margin-left: auto;
+        @include padding-plus-margin(15px, 15px);
+        max-width: $page-max-width;
+        @extend %before-after-table;
+        &:after {
+            clear: both;
+        }
+    }
+}
+
+#searchForm {
+    position: absolute;
+    width: 40%;
+    min-width: 48px;
+    height: 48px;
+    margin-right: 15px;
+    margin-top: 11px;
+    right: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-backface-visibility: hidden;
+    @media (max-width: $breakpoint-max-767px) {
+        width: 100%;
+        position: relative;
+        float: right;
+        margin: 10px 0 15px 0;
+    }
+    label {
+        position: absolute !important;
+        display: inline-block !important;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        margin: -1px;
+        padding: 0;
+        width: 1px;
+        height: 1px;
+        border: 0;
+    }
+    .searchInput {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 48px;
+        margin: 0;
+        z-index: 10;
+        padding: 0px 45px 0px 10px;
+        font-size: 1.025em;
+    }
+    .searchSubmit {
+        height: 48px;
+        width: 48px;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 0;
+        line-height: 1px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 1.125em;
+        text-indent: -9999px;
+        color: #FFFFFF;
+        background-color: #000000;
+        -webkit-transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        -moz-transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: 90;
+        &:before {
+            font-weight: normal;
+            font-family: $font-style-icon;
+            display: inline-block;
+            vertical-align: middle;
+            speak: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: "";
+            color: #fff;
+            position: absolute;
+            left: 15px;
+            top: 22px;
+            text-indent: 0;
+        }
+    }
+}
+
+.nav-tabs {
+    border-bottom:1px solid #d2d2d2;
+    li {
+        padding: 15px 0;
+        display: inline-block;
+        border: 1px solid #d2d2d2;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        width: 100px;
+        text-align: center;
+        margin-left: 5px;
+        border-bottom: 0;
+        &:before {
+            content:'';
+        }
+    }
+}
+
+
+/*******************
+**** Pager *********
+*******************/
+ul.paging {
+    margin: -15px 0 70px;
+    padding-left: 150px;
+    border-top: 2px solid #696969;
+    font-size: 70%;
+    display: block !important;
+    &:after {
+        content: " ";
+        visibility: hidden;
+        width: 0;
+        height: 0;
+        display: block;
+        clear: left;
+    }
+    li {
+            display: block;
+            float: left;
+            margin: 0 10px 0 0;
+            padding: 0;
+            border: 0;
+            background-image: none;
+            font-size: 1.25em;
+            line-height: 1.2381;
+            @media (min-width: $breakpoint-min-768px) {
+                font-size: 1.3125em;
+                line-height: 1.2381;
+            }
+            &:before {
+                content:'';
+            }
+    }
+    .previous a,
+    .next a {
+        position: static;
+        top: auto;
+    }
+    a,
+    a:visited {
+        display: block;
+        padding: .5em 8px;
+        padding-top: 0.5em;
+        color: #696969;
+        text-decoration: none;
+    }
+    a:focus,
+    a:hover {
+        text-decoration: underline;
+        color: #0162CD;
+    }
+    .is-active a {
+        background-color: #696969;
+        display: block;
+        padding: .5em 8px;
+        padding-top: 0.5em;
+        color: #FFFFFF;
+    }
+}

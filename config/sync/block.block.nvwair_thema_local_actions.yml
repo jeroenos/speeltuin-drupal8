@@ -1,0 +1,20 @@
+uuid: 752b3cdb-8dc1-4efc-a131-d087e0f2639d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - nvwair_thema
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: nvwair_thema_local_actions
+theme: nvwair_thema
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

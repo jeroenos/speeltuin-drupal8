@@ -1,0 +1,137 @@
+
+#block-views-block-product-onderzoeken-block-1 {
+  .views-row > a {
+    color: #000;
+    text-decoration: none;
+  }
+  .pager {
+    margin-top: 40px;
+  }
+}
+
+.inspection-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 1px solid $color-light-grey;
+  padding: 10px 0;
+
+  h3 {
+    font-size: 1.25rem;
+    color: $border-color-blue;
+    text-decoration: underline;
+  }
+  .inspection-body {
+    font-size: 0.85rem;
+  }
+}
+.inspection-wrapper {
+  flex-basis: 100%;
+}
+.inspection-result {
+  flex-basis: 100%;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 1.25rem;
+
+  @media (min-width: $breakpoint-min-640px) {
+    margin: 0;
+  }
+}
+.inspection-wrapper,
+.inspection-result {
+  align-self: center;
+
+  @media (min-width: $breakpoint-min-640px) {
+    flex-basis: calc(50% - 30px);
+  }
+}
+.inspection-reaction {
+  flex-basis: 40px;
+  align-self: center;
+}
+
+// Only display color box if the class is enabled.
+#mainwrapper.toon-kleur {
+  .inspection-item {
+    &.geen .inspection-color-box {
+      background: $color-result-positive;
+    }
+    &.beperkt_veiligheidsrisico .inspection-color-box {
+      background: $color-result-warning;
+    }
+    &.geen_veiligheidsrisico .inspection-color-box {
+      background: $color-result-positive;
+    }
+    &.veiligheidsrisico .inspection-color-box {
+      background: $color-result-warning;
+    }
+    &.ernstig_veiligheidsrisico .inspection-color-box {
+      background: $color-result-alarming;
+    }
+
+    &.voldoet .inspection-color-box {
+        background: $color-result-positive;
+     }
+     &.misleiding .inspection-color-box {
+         background: $color-result-warning;
+     }
+     &.ernstige_misleiding .inspection-color-box {
+      background: $color-result-alarming;
+    }
+  
+  }
+  .inspection-color-box {
+    align-self: center;
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $color-dark-grey;
+  }
+  .inspection-wrapper {
+    flex-basis: calc(100% - 50px);
+  }
+  .inspection-wrapper,
+  .inspection-result {
+    @media (min-width: $breakpoint-min-640px) {
+      flex-basis: calc(50% - 50px);
+    }
+  }
+}
+
+// Productonderzoek content
+.page-node-type-product {
+  .field--name-field-product-oordeel {
+    height: 90px;
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    line-height: 5;
+
+    &.risico-geen {
+      background: $color-result-positive;
+    }
+    &.risico-beperkt {
+      background: $color-result-warning;
+    }
+    &.risico-veiligheidsrisico {
+      background: $color-result-warning;
+    }
+    &.risico-ernstig {
+      background: $color-result-alarming;
+    }
+     &.risico-voldoet {
+      background:  $color-result-positive;
+    }    
+      &.risico-misleiding {
+      background: $color-result-warning;
+    }
+     &.risico-ernstige-misleiding {
+      background: $color-result-alarming;
+    }
+    
+  }
+  .inspected {
+    background: #fff;
+  }
+}

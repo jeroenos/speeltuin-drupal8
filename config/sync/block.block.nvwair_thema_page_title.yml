@@ -1,0 +1,20 @@
+uuid: b96ddcd3-70f3-4300-9790-121cf60ae05c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - nvwair_thema
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: nvwair_thema_page_title
+theme: nvwair_thema
+region: content
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

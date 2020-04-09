@@ -1,0 +1,25 @@
+uuid: 3a0596f7-b3d5-44cd-8b04-75b7f4e4faf2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nvwair_thema
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: nvwair_thema_branding
+theme: nvwair_thema
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

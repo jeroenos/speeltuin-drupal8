@@ -247,6 +247,7 @@
         "drupal/nothing": "^1.0",
         "drupal/paragraphs": "^1.10",
         "drupal/queue_ui": "^2.0",
+        "drupal/simple_popup_blocks": "^1.2",
         "drupal/views_data_export": "^1.0@beta",
         "drupal/views_simplechart": "^1.2",
         "drush/drush": "^9.0.0",
@@ -259,13 +260,13 @@
         "highcharts/more": "6.1.0",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
-        "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
         "wikimedia/composer-merge-plugin": "^1.4",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "webflo/drupal-core-require-dev": "^8.7.0"
+        "drupal/core-dev": "^8.8",
+        "drupal/devel": "^1.2"
     },
     "conflict": {
         "drupal/drupal": "*"

@@ -1,0 +1,33 @@
+uuid: 826a8c41-f2be-4ae9-b208-01fd51796e39
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.jaaroverzicht
+  module:
+    - node
+    - views
+  theme:
+    - nvwair_thema
+id: nvwair_thema_views_block__jaaroverzicht_block_2
+theme: nvwair_thema
+region: content
+weight: -2
+provider: null
+plugin: 'views_block:jaaroverzicht-block_2'
+settings:
+  id: 'views_block:jaaroverzicht-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      jaaroverzicht: jaaroverzicht
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,21 @@
+uuid: af1a864f-77b0-4a50-a6f3-ec7e9b8e85b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legenda
+    - node.type.slachthuis
+  module:
+    - text
+id: node.slachthuis.field_legenda
+field_name: field_legenda
+entity_type: node
+bundle: slachthuis
+label: legenda
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

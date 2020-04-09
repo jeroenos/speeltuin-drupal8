@@ -5,9 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.slachthuis.body
+    - field.field.node.slachthuis.field_foto
     - field.field.node.slachthuis.field_getal_1
     - field.field.node.slachthuis.field_getal_2
     - field.field.node.slachthuis.field_getal_3
+    - field.field.node.slachthuis.field_legenda
     - field.field.node.slachthuis.field_percentage_1
     - field.field.node.slachthuis.field_percentage_2
     - field.field.node.slachthuis.field_percentage_3
@@ -34,9 +36,11 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_foto: true
   field_getal_1: true
   field_getal_2: true
   field_getal_3: true
+  field_legenda: true
   field_percentage_1: true
   field_percentage_2: true
   field_percentage_3: true

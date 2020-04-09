@@ -1,0 +1,25 @@
+uuid: 6926fba4-cc47-44f5-ba71-295d5814f871
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2291b019-65a5-4e9d-b30e-d2f070e4914b'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: mijnpopupblok
+theme: bartik
+region: content
+weight: -8
+provider: null
+plugin: 'block_content:2291b019-65a5-4e9d-b30e-d2f070e4914b'
+settings:
+  id: 'block_content:2291b019-65a5-4e9d-b30e-d2f070e4914b'
+  label: 'Mijn popup blok'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

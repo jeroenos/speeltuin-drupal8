@@ -1,0 +1,192 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Bootstrap Rijkshuisstijl theme.
+ */
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\crop\Entity\Crop;
+use Drupal\Core\Url;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Entity\Entity;
+use Drupal\system\Entity\Menu;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * @file
+ * Functions to support theming in the NVWA Inspectieresultaten Theme.
+ */
+
+/**
+ * Theme setting callbacks for the Dictu Rijkshuisstijl theme.
+ */
+function nvwair_thema_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+  $form['logo_header']['logo']['sender_primary'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Primary sender'),
+    '#default_value' => theme_get_setting('sender_primary'),
+    '#description' => t("Primary sender next to brand mark (ribbon)"),
+  );
+
+  $form['logo_header']['logo']['sender_secondary'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Secondary sender'),
+    '#default_value' => theme_get_setting('sender_secondary'),
+    '#description' => t("Secondary sender next to brand mark (ribbon)"),
+  );
+}
+
+/**
+ * Implements hook_theme_preprocess_page().
+ */
+function nvwair_thema_preprocess_page(array &$variables) {
+  // Load the site name out of configuration.
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+  $variables['site_slogan'] = $config->get('slogan');
+
+  $variables['display_color'] = false;
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface && _nvwair_theme_has_color_enabled($node)) {
+    $variables['display_color'] = true;
+  }
+
+  $variables['theme_sender_primary'] = strip_tags(theme_get_setting('sender_primary'));
+  $variables['theme_sender_secondary'] = strip_tags(theme_get_setting('sender_secondary'));
+}
+
+/**
+ * Implements hook_preprocess_breadcrumb().
+ */
+function nvwair_thema_preprocess_breadcrumb(&$variables) {
+  $request = \Drupal::request();
+  $route_match = \Drupal::routeMatch();
+  $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+  //this variable will avaliable in twig file.
+  $variables['breadcrumb'][] = array(
+    'text' => $page_title
+  );
+  $variables['#cache']['contexts'][] = 'url';
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function nvwair_thema_preprocess_field(&$variables, $hook) {
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    if ($node->hasField('field_product_oordeel')) {
+      $oordeel_id = $node->get('field_product_oordeel')->getValue();
+      if ($oordeel_id) {
+        $oordeel_id = $oordeel_id['0']['target_id'];
+        $oordeel = Term::load($oordeel_id);
+         if (empty($oordeel)) {
+          $oordeel = 'geen';
+        }
+        else {
+          $oordeel = strtolower($oordeel->getName());
+        }
+        $oordeel = str_replace(' veiligheidsrisico', '', $oordeel);
+        $variables['oordeel'] = $oordeel;
+      }
+    }
+  }
+
+  if (in_array($variables['field_name'], ['field_bedrijfsoordeel', 'field_onderwerpoordeel'])) {
+    $item_list = $variables['element']['#items'];
+    foreach ($item_list as $item) {
+      $properties = $item->getProperties(['entity']);
+      $entity = $properties['entity'];
+      $target = $entity->getTarget();
+      $variables['color'] = $target->get('field_color')->getString();
+    }
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function nvwair_thema_page_attachments_alter(&$attachments) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface && $node->getType() === 'bedrijfsinspectie') {
+    if ($node->field_thema->entity) {
+      $thema_id = $node->field_thema->entity->id();
+      $field_toon_tzo_blok = $node->field_toon_tzo_blok->value;
+
+      $attachments['#attached']['drupalSettings']['tzoList']['thema_id'] = $thema_id;
+      if ($field_toon_tzo_blok == TRUE) {
+        $attachments['#attached']['library'][] = 'nvwair_thema/tzo-list';
+      }
+
+    }
+  }
+}
+
+/**
+ * @param \Drupal\node\Entity\Node $node
+ *
+ * @return bool
+ */
+function _nvwair_theme_has_color_enabled($node) {
+  $node_type = $node->getType();
+  // TODO: Add a conditional to check if the color enabled flag is on
+  if ($node_type === 'product_onderzoek' || $node_type === 'product') {
+    return TRUE;
+  }
+  if ($node_type === 'bedrijfsinspectie') {
+    $thema_term = _nvwair_thema_load_thema_term($node->field_thema);
+    if (!$thema_term) {
+      return FALSE;
+    }
+
+    return !!$thema_term->get('field_kleur')->getString();
+  }
+
+  if ($node_type === 'toezichtsobject') {
+    $besluit_paragraph = _nvwair_thema_load_besluit_paragraph($node);
+    if (!$besluit_paragraph) {
+      return FALSE;
+    }
+
+    $thema_term = _nvwair_thema_load_thema_term($besluit_paragraph->field_thema);
+    if (!$thema_term) {
+      return FALSE;
+    }
+
+    return !!$thema_term->get('field_kleur')->getString();
+  }
+
+  return FALSE;
+}
+
+/**
+ * @param $node
+ *
+ * @return \Drupal\Core\Entity\EntityInterface|\Drupal\paragraphs\Entity\Paragraph|null
+ */
+function _nvwair_thema_load_besluit_paragraph($node) {
+  $besluit = current($node->get('field_field_besluit_paragraph')->getValue());
+  if (isset($besluit['target_id'])) {
+    return \Drupal\paragraphs\Entity\Paragraph::load($besluit['target_id']);
+  }
+  return NULL;
+}
+
+/**
+ * @param \Drupal\Core\Entity\EntityInterface|\Drupal\paragraphs\Entity\Paragraph $besluit_paragraph
+ *
+ * @return \Drupal\Core\Entity\EntityInterface|null
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function _nvwair_thema_load_thema_term($field_thema) {
+  $thema = current($field_thema->getValue());
+  if (isset($thema['target_id'])) {
+    return \Drupal::entityTypeManager()
+        ->getStorage('taxonomy_term')
+        ->load($thema['target_id']);
+  }
+  return NULL;
+}

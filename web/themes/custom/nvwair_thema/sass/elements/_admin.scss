@@ -1,0 +1,7 @@
+.contextual-links {
+    li {
+    &:before {
+        content:'';
+    }
+}
+}

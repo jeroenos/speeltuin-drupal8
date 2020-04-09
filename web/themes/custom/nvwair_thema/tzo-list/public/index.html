@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+    <style>
+      body {
+        padding-bottom: 30px;
+      }
+      h1, h2, p {
+        font-family: sans-serif;
+        text-align: center;
+      }
+      .leaflet-container {
+        height: 400px;
+        width: 80%;
+        margin: 0 auto;
+      }
+    </style>
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/ajax-progress.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/align.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/autocomplete-loading.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/fieldgroup.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/container-inline.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/clearfix.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/details.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/hidden.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/item-list.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/js.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/nowrap.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/position-container.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/progress.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/reset-appearance.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/resize.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/sticky-header.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/system-status-counter.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/system-status-report-counters.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/system-status-report-general-info.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/tabledrag.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/tablesort.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/system/components/tree-child.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/modules/contrib/leaflet/js/leaflet/dist/leaflet.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/core/themes/stable/css/views/views.module.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/libraries/leaflet_markercluster/dist/MarkerCluster.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/libraries/leaflet_markercluster/dist/MarkerCluster.Default.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/modules/contrib/chosen/css/chosen-drupal.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/libraries/chosen/chosen.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/modules/contrib/addtoany/css/addtoany.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/modules/contrib/better_exposed_filters/css/better_exposed_filters.css?pgqv4l" media="all" />
+    <link rel="stylesheet" href="http://nvwair.docker.localhost/themes/custom/nvwair_thema/stylesheets/style.css?pgqv4l" media="all" />
+  </head>
+  <body id="nvwa">
+    <div id="mainwrapper">
+      <noscript>
+        You need to enable JavaScript to run this app.
+      </noscript>
+      <div id="main">
+        <div class="wrapper">
+          <div id="content">
+            <div id="tzo-list"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/20","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"nl"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"addtoany\/addtoany,big_pipe\/big_pipe,contextual\/drupal.contextual-links,contextual\/drupal.contextual-toolbar,core\/drupal.active-link,core\/html5shiv,history\/mark-as-read,nvwair_thema\/global,quickedit\/quickedit,rebuild_cache_access\/rebuild-cache-access-toolbar,shortcut\/drupal.shortcut,system\/base,toolbar\/toolbar,toolbar\/toolbar.escapeAdmin,tour\/tour,user\/drupal.user.icons,views\/views.module","theme":"nvwair_thema","theme_token":null},"ajaxTrustedUrl":[],"bigPipePlaceholderIds":{"callback=Drupal%5CCore%5CRender%5CElement%5CStatusMessages%3A%3ArenderMessages\u0026args%5B0%5D\u0026token=_HAdUpwWmet0TOTe2PSiJuMntExoshbm1kh2wQzzzAA":true,"callback=user.toolbar_link_builder%3ArenderToolbarLinks\u0026\u0026token=xssKdKFVFD7N0FUPPcC1C7LrqMHpQFVzUhrI4cOeEgs":true,"callback=user.toolbar_link_builder%3ArenderDisplayName\u0026\u0026token=-MH2NzEnTzbzMk0ZGfGgoiw7G3j_-Q1ILWBRVhIOKLI":true},"tzoList":{"thema_id":"172"},"history":{"nodesToMarkAsRead":{"147":true,"20":true}},"field_group":{"html_element":{"mode":"default","context":"view","settings":{"id":"","classes":"","element":"label","show_label":false,"label_element":"h3","attributes":"","effect":"none","speed":"fast","label":"Accordion Titel"}}},"toolbar":{"breakpoints":{"toolbar.narrow":"only screen and (min-width: 16.5em)","toolbar.standard":"only screen and (min-width: 38.125em)","toolbar.wide":"only screen and (min-width: 61em)"},"subtreesHash":"fPgaRsQpRJ5myBiJiMWs6ZzoSljU7TqXBiWJV5f3isw"},"user":{"uid":"1","permissionsHash":"49f4c68604cb5584d19750f58a75cdd216c592b7bb829f3711114333047034ae"}}</script>
+    <script src="http://nvwair.docker.localhost/core/assets/vendor/domready/ready.min.js?v=1.0.8"></script>
+    <script src="http://nvwair.docker.localhost/core/assets/vendor/jquery/jquery.min.js?v=3.2.1"></script>
+    <script src="http://nvwair.docker.localhost/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.0"></script>
+    <script src="http://nvwair.docker.localhost/core/misc/drupalSettingsLoader.js?v=8.6.1"></script>
+    <script src="http://nvwair.docker.localhost/sites/default/files/languages/nl_kil5qLo4vv8sQcCHUAqGwGBi2tAj7kHN27MR3-b7TAE.js?pgqv4l"></script>
+    <script src="http://nvwair.docker.localhost/core/misc/drupal.js?v=8.6.1"></script>
+    <script src="http://nvwair.docker.localhost/core/misc/drupal.init.js?v=8.6.1"></script>
+    <script src="https://static.addtoany.com/menu/page.js" async></script>
+    <script src="http://nvwair.docker.localhost/modules/contrib/addtoany/js/addtoany.js?v=8.6.1"></script>
+    <script src="http://nvwair.docker.localhost/modules/contrib/leaflet/js/leaflet/dist/leaflet.js?v=1.0.3"></script>
+    <script src="http://nvwair.docker.localhost/themes/custom/nvwair_thema/js/script.js?pgqv4l"></script>
+    <script src="http://nvwair.docker.localhost/core/assets/vendor/jquery-form/jquery.form.min.js?v=4.22"></script>
+    <script src="http://nvwair.docker.localhost/core/misc/progress.js?v=8.6.1"></script>
+    <script src="http://nvwair.docker.localhost/core/modules/responsive_image/js/responsive_image.ajax.js?v=8.6.1"></script>
+    <script src="http://nvwair.docker.localhost/core/misc/ajax.js?v=8.6.1"></script>
+    <script src="http://nvwair.docker.localhost/core/modules/views/js/base.js?v=8.6.1"></script>
+    <script src="http://nvwair.docker.localhost/core/modules/views/js/ajax_view.js?v=8.6.1"></script>
+    <script src="http://nvwair.docker.localhost/modules/contrib/leaflet/leaflet.drupal.js?v=8.6.1"></script>
+    <script src="http://nvwair.docker.localhost/libraries/leaflet_markercluster/dist/leaflet.markercluster.js?v=0.4.0"></script>
+    <script src="http://nvwair.docker.localhost/modules/contrib/leaflet_markercluster/leaflet_markercluster.drupal.js?v=8.6.1"></script>
+    <script src="http://nvwair.docker.localhost/modules/custom/leaflet_pdok/js/proj4-compressed.js?pgqv4l"></script>
+    <script src="http://nvwair.docker.localhost/modules/custom/leaflet_pdok/js/proj4leaflet.js?pgqv4l"></script>
+    <script src="http://nvwair.docker.localhost/modules/custom/leaflet_pdok/leaflet_pdok.js?pgqv4l"></script>
+    <script src="http://nvwair.docker.localhost/modules/contrib/better_exposed_filters/js/better_exposed_filters.js?v=3.x"></script>
+    <script src="http://nvwair.docker.localhost/core/misc/debounce.js?v=8.6.1"></script>
+    <script src="http://nvwair.docker.localhost/modules/contrib/better_exposed_filters/js/auto_submit.js?v=3.x"></script>
+    <script src="http://nvwair.docker.localhost/libraries/chosen/chosen.jquery.min.js?v=1.8.2"></script>
+    <script src="http://nvwair.docker.localhost/modules/contrib/chosen/js/chosen.js?v=1.7.0"></script>
+  </body>
+</html>

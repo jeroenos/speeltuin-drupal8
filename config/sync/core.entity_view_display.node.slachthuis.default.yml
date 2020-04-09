@@ -4,14 +4,17 @@ status: true
 dependencies:
   config:
     - field.field.node.slachthuis.body
+    - field.field.node.slachthuis.field_foto
     - field.field.node.slachthuis.field_getal_1
     - field.field.node.slachthuis.field_getal_2
     - field.field.node.slachthuis.field_getal_3
+    - field.field.node.slachthuis.field_legenda
     - field.field.node.slachthuis.field_percentage_1
     - field.field.node.slachthuis.field_percentage_2
     - field.field.node.slachthuis.field_percentage_3
     - node.type.slachthuis
   module:
+    - magnific_popup
     - text
     - user
 id: node.slachthuis.default
@@ -25,6 +28,16 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_foto:
+    weight: 109
+    label: above
+    settings:
+      thumbnail_image_style: medium
+      popup_image_style: large
+      gallery_type: all_items
+    third_party_settings: {  }
+    type: magnific_popup
     region: content
   field_getal_1:
     weight: 102
@@ -52,6 +65,13 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
+  field_legenda:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_percentage_1:
     weight: 105
@@ -88,7 +108,7 @@ content:
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

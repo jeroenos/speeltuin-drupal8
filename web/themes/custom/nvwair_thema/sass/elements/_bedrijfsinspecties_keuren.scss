@@ -1,0 +1,153 @@
+// Node: highlight period
+#block-nvwair-thema-content {
+  .time-period span {
+    color: unset;
+  }
+}
+.reactie-ondernemer-legenda {
+  display: flex;
+  img {
+    height: 20px;
+    margin-right: 5px;
+    margin-left: 0px;
+    align-self: center;
+  }
+}
+// Exposed form
+form#views-exposed-form-inspectieresultaten-keuren-block-1,
+form#views-exposed-form-inspectieresultaten-keuren-eva-tab-cijfers-overzicht{
+  margin-bottom: 10px;
+  .column-names-wrapper {
+    text-align: right;
+    margin-top: 20px;
+    width: 100%;
+    font-weight: bold;
+  }
+}
+
+.field-group-tabs-wrapper-inspectieresultaten-keuren{
+  padding-top: 10px;
+  //  background-color: red;
+}
+
+// Results
+#block-views-block-inspectieresultaten-keuren-block-1,
+.view-display-id-eva_tab_cijfers_overzicht {
+  .views-row > a {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid $color-light-grey;
+    padding: 10px 0;  
+    color: #000;
+    text-decoration: none;
+  }
+  .pager {
+    margin-top: 40px;
+  }
+  .views-row {
+    h3 {
+      font-size: 1.1rem;
+      color: $border-color-blue;
+      text-decoration: underline;
+    }
+    .inspection-body {
+      font-size: 0.85rem;
+    }
+    .views-field-field-tzo-keuren-bedrijf {
+      min-width: 21em;
+      .eg-nummer {
+        display: block;
+        font-style: italic;
+      }
+    }
+    .views-field-field-thema-keuren-aantal-sw {
+      min-width: 10em;
+    }
+    //highlight percentage
+    .views-field-field-thema-keuren-percentage {
+      min-width: 1.9em;
+      text-align:right;
+    }
+    .views-field-field-thema-keuren-aantal {
+      min-width: 3.5em;
+      text-align:right;
+
+    }
+    .views-field-field-besluit-keuren-reactie {
+      min-width: 1.5em;
+      width: 1.8em;
+      height: auto;
+
+    }
+  }
+}
+
+// tabblad Benchmark op overzichts pagina
+// Jeroen, later kijken of dit generieker kan en technical dept release
+//
+form#views-exposed-form-inspectieresultaten-keuren-tab-benchmark-eva-tab-benchmark-overzicht,
+form#views-exposed-form-inspectieresultaten-keuren-tab-trends-eva-tab-trends-overzicht{
+   // background-color: purple;
+    #edit-legenda-thema-exposed-filter-tzo-overzicht{
+      width: 250px;
+    }
+}
+
+div.chart-container-tzo-overzicht-trends-tab{
+  // background-color: red;
+  padding-top : 40px;
+
+}
+
+
+
+div.bedrijvenlijst-container-tzo-overzicht {
+  // background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 800px;
+  float :left;   
+  padding-top : 40px;
+  padding-bottom : 40px;
+  padding-right : 5px;
+  width : 50%; 
+  h3 {
+    text-align: right;
+    a { 
+      color :#01689b; 
+      font-size: 1.0rem;
+    }
+  }
+
+}
+
+div.chart-container-tzo-overzicht {
+  // background-color: red;
+  float :right;
+  width :50%;
+}
+
+// Legenda en tekst op de tzo keuren detail pagina
+// TODO : moet nog resonsive
+div.legenda-container-tzo-overzicht  {
+  // background-color: green;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 20px;
+ // width: 100%;
+  div.legenda-row-tzo-overzicht { 
+    display: flex;
+    align-items: center;
+    span{
+      padding-right : 3px;
+      font-style: italic;
+    }         
+    img {
+      height: 35px;
+    }
+  }
+}

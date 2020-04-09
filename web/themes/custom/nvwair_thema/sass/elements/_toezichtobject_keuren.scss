@@ -1,0 +1,78 @@
+/*
+    Created on : 4 Feb 2020, 08:34:16
+    Author     : jeroen
+*/
+
+// Exposed form
+form#views-exposed-form-toezichtsobject-keuren-eva-tab-cijfers {
+  margin-bottom: 10px;
+  .column-names-wrapper {
+    text-align: right;
+    margin-top: 20px;
+    width: 100%;
+  }
+  #edit-field-besluit-keuren-tijdvak-target-id,
+  label {
+    display :none;
+  }
+}
+
+// Hide the 'slave' exposed filters on tijdsvak and the labels of
+// the exposed filters(s). 
+form#views-exposed-form-toezichtsobject-keuren-eva-block-reactie {
+  #edit-field-besluit-keuren-tijdvak-target-id,
+  label {
+    display :none;
+  }
+}
+
+// Hide the 'slave' exposed filters on tijdsvak and the labels of
+// the exposed filters(s). 
+form#views-exposed-form-toezichtsobject-keuren-eva-tab-benchmark {
+  #edit-field-besluit-keuren-tijdvak-target-id,
+  label {
+    display :none;
+  }  
+}
+
+// Legenda en tekst op de tzo keuren detail pagina
+// TODO : moet nog resonsive
+div.legenda-container-tzo-detail{
+  height: 10px;
+  border-style: solid;
+  border-color: white;
+  border-top-color: lightgrey;
+  border-width: thin;
+  padding-top: 10px;
+  div.legenda_tekst_tzo_detail{
+    padding-top: 5px;
+    // background-color :yellow;
+    float : left;
+    font-weight: bold;
+    width :67%;
+  }
+  div.legenda_image_tzo_detail {
+    display: flex;
+    float: right;
+    //     background-color: red;
+    width: 33%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    span{
+      padding-right : 3px;
+      font-style: italic;
+    }         
+    img {
+      height: 35px;
+    }
+  }
+}
+
+div.benchmark-chart-x-axe{
+  // background-color: red;   
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  font-size: smaller;
+}

@@ -1,0 +1,22 @@
+uuid: 0488a074-fa31-46c3-97b6-b8f073b4d89d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nvwair_thema
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: nvwair_thema_powered
+theme: nvwair_thema
+region: header
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

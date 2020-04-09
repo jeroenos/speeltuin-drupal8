@@ -1,0 +1,70 @@
+#breadCrumbBar {
+    background-color: $secundary-color;
+    min-height: 60px;
+    .wrapper {
+        position: relative;
+        .breadCrumbNav {
+            position: relative;
+            min-height: 1px;
+            font-size: 1rem;
+            line-height: 1.7em;
+            letter-spacing: .03rem;
+            text-decoration: none;
+            font-weight: normal;
+            padding: 12px 0;
+            @media (min-width: $breakpoint-min-768px) {
+                float: left;
+                width: 100%;
+            }
+            @media (min-width: $breakpoint-min-640px) {
+                padding: 18px 48px 18px 0;
+                line-height: 1.6em;
+            }
+            span {
+                color: #000;
+                font-weight: 700;
+                @media (min-width: $breakpoint-min-640px) {
+                    font-size: 1.125rem;
+                }
+                @media (min-width: $breakpoint-min-1200) {
+                    font-size: 1.25rem;
+                }
+            }
+            a {
+                text-decoration: none;
+                color: #000;
+                &:hover {
+                    text-decoration: underline;
+                }
+                @media (min-width: $breakpoint-min-640px) {
+                    font-size: 1.125rem;
+                    &:after {
+                        font-size: 1rem;
+                    }
+                }
+                @media (min-width: $breakpoint-min-1200) {
+                    font-size: 1.25rem;
+                    &:after {
+                        font-size: 1.125rem;
+                    }
+                }
+                &:after {
+                    font-weight: normal;
+                    font-family: $font-style-icon;
+                    display: inline-block;
+                    vertical-align: middle;
+                    content: "";
+                    speak: none;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    color: #000;
+                    padding: 0 4px 0 8px;
+                    display: inline-block;
+                    font-size: .8rem;
+                    margin: -3px 0 0;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

@@ -4,14 +4,18 @@ status: true
 dependencies:
   config:
     - field.field.node.slachthuis.body
+    - field.field.node.slachthuis.field_foto
     - field.field.node.slachthuis.field_getal_1
     - field.field.node.slachthuis.field_getal_2
     - field.field.node.slachthuis.field_getal_3
+    - field.field.node.slachthuis.field_legenda
     - field.field.node.slachthuis.field_percentage_1
     - field.field.node.slachthuis.field_percentage_2
     - field.field.node.slachthuis.field_percentage_3
+    - image.style.thumbnail
     - node.type.slachthuis
   module:
+    - image
     - path
     - text
 id: node.slachthuis.default
@@ -35,6 +39,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_foto:
+    weight: 129
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
   field_getal_1:
     weight: 122
     settings:
@@ -55,6 +67,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
+  field_legenda:
+    weight: 128
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
     region: content
   field_percentage_1:
     weight: 125

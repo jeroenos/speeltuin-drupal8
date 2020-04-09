@@ -1,0 +1,7 @@
+%before-after-table {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+}

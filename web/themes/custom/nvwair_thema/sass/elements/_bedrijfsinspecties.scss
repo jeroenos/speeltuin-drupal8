@@ -1,0 +1,159 @@
+.toezichtobj-page {
+    header {
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 40px;
+    }
+}
+
+.lijst-resultaten {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #CCCCCD;
+    p {
+        font-size: .8em;
+        font-weight: normal;
+        line-height: 1;
+        margin: 0;
+        @media (min-width: $breakpoint-min-640px) {
+            margin-top: .8em;
+            font-weight: normal;
+            font-size: 1.125em;
+            &.inspection-result {
+                position: absolute;
+                top: .1em;
+                left: 60%;
+            }
+        }
+        &.datum {
+            font-size: .8em;
+            padding-top: 10px;
+        }
+    }
+    li {
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid #CCCCCD;
+        position: relative;
+        text-overflow: ellipsis;
+        p {
+            font-size: 1em;
+            margin: 0;
+        }
+        &:before {
+            content: '';
+        }
+        a {
+            display: block;
+            padding: .8em .5em;
+            margin: 0;
+            position: relative;
+            color: #000;
+            text-decoration: none;
+            &:hover,
+            &:focus {
+                color: #000;
+                text-decoration: none;
+                background-color: #f8f8f8;
+            }
+            &.reactie-ondernemer {
+                position: absolute;
+                right: .5em;
+                top: 1em;
+                padding: 0;
+                img {
+                    width: 1.8em;
+                    height: auto;
+                }
+            }
+        }
+        p.inspection-result {
+            margin-top: .8em;
+            font-weight: bold;
+            font-size: 1.125em;
+        }
+        h3 {
+            padding-right: 40%;
+            text-decoration: underline;
+            color: $border-color-blue;
+          }
+          h3.index-title a {
+              padding-right: 40%;
+              text-decoration: underline;
+              color: $border-color-blue;
+        }
+    }
+
+}
+
+#mainwrapper.toon-kleur {
+  .lijst-resultaten li {
+    a.inspection-title {
+      padding: .8em 5em .8em 3em;
+    }
+    h3::before {
+      content:" ";
+      display:block;
+      width:2em;
+      height:2em;
+      position:absolute;
+      left:0;
+      top:.9em;
+
+      background-color: #EEF7FB;
+      border: 1px black solid;
+    }
+
+    .red h3::before {
+      background-color:$color-result-alarming;
+      color:white;
+    }
+    .green h3::before {
+      background-color: $color-result-positive;
+    }
+    .yellow h3::before {
+      background-color: $color-result-warning;
+    }
+    .orange h3::before {
+      background-color: $color-result-supervised;
+    }
+    .white h3::before {
+      background-color:white;
+    }
+  }
+}
+
+.page-node-type-bedrijfsinspectie {
+        .inspectiersultaten-leaflet {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            outline: none;
+            /* display:none; */
+            height: 0;
+            opacity:0;
+            visibility:hidden;
+            &.open {
+                height:auto;
+                opacity:1;
+                visibility:visible;
+            }
+        }
+        .bedrijfsinspecie-wrapper {
+
+            &.close {
+                height: 0;
+                opacity:0;
+                visibility:hidden;
+            }
+        }
+       .leaflet-container {
+	background: white;
+        outline: 2px solid gray;
+	}
+}

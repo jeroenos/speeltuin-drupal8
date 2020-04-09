@@ -1,0 +1,34 @@
+#header {
+    @include margin-minus-padding(-15px, -15px);
+    background-color: #FFFFFF;
+    position: relative;
+    @extend %before-after-table;
+    .logo {
+        margin-right: auto;
+        margin-left: auto;
+        @include padding-plus-margin(15px, 15px);
+        max-width: $page-max-width;
+        overflow: hidden;
+        @extend %before-after-table;
+        .wrapper {
+            margin: 0px 0px 0px 50%;
+            a {
+                display: inline-block;
+                margin-bottom: 20px;
+                margin-left: -22px;
+            }
+            img {
+                display: inline-block;
+            }
+        }
+    }
+    .skiplinks {
+        margin-right: auto;
+        margin-left: auto;
+        @include padding-plus-margin(15px, 15px);
+        max-width: $page-max-width;
+    }
+    &:after {
+        clear: both;
+    }
+}

@@ -1,0 +1,141 @@
+#footer {
+    background-color: $primary-color;
+    border: none;
+    padding-bottom: 0px;
+    @include margin-minus-padding(-15px, -15px);
+    @extend %before-after-table;
+    .wrapper {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+        max-width: $page-max-width;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        @extend %before-after-table;
+        &:after {
+            clear: both;
+        }
+        @media (min-width: $breakpoint-min-480px) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        @media (min-width: $breakpoint-min-992px) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .payoff {
+            padding-top: 0;
+            padding-left: 0;
+            position: relative;
+            float: left;
+            width: 100%;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+            position: relative;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+            position: relative;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+            @media (min-width: $breakpoint-min-768px) {
+                float: left;
+                width: 50%;
+            }
+            @media (min-width: $breakpoint-min-992px) {
+                float: left;
+                width: 58.33333%;
+            }
+            p {
+                display: block;
+                padding-bottom: 25px;
+                color: #000;
+                font-size: 1.5em;
+                font-family: "RO Serif";
+                font-style: italic;
+                font-weight: normal;
+                margin-bottom: 0;
+                line-height: 1.2381;
+                @media (min-width: $breakpoint-min-480px) {
+                    position: relative;
+                    min-height: 1px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    padding: 0 0 25px 0;
+                    font-size: 1.75em;
+                    float: left;
+                    width: 83.33333%;
+                }
+                @media (min-width: $breakpoint-min-768px) {
+                    padding-bottom: 0;
+                }
+            }
+        }
+        .column {
+            position: relative;
+            float: left;
+            width: 50%;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+            position: relative;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+            position: relative;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+            @media (min-width: $breakpoint-min-768px) {
+                float: left;
+                width: 25%;
+            }
+            @media (min-width: $breakpoint-min-992px) {
+                float: left;
+                width: 16.66667%;
+            }
+            h2 {
+                margin: 8px 0 5px 0;
+                padding-top: 0;
+                color: #535353;
+                border-bottom: 1px solid #b4b4b4;
+                font-weight: normal;
+                font-size: 1.25em;
+                color: #000;
+                border: none;
+                @media (min-width: $breakpoint-min-768px) { 
+                        font-size: 1.5em;
+                        margin-bottom: 5px;
+                }
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                @extend %before-after-table;
+                li {
+                    width: 100%;
+                    list-style: none;
+                    float: left;
+                    @media (min-width: $breakpoint-min-992px) {
+                        width: 100%;
+                        list-style: none;
+                        margin: 0;
+                    }
+                    a {
+                        color: #000;
+                        text-decoration: none;
+                        @media (min-width: $breakpoint-min-768px) {
+                            padding: 2px 0 2px 0;
+                        }
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
