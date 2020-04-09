@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fff3d7dedeaefa0e1ad7b9cebed82d7d",
+    "content-hash": "81d844d316e4849dc2ca25d546f62641",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -121,6 +121,42 @@
                 "stack"
             ],
             "time": "2017-12-20T14:37:45+00:00"
+        },
+        {
+            "name": "billboardjs/billboard",
+            "version": "1.6.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/naver/billboard.js/archive/1.6.2.zip"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "billboard"
+            }
+        },
+        {
+            "name": "c3js/c3",
+            "version": "v0.4.18",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/c3js/c3/archive/v0.4.18.zip"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "c3"
+            }
+        },
+        {
+            "name": "chartjs/chartjs",
+            "version": "v2.7.2",
+            "dist": {
+                "type": "file",
+                "url": "https://www.chartjs.org/dist/2.7.2/Chart.bundle.js"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "chartjs"
+            }
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -1164,6 +1200,36 @@
             ],
             "description": "Provides a way to patch Composer packages.",
             "time": "2019-08-29T20:11:49+00:00"
+        },
+        {
+            "name": "d3/d3",
+            "version": "v3.5.17",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/d3/d3/archive/v3.5.17.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "d3"
+            }
+        },
+        {
+            "name": "d3v4/d3",
+            "version": "4.9.1",
+            "dist": {
+                "type": "file",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.js"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "d3v4"
+            }
         },
         {
             "name": "dflydev/dot-access-configuration",
@@ -2995,6 +3061,84 @@
             }
         },
         {
+            "name": "drupal/flot",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/flot.git",
+                "reference": "8.x-1.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/flot-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "dd4d7266eb50d2b1de5bfe7683916183a4fe9261"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "require-dev": {
+                "drupal/flot_axislabels-flot_axislabels": "*",
+                "drupal/flot_examples": "*",
+                "drupal/flot_examples-flot_examples": "*",
+                "drupal/flot_jumlib": "*",
+                "drupal/flot_spider": "*",
+                "drupal/flot_views_pie-flot_views_pie": "*",
+                "drupal/flot_views_time-flot_views_time": "*",
+                "drupal/timezone_js": "*",
+                "drupal/views-views": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1519228080",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Beakerboy",
+                    "homepage": "https://www.drupal.org/user/1700098"
+                },
+                {
+                    "name": "Jelle_S",
+                    "homepage": "https://www.drupal.org/user/829198"
+                },
+                {
+                    "name": "attiks",
+                    "homepage": "https://www.drupal.org/user/105002"
+                },
+                {
+                    "name": "febbraro",
+                    "homepage": "https://www.drupal.org/user/43670"
+                },
+                {
+                    "name": "jmiccolis",
+                    "homepage": "https://www.drupal.org/user/31731"
+                },
+                {
+                    "name": "yhahn",
+                    "homepage": "https://www.drupal.org/user/264833"
+                }
+            ],
+            "description": "This module provides a wrapper to the javascript FLOT library.",
+            "homepage": "https://www.drupal.org/project/flot",
+            "support": {
+                "source": "https://git.drupalcode.org/project/flot"
+            }
+        },
+        {
             "name": "drupal/graphql",
             "version": "3.0.0",
             "source": {
@@ -3375,6 +3519,61 @@
             "homepage": "https://www.drupal.org/project/views_data_export",
             "support": {
                 "source": "https://git.drupalcode.org/project/views_data_export"
+            }
+        },
+        {
+            "name": "drupal/views_simplechart",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views_simplechart.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_simplechart-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "b66de1ccef16deefe455aa952af36b3c9fd5bf93"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1479888539",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "drupwash",
+                    "homepage": "https://www.drupal.org/user/1652472"
+                },
+                {
+                    "name": "jacob.embree",
+                    "homepage": "https://www.drupal.org/user/2622325"
+                },
+                {
+                    "name": "meenugupta",
+                    "homepage": "https://www.drupal.org/user/265769"
+                }
+            ],
+            "description": "Simple visualization based on google api",
+            "homepage": "https://www.drupal.org/project/views_simplechart",
+            "support": {
+                "source": "https://git.drupalcode.org/project/views_simplechart"
             }
         },
         {
