@@ -453,6 +453,12 @@ a h3 {
   padding-right: 15px;
   margin-top: 40px; }
 
+
+ #block-nvwair-thema-mijnpopupblok {
+    display: none;
+  }
+
+
 .lijst-resultaten {
   width: 100%;
   position: relative;
