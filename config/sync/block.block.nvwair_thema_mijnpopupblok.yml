@@ -11,7 +11,7 @@ dependencies:
 id: nvwair_thema_mijnpopupblok
 theme: nvwair_thema
 region: content
-weight: -8
+weight: -7
 provider: null
 plugin: 'block_content:2291b019-65a5-4e9d-b30e-d2f070e4914b'
 settings:

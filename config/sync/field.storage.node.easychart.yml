@@ -1,0 +1,21 @@
+uuid: 7697f479-9147-4e3e-9119-5260657d3320
+langcode: en
+status: true
+dependencies:
+  module:
+    - easychart
+    - node
+_core:
+  default_config_hash: pFHOWLX1mv7WQ43KImdVeqOnwkCBzx8DeOfxrruIyXE
+id: node.easychart
+field_name: easychart
+entity_type: node
+type: easychart
+settings: {  }
+module: easychart
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

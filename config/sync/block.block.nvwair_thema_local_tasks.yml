@@ -9,7 +9,7 @@ _core:
 id: nvwair_thema_local_tasks
 theme: nvwair_thema
 region: content
-weight: -6
+weight: -5
 provider: null
 plugin: local_tasks_block
 settings:

@@ -12,7 +12,7 @@ dependencies:
 id: nvwair_thema_views_block__jaaroverzicht_block_2
 theme: nvwair_thema
 region: content
-weight: -2
+weight: -1
 provider: null
 plugin: 'views_block:jaaroverzicht-block_2'
 settings:

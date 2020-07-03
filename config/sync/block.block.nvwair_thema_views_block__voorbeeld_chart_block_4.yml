@@ -12,7 +12,7 @@ dependencies:
 id: nvwair_thema_views_block__voorbeeld_chart_block_4
 theme: nvwair_thema
 region: content
-weight: -1
+weight: 0
 provider: null
 plugin: 'views_block:voorbeeld_chart-block_4'
 settings:

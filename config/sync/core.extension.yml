@@ -22,6 +22,7 @@ module:
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
+  easychart: 0
   editor: 0
   entity_reference_revisions: 0
   examples: 0
@@ -31,6 +32,10 @@ module:
   file: 0
   filter: 0
   flot: 0
+  flot_JUMlib: 0
+  flot_examples: 0
+  flot_spider: 0
+  flot_spider_examples: 0
   graphql: 0
   help: 0
   history: 0
@@ -58,6 +63,7 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  timezone_js: 0
   toolbar: 0
   tour: 0
   update: 0
