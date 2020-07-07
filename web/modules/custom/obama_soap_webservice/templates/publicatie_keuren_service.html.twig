@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://www.minez.nl/xml/wsdl/obama/publiceerKeurenService/v1" 
+             name="DrupalKeuren_SRV_1_0" 
+             xmlns="http://schemas.xmlsoap.org/wsdl/" 
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+             xmlns:types="http://www.minez.nl/xml/schema/obama/publicatie/berichttypes/v1"
+             xmlns:tns="http://www.minez.nl/xml/wsdl/obama/publiceerKeurenService/v1"             
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+  <types>
+
+    <xs:schema>
+      <xs:import namespace="http://www.minez.nl/xml/schema/obama/publicatie/berichttypes/v1" 
+                 schemaLocation="{{xsd_url}}"/>
+    </xs:schema>
+
+  </types>
+  <message name="publiceerKeurenRequest">
+    <part name="payload" element="types:publiceerKeurenRequest"/>
+  </message>
+  <portType name="publiceerKeurenPortType">
+    <operation name="publiceerKeuren">
+      <input message="tns:publiceerKeurenRequest"/>
+    </operation>
+  </portType>
+  <binding name="publiceerKeurenBinding" type="tns:publiceerKeurenPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="publiceerKeuren">
+      <soap:operation style="document" soapAction="publiceerKeuren"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+    </operation>
+  </binding>
+  <service name="publiceerKeurenService">
+    <port name="publiceerKeurenPort" binding="tns:publiceerKeurenBinding">
+      <soap:address location="{{service_endpoint}}"/>
+    </port>
+  </service>
+
+
+</definitions>
