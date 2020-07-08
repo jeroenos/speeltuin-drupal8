@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:mhdr="http://www.minez.nl/xml/schema/gen/header/v2" 
+    xmlns:tmg="http://www.minez.nl/xml/schema/gen/terugmelding/v3" 
+    xmlns:bts="http://www.minez.nl/xml/schema/gen/basistypes/v2" 
+    xmlns:obabte="http://www.minez.nl/xml/schema/obama/basistypes/v2"
+    xmlns:obabts="http://www.minez.nl/xml/schema/obama/publicatie/berichttypes/v1" 
+    targetNamespace="http://www.minez.nl/xml/schema/obama/publicatie/berichttypes/v1" 
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+    <!-- 
+    xmlns:bte="http://www.minez.nl/xml/schema/oba/basistypes/v2" 
+    xmlns:pub="http://www.minez.nl/xml/schema/oba/publicatiekeuren/v1" 
+    targetNamespace="http://www.minez.nl/xml/schema/oba/publicatiekeuren/v1" 
+    -->
+		<!-- 
+		<xs:import namespace="http://www.minez.nl/xml/schema/gen/header/v2" schemaLocation="../CDM/header/MessageHeader_v2.xsd"/>
+		<xs:import namespace="http://www.minez.nl/xml/schema/gen/terugmelding/v3" schemaLocation="../CDM/utilities/Terugmelding_v3.xsd"/>
+		<xs:import namespace="http://www.minez.nl/xml/schema/gen/basistypes/v2" schemaLocation="../CDM/basistypes/BasisTypes_v2.xsd"/>
+		-->
+		<xs:import namespace="http://www.minez.nl/xml/schema/obama/basistypes/v2" schemaLocation="ObaBasisTypes_v2.xsd"/>	
+  <!-- Start RCI:07052020 -->	  
+	<!-- =========== Simple Types =========== -->	
+	<xs:simpleType name="publicatieDatum">
+		<xs:restriction base="xs:date"/>
+	</xs:simpleType>
+	<!-- =========== Complex Types =========== -->
+	<xs:complexType name="codeType">
+		<xs:sequence>
+			<xs:element name="code" type="xs:string"/>
+			<xs:element name="omschrijving" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="batch" type="obabts:batchType"/>
+	<xs:complexType name="batchType">
+		<xs:sequence>
+			<xs:element name="batchId" type="xs:integer"/>
+			<xs:element name="totaal" type="xs:integer"/>
+			<xs:element name="volgNr" type="xs:integer"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="objectKeurenType">
+		<xs:sequence>
+			<xs:element name="handelsnaam" type="xs:string"/>
+			<xs:element name="kvknummer" type="xs:string"/>
+			<xs:element name="vestigingsnummer" type="xs:string"/>
+			<xs:element name="adres" type="obabte:adresType"/>
+			<xs:element name="erkenningsNummer" type="xs:string" minOccurs="0"/>
+			<xs:element name="sector" type="obabts:codeType"/>
+			<xs:element name="locatie" type="obabte:locatieType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="onderwerpOordeelKeurenType">
+		<xs:sequence>
+			<xs:element name="onderwerp" type="obabts:codeType"/>
+			<xs:element name="aantalControles" type="xs:integer"/>
+			<xs:element name="aantalNV" type="xs:integer"/>
+			<xs:element name="aantalVB" type="xs:integer"/>
+			<xs:element name="aantalSW" type="xs:integer"/>
+			<xs:element name="datumogrondslag" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="periodeKeurenType">
+		<xs:sequence>
+			<xs:element name="tijdvak" type="obabts:codeType"/>
+			<xs:element name="reactie" type="xs:string" minOccurs="0"/>
+			<xs:element name="domein" type="obabts:codeType"/>
+			<xs:element name="oordelenKeuren" type="obabts:oordelenKeurenType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="oordeelKeurenType">
+		<xs:sequence>
+			<xs:element name="thema" type="obabts:codeType"/>
+			<xs:element name="datumontstaan" type="xs:date"/>
+			<xs:element name="onderwerpoordelen" type="obabts:onderwerpOordelenKeurenType"/>
+		</xs:sequence>
+	</xs:complexType>  
+	<xs:complexType name="publiceerKeurenType">
+		<xs:sequence>
+			<xs:element name="object" type="obabts:objectKeurenType"/>
+			<xs:element name="periode" type="obabts:periodeKeurenType"/>
+			<xs:element name="publicatiedatum" type="obabts:publicatieDatum"/>
+		</xs:sequence>
+	</xs:complexType>
+    <!-- End RCI -->  
+    <!--  
+    <xs:complexType name="publiceerOordelenRequestType">
+      <xs:sequence>
+        <xs:element ref="mhdr:messageHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="publiceerOordelenResponseType">
+      <xs:sequence>
+        <xs:element ref="mhdr:messageHeader"/>
+        <xs:element ref="tmg:terugmelding"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="publiceerProductOordelenRequestType">
+      <xs:sequence>
+        <xs:element ref="mhdr:messageHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="publiceerProductOordelenResponseType">
+      <xs:sequence>
+        <xs:element ref="mhdr:messageHeader"/>
+        <xs:element ref="tmg:terugmelding"/>
+      </xs:sequence>
+    </xs:complexType>
+    -->
+    <!-- Start RCI:07052020 -->    
+	<!-- =========== Complex Array Types =========== -->
+	<xs:complexType name="oordelenKeurenType">
+		<xs:sequence>
+			<xs:element name="oordeelKeuren" type="obabts:oordeelKeurenType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="onderwerpOordelenKeurenType">
+		<xs:sequence>
+			<xs:element name="onderwerpoordeel" type="obabts:onderwerpOordeelKeurenType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="drupalKeuren" type="obabts:drupalKeurenType"/> 
+	<xs:complexType name="drupalKeurenType">
+		<xs:sequence>
+			<xs:element name="publiceerKeuren" type="obabts:publiceerKeurenType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType> 	  
+	  <!-- End RCI:07052020 voorheen drupalpubliceerKeuren -->
+    <xs:complexType name="publiceerKeurenRequestType">
+      <xs:sequence>
+        <!-- <xs:element ref="mhdr:messageHeader"/> -->
+        <!-- Start RCI:07052020 -->
+				<xs:element ref="obabts:batch"/>
+				<xs:element ref="obabts:drupalKeuren"/>  
+	      <!-- End RCI:07052020 -->      
+      </xs:sequence>
+    </xs:complexType>
+    <!-- 
+    <xs:complexType name="publiceerKeurenResponseType">
+      <xs:sequence>
+        <xs:element ref="mhdr:messageHeader"/>
+        <xs:element ref="tmg:terugmelding"/>
+      </xs:sequence>
+    </xs:complexType>
+    -->
+	<xs:element name="publiceerKeurenRequest" type="obabts:publiceerKeurenRequestType"/>
+</xs:schema>

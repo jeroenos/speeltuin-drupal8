@@ -19,5 +19,12 @@ function obama_soap_webservice_theme() {
         'service_endpoint' => NULL,
       ],
     ],
+    'publicatie_keuren_service' => [
+      'template' => 'publicatie_keuren_service',
+      'variables' => [
+        'xsd_url' => NULL,
+        'service_endpoint' => NULL,
+      ],
+    ],
   ];
 }

@@ -158,11 +158,23 @@ class SoapController extends ControllerBase {
    *   Render array.
    */
   public function handleGetRequest($endpoint, Request $request) {
+
     $baseUrl = \Drupal::request()->getSchemeAndHttpHost();
+    $service_endpoint = $baseUrl . '/services/obama_soap_webservice/soap/' . $endpoint;
+
+    if ($endpoint == 'publiceeerkeuren') {
+      $theme = 'publicatie_keuren_service';
+      $xsd_url = $baseUrl . '/' . drupal_get_path('module', 'obama_soap_webservice') . '/xsd/PublicatieBerichttypes_v1.xsd';
+    }
+    else {
+      $theme = 'publicatie_service';
+      $xsd_url = $baseUrl . '/' . drupal_get_path('module', 'obama_soap_webservice') . '/xsd/obaDrupal.xsd';
+    }
+
     return [
-      '#theme' => 'publicatie_service',
-      '#xsd_url' => $baseUrl . '/' . drupal_get_path('module', 'obama_soap_webservice') . '/xsd/obaDrupal.xsd',
-      '#service_endpoint' => $baseUrl . '/services/obama_soap_webservice/soap/' . $endpoint,
+      '#theme' => $theme,
+      '#xsd_url' => $xsd_url,
+      '#service_endpoint' => $service_endpoint,
     ];
   }
 
@@ -180,7 +192,7 @@ class SoapController extends ControllerBase {
   public function handleSoapRequest($endpoint, Request $request) {
     // Construct the WSDL file location.
     $wsdlUri = \Drupal::request()
-      ->getSchemeAndHttpHost() . '/services/obama_soap_webservice/soap/' . $endpoint . '/?wsdl=true';
+        ->getSchemeAndHttpHost() . '/services/obama_soap_webservice/soap/' . $endpoint . '/?wsdl=true';
     $soapClass = 'Drupal\obama_soap_webservice\Soap\PublicatieServiceClass';
 
     $classmap = [

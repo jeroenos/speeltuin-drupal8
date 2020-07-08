@@ -69,12 +69,13 @@ class PublicatieServiceClass {
     }
     return 10;
   }
+
   /**
    * Status rapportage
    *
    * @param String $data
    */
-  public function statusrapportage( $data ) {
+  public function statusrapportage($data) {
     $response = new DrupalStatusrapportage();
 
     for ($i = 1; $i <= 3; $i++) {
@@ -86,6 +87,48 @@ class PublicatieServiceClass {
       $telling->aantal = $i * $i;
       $response->ListOfTellingen[] = $telling;
     }
+    return $response;
+  }
+
+  /**
+   * Receive and queue Obama Keuren Publicaties messages operation.
+   *
+   * @param String $data
+   *   List with Obama keuren publications.
+   */
+    public function publiceerkeuren($data) {
+
+    $batch = $data->batch;
+    $message = 'publiceerKeuren started - batchId=' . $batch->batchId . ' volgNr' . $batch->volgNr;
+    \Drupal::logger('obama_soap_webservice')->notice($message);
+
+    $queue = \Drupal::queue('obama_keuren_runner');
+    foreach ($data->drupalKeuren->publiceerKeuren as $publiceerKeuren) {
+
+      if ((empty($publiceerKeuren->object->kvknummer)) ||
+        (empty($publiceerKeuren->object->vestigingsnummer)) ||
+        (empty($publiceerKeuren->object->handelsnaam))
+      ) {
+        $message = 'Empty kvknummer, kvkvestigingsnummer or handelsnaam, queue item skipped';
+      }
+      else {
+        // add info batch info to publicatie.
+        $publiceerKeuren->batch = $batch;
+
+        $queue->createItem($publiceerKeuren);
+
+        $message = 'Aangeleverd keuren'
+          . $publiceerKeuren->batch->batchId . '/' . $publiceerKeuren->batch->volgNr
+          . ' - ' . $publiceerKeuren->object->vestigingsnummer
+          . ' - ' . $publiceerKeuren->object->kvknummer
+          . ' - ' . $publiceerKeuren->object->handelsnaam;
+      }
+      \Drupal::logger('obama_soap_webservice')->notice($message);
+    }
+    $message = 'publiceerKeuren ended.';
+    \Drupal::logger('obama_soap_webservice')->notice($message);
+
+    $response = new \stdClass();
     return $response;
   }
 
