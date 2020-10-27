@@ -25,6 +25,7 @@ module:
   easychart: 0
   editor: 0
   entity_print: 0
+  entity_print_views: 0
   entity_reference_revisions: 0
   examples: 0
   field: 0
