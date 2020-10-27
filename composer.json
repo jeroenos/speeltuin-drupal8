@@ -249,6 +249,7 @@
         "drupal/paragraphs": "^1.10",
         "drupal/queue_ui": "^2.0",
         "drupal/simple_popup_blocks": "^1.2",
+        "drupal/swiftmailer": "^2.0@beta",
         "drupal/views_data_export": "^1.0@beta",
         "drupal/views_simplechart": "^1.2",
         "drupal/webform": "^5.22",
