@@ -1,0 +1,6 @@
+name: "acvg_piwik_tagmanager"
+type: module
+description: "Een piwik tagmanager script embeden op een Drupal site"
+package: Custom
+version: '8.x-0.9-dev'
+core: '8.x'
