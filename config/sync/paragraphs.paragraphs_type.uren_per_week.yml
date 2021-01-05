@@ -5,5 +5,6 @@ dependencies: {  }
 id: uren_per_week
 label: 'uren per week'
 icon_uuid: null
+icon_default: null
 description: ''
 behavior_plugins: {  }
