@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Contains the module file for acvg_piwik_tagmanager.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Include the piwik tag manager java scripts file on every page of the drupal site.
+ */
+function acvg_piwik_tagmanager_page_attachments(array &$attachments) {
+
+  // Unconditionally attach an asset to the page.
+  $attachments['#attached']['library'][] = 'acvg_piwik_tagmanager/acvg_piwik_tagmanager_library';
+  
+}

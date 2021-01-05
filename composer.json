@@ -237,6 +237,7 @@
         "drupal/charts": "^3.1",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
+        "drupal/datalayer": "^1.0@beta",
         "drupal/easychart": "^3.4",
         "drupal/entity_print": "^2.2",
         "drupal/examples": "^1.0",

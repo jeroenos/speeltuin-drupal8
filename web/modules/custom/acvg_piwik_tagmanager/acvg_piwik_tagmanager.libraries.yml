@@ -1,0 +1,4 @@
+acvg_piwik_tagmanager_library:
+  version: 1.x
+  js:
+    js/acvg_piwik_tagmanager.js: {}
