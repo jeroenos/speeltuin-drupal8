@@ -1,0 +1,9 @@
+.paragraph--type--links {
+  .field--name-field-links.content-item {
+      position: relative;
+      &:before {
+        margin-right: 5px;
+        content: ' › ';
+      }
+  }
+}

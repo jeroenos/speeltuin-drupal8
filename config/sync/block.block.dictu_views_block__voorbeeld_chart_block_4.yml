@@ -1,0 +1,32 @@
+uuid: 2e769381-b8c9-4b70-93dd-660d304ca238
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.voorbeeld_chart
+  module:
+    - node
+    - views
+  theme:
+    - dictu
+id: dictu_views_block__voorbeeld_chart_block_4
+theme: dictu
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:voorbeeld_chart-block_4'
+settings:
+  id: 'views_block:voorbeeld_chart-block_4'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      slachthuis: slachthuis
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

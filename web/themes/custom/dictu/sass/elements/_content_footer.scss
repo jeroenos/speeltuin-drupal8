@@ -1,0 +1,16 @@
+.content-footer {
+  border-top: 2px solid #38870a;
+  padding-top: 20px;
+  width: 66.66667%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 80px;
+  .content-item {
+    display: inline-block;
+    padding: 0 20px;
+    text-align: center;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}

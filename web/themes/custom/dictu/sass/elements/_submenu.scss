@@ -1,0 +1,131 @@
+.submenu-wrapper-row {
+  padding-left: 20px;
+
+  .submenu-wrapper {
+    border-bottom: 2px solid $dark-blue;
+    padding-left: 0;
+
+    .field--name-field-submenu-tabs-item.content-item-list {
+      .field--name-field-submenu-tabs-item {
+        width: 100%;
+        margin: 0 auto;
+
+        a:hover {
+          text-decoration: none;
+        }
+
+        a.clickable {
+          .submenu-item {
+            margin: 0 0 0 0;
+            border: 1px solid $dark-blue;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border-bottom: none;
+            padding: 0 10px 0px 10px;
+            color: $main-txt-color;
+
+            img {
+              height: 1.5rem;
+              padding: 0 10px 0 5px;
+              fill: white;
+            }
+
+            .link-with-icon {
+              color: #000000;
+              white-space: nowrap;
+              padding-right: 10px;
+            }
+
+            &.active,
+            &:hover,
+            &:active {
+              background-color: $dark-blue;
+              border-color: $dark-blue;
+
+              img {
+                filter: invert(1);
+              }
+
+              .link-with-icon {
+                color: #fff;
+              }
+            }
+
+            &.active {
+              &:hover {
+                background-color: #fff;
+
+                img {
+                  filter: none;
+                }
+
+                .link-with-icon {
+                  color: #000;
+                }
+              }
+            }
+          }
+        }
+
+
+        &:first-child {
+          padding-left: 0px;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (min-width: $break-l) {
+  .submenu-wrapper-row {
+    max-width: 1350px;
+    margin: 0 auto;
+
+    .submenu-wrapper {
+      margin-left: -15px;
+
+      .submenu-tabs {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 40px;
+        margin-inline-end: 40px;
+
+        .field--name-field-submenu-tabs-item.content-item-list {
+          .field--name-field-submenu-tabs-item {
+            width: unset;
+            float: left;
+            padding-right: 10px;
+
+            a.clickable {
+              .submenu-item {
+                padding: 5px 7px 0 0;
+                display: flex;
+                align-items: center;
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $break-xl) {
+  .submenu-wrapper-row {
+
+    .submenu-wrapper {
+
+      .submenu-tabs {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.toptaken-block {
+    margin-top:30px;
+    @media screen and (min-width: $break-xxl) {
+        margin-top:0;
+    }
+}
+
+.herobanner-description {
+    //background-color: #01689b;
+    color: white;
+    padding: 10px;
+    //argin-bottom: 20px;
+    height:100%;
+}
+
+.herobanner-item > .views-field-nothing,
+.toptaken-descrip-wrap {
+    height:100%;
+}
+
+/* .herobanner-item {
+    &:before,
+    &:after {
+        position: absolute;
+        content: "";
+        top: 100px;
+        bottom: 5px;
+        left: 30px;
+        right: 30px;
+        z-index: -1;
+        box-shadow: 0 0 40px 13px #2a2b2b;
+        border-radius: 100px/20px;
+    }
+} */

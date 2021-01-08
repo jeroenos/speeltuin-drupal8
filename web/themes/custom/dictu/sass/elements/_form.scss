@@ -1,0 +1,190 @@
+input[type=text], input[type=password], input[type=email], textarea {
+  border: 0;
+  padding-right: 3rem;
+  padding-left: 0.5rem;
+  max-width: none;
+  height: 2.2rem;
+  line-height: .75rem;
+  border: 1px solid #e2e2e2;
+  display: block;
+  width: 100%;
+}
+
+input[type=button],input[type=submit] {
+  width:100%;
+  @media screen and (min-width: $break-m) {
+    width:auto;
+  }
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: $primary-color;
+  color: set-contrast-color($primary-color);
+  border: 1px solid $primary-color;
+  &:hover {
+    background-color: lighten($primary-color, 10%);
+  }
+}
+
+input[type=date] {
+  padding-left: 0.5rem;
+  max-width: none;
+  height: 2.2rem;
+  line-height: .75rem;
+  border: 1px solid #e2e2e2;
+  display: block;
+}
+
+textarea {
+  height: 10rem;
+  margin-bottom:30px;
+}
+
+form {
+  padding: 20px;
+  background-color: $gray-lightest;
+  border-top: 2px solid $primary-color;
+  margin-bottom: 30px;
+  box-shadow: 0px 1px 0px 0px #e0e0e0;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+}
+
+select {
+  padding: 8px 70px 8px 13px !important;
+  max-width: 100%;
+  height: auto !important;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #444444;
+  line-height: 16px !important;
+  &:after {
+    content:'&#8691'
+  }
+  option { padding: 0 4px; }
+}
+
+/* User login page */
+form#user-login-form {
+  padding: 20px;
+  background-color: $gray-lightest;
+  border-top: 2px solid $primary-color;
+  box-shadow: 0px 1px 0px 0px $shadow-gray;
+  label {
+    display: block;
+  }
+  fieldset {
+    margin-bottom:20px;
+  }
+}
+
+
+fieldset {
+  legend {
+    font-weight:bold;
+  }
+}
+
+fieldset, .form-item {
+  margin-bottom: 25px;
+}
+
+.radio, .checkbox {
+  .form-item {
+    margin-bottom:0px;
+  }
+  label {
+    font-weight:normal;
+    display:inline-block;
+    cursor:pointer;
+    padding-left:10px;
+  }
+}
+
+input[type=radion], input[type=checkbox] {
+  display:inline-block;
+}
+
+/* overrule for searchfield */
+.search-block {
+  input[type=text] {
+    @media screen and (min-width: $break-s) {
+      //width:250px;
+    }
+  }
+}
+/* added asterisk indicating for required fields */
+.form-required::after {
+  content: '';
+  vertical-align: super;
+  display: inline-block;
+  background-image: url(/core/misc/icons/ee0000/required.svg);
+  background-repeat: no-repeat;
+  background-size: 6px 6px;
+  width: 6px;
+  height: 6px;
+  margin: 0 0.3em;
+}
+
+/* Bugfix: add asterisk to label for select field in form */
+.form-item-betreft label::after {
+  content: '';
+  vertical-align: super;
+  display: inline-block;
+  background-image: url(/core/misc/icons/ee0000/required.svg);
+  background-repeat: no-repeat;
+  background-size: 6px 6px;
+  width: 6px;
+  height: 6px;
+  margin: 0 0.3em;
+}
+
+/* Jeroen - some custom requirement on the tvs webform */  
+div.form-item-dv-productie-url,
+div.form-item-dv-preproductie-url,
+div.form-item-leverancier-preproductie-url,
+div.form-item-leverancier-preproductie-aansluitbestand-url,
+div.form-item-leverancier-productie-url,
+div.form-item-leverancier-productie-aansluitbestand-url,
+div.form-item-dv-toestemmingsvraag {
+  margin-bottom: unset;
+}
+a.as_button{
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #01689b;
+  color: #ffffff;
+  border: 1px solid #01689b;
+  text-decoration: none;
+}
+div.handtekening_vak {
+  border: dashed  ;
+  width: 600px;
+  height: 100px;
+}
+/* Jeroen - IE11 Fix to display the month and year fields in the datepicker */ 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  .ui-datepicker select.ui-datepicker-month,
+  .ui-datepicker select.ui-datepicker-year {
+    width: 100%;
+  }
+}

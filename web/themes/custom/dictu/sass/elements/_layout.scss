@@ -1,0 +1,141 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+
+  main.content {
+    flex: 1 0 auto;
+    padding: 60px 0px;
+  }
+}
+
+.page-node-type-homepage {
+  main.content {
+    padding-bottom:0;
+    padding-top: 0;
+  }
+  article {
+    margin-bottom:0;
+    margin-top: 0;
+  }
+  
+}
+
+.wrapper {
+    padding: 40px 0px;
+}
+
+.path-frontpage #block-dictu-page-title { display: none; }
+
+.layout-content {
+  @media screen and (min-width: $break-m) {
+    padding-right: 15px;
+  }
+  @media screen and (min-width: $break-l) {
+    padding-right: 45px;
+  }
+  @media screen and (min-width: $break-xl) {
+    padding-right: 75px;
+  }
+}
+
+.layout-content.col-12 {
+  padding-right:15px;
+}
+
+
+.payoff {
+    position: relative;
+    height: 31px;
+    margin-top: 31px;
+    box-sizing: border-box;
+    .logo {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 50%;
+      margin: 0 0 0 -22px;
+      padding: 0;
+      border-left: 44px solid #154273;
+      width: 50%;
+      height: 31px;
+      background: 0;
+      font-family: "RO Serif", "Times New Roman", Times, serif;
+      font-size: 0.69rem;
+      padding-left: 5px;
+      vertical-align: middle;
+      line-height: 31px;
+    }
+}
+
+
+/* see more at the bottom of basic page */
+.field--name-field-see-more.field-container {
+    padding: 15px 30px 15px 0;
+    border-top: 1px solid #c5c5c5;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+.field--name-field-see-more a {
+    font-weight: bold;
+    &:before {
+      font-weight: normal;
+      font-family: "icons";
+      display: inline-block;
+      vertical-align: middle;
+      content: "\e909";
+      speak: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: -4px 8px 0 0;
+      font-size: 18px;
+      line-height: inherit;
+    }
+}
+
+
+ul.see-also-list, ul.see-also-list ul {
+    list-style: none;
+    padding: 0;
+    a {
+      font-weight:bold;
+      &:before {
+        font-weight: normal;
+        font-family: "icons";
+        display: inline-block;
+        vertical-align: middle;
+        content: "\e909";
+        speak: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin: -4px 8px 0 0;
+        font-size: 18px;
+        line-height: inherit;
+      }
+    }
+}
+
+div[role='contentinfo'] {
+  display: block;
+  width: 100%;
+  border: 1px solid darken(green, 10%);
+  padding: 10px;
+  margin-bottom: 20px;
+  background: green;
+  color: white;
+}
+
+
+/*** payoff ***/
+span.payoff_information {
+  font-size: 16px;
+  margin-top: -10px;
+  display: block;
+  margin-left: 10px;
+}
+
+p {
+  +ul a, a {
+    text-decoration:underline;
+  }
+  
+}

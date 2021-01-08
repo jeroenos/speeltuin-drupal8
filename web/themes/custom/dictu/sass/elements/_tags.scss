@@ -1,0 +1,33 @@
+.tag-container {
+  margin-bottom: 90px;
+}
+
+.field.field--name-field-tags.content-item {
+    display: inline-block;
+    a {
+      display: inline-block;
+      padding: 5px 10px;
+      margin-top: 20px;
+      border-radius: 3px;
+      margin-right: 5px;
+      color: set-contrast-color($primary-color);
+      text-decoration: none;
+      transition: .5s;
+      background-color: $primary-color;
+      &:hover {
+        background-color: lighten($primary-color, 10%);
+      }
+    }
+}
+
+
+
+.field.field--name-field-tags.content-item-list {
+  &:before {
+    content: "\f02c";
+    font: normal normal normal 30px/1 FontAwesome;
+    margin-right: 5px;
+    color: #b3b3b3;
+    vertical-align: middle;
+  }
+}

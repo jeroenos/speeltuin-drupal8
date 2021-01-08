@@ -1,0 +1,35 @@
+.field--name-field-sidebar-sidebar {
+  h1, h2, h3, .field--name-field-titel {
+    font-size: 1.0625rem !important;
+    margin-top: 1.0rem;
+    margin-bottom: 1.0rem;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 1.1;
+    color: inherit;
+    &:after {
+          top: 22px;
+    }
+  }
+  .paragraph.paragraph--type--content,
+  .paragraph--type--embed-block {
+    padding-left: 10px;
+  }
+}
+
+.field--name-field-titel {
+  margin-top: 0;
+}
+
+
+.paragraph--type--three-column-content,
+.paragraph--type--two-column-content {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.paragraph--type--call-to-action-button {
+  margin-bottom: 20px;
+}
+
+

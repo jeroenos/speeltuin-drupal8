@@ -1,0 +1,87 @@
+.event-bd {
+    padding: 15px 5px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 10px 0 30px 0;
+    font-weight: bold;
+    .icon-kalender,.icon-klok {
+      &:before {
+        margin-right: 10px;
+      }
+    }
+    .date-event,.time-event {
+      @media screen and (min-width: $break-l) {
+      display: inline-block;
+      margin-right: 20%;
+      }
+    }
+}
+
+
+.field--name-field-event-calendar {
+  margin-bottom: 40px;
+  border-bottom: 1px dashed $gray-darker;
+  &:last-child {
+    border:0px;
+  }
+  h2 {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $gray-light;
+  }
+  h3 p {
+    margin: 10px 0;
+  }
+  .field--name-field-event-start-date,
+  .vw-end-time,
+  .vw-start-time,
+  .field--name-field-event-location,
+  .field--name-field-event-end-date {
+    display: inline-block;
+    p {
+      margin:0px;
+    }
+  }
+  .even-start-date, .event-time-ct {
+    @media screen and (min-width: $break-l) {
+      display: inline-block;
+      width: 49%;
+      margin-bottom: 10px;
+    }
+  }
+  .event-data {
+    padding: 22px;
+    background-color: #f8f8f8;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    border-top: 2px solid #d52b1e;
+    box-shadow: 0px 1px 0px 0px $shadow-gray;
+  }
+}
+
+
+.front-event {
+    margin-bottom: 20px;
+}
+
+/* Block on frontpage */
+.block-col {
+  .front-event h4 {
+      margin: 0;
+      font-size: 1.3rem;
+  }
+  .wrapper-news {
+    margin-bottom: 10px;
+    border-bottom: 1px solid $gray;
+  }
+}
+
+
+/* filter on overview page */
+form#views-exposed-form-evenementen-page-1 {
+  .form-item, .form-group {
+    display: inline-block;
+    margin-right: 33px;
+  }
+}

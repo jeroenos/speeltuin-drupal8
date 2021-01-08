@@ -1,0 +1,132 @@
+@import 'headings';
+@import 'form';
+@import 'screenreader';
+@import 'navigation';
+@import 'breadcrumb';
+@import 'layout';
+@import 'news';
+@import 'events';
+@import 'tags';
+@import 'dienstlabel';
+@import 'frontpage';
+@import 'advancedsc';
+@import 'search';
+@import 'faq';
+@import 'feitenblok';
+@import 'block';
+@import 'documents';
+@import 'services';
+@import 'content_footer';
+@import 'slider';
+@import 'statusmessage';
+@import 'toptaken';
+@import 'submenu';
+
+a {
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+article {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
+
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  color: white;
+  border: 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+
+small.description {
+  color: $gray-dark;
+}
+
+.image-fullwidth img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  @include center-page($website-width-xl);
+}
+
+.container-l {
+  @include center-page($website-width-l);
+}
+
+.container-m {
+  @include center-page($website-width-m);
+}
+
+
+.btn {
+  display: block;
+  background-color: $btn-blue;
+  color: white;
+  text-align: center;
+
+  @media screen and (min-width: $break-m) {
+    display: inline-block;
+    transition: .5s;
+  }
+
+  &:hover {
+    background-color: lighten($btn-blue, 15%);
+    text-decoration: none;
+  }
+}
+
+.btn-s {
+  padding: 5px 20px;
+}
+
+.btn-m {
+  padding: 10px 35px;
+}
+
+.clear {
+  clear: both;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.colored-border-top {
+  border-top: 3px solid $primary-color;
+  margin-top: 20px;
+  padding-top: 15px;
+}

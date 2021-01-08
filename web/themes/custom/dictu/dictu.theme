@@ -1,0 +1,205 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Bootstrap Rijkshuisstijl theme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Url;
+
+/**
+ * Theme setting callbacks for the Dictu Rijkshuisstijl theme.
+ */
+function dictu_form_system_theme_settings_alter(&$form, FormStateInterface &$form_state, $form_id = NULL) {
+
+  if (isset($form_id)) {
+    return;
+  }
+
+  $form['color_scheme'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Color scheme'),
+  ];
+
+  $url_logo_header = Url::fromUri('https://www.rijkshuisstijl.nl/bouwstenen/algemene-online-richtlijnen/logo-en-header');
+  $link_logo_header = \Drupal::l(t('logo and header'), $url_logo_header);
+  $form['logo_header'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Logo and header'),
+    '#description'  => t("Settings regarding the %url for this site.", ['%url' => $link_logo_header]),
+  ];
+
+  $form['logo_option'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Logo'),
+  ];
+
+  $form['logo_option']['brand_logo'] = [
+    '#type' => 'radios',
+    '#title' => t('Is the brand logo a rijks govermental logo?'),
+    '#default_value' => theme_get_setting('brand_logo'),
+    '#options' => [
+      '0' => t('Yes'),
+      '1' => t('No'),
+    ],
+    '#description' => t("If you pick 'no' this means that the options at logo & header are invalid."),
+  ];
+
+  $form['logo_header']['logo'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Logo'),
+  ];
+
+  $form['logo_header']['logo']['sender_primary'] = [
+    '#type'          => 'textfield',
+    '#title'         => t('Primary sender'),
+    '#default_value' => theme_get_setting('sender_primary'),
+    '#description'   => t("Primary sender next to brand mark (ribbon)"),
+  ];
+
+  $form['logo_header']['logo']['sender_secondary'] = [
+    '#type'          => 'textfield',
+    '#title'         => t('Secondary sender'),
+    '#default_value' => theme_get_setting('sender_secondary'),
+    '#description'   => t("Secondary sender next to brand mark (ribbon)"),
+  ];
+
+  $form['payoff'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Payoff'),
+  ];
+
+  $form['payoff']['payoff_text'] = [
+    '#type'          => 'textfield',
+    '#title'         => t('Payoff'),
+    '#default_value' => theme_get_setting('payoff_text'),
+    '#description'   => t("Fill in payoff information"),
+  ];
+
+  $url_color_scheme = Url::fromUri('https://www.rijkshuisstijl.nl/bouwstenen/kleur/online-kleuren');
+  $link_color_scheme = \Drupal::l(t('the color palette'), $url_color_scheme);
+  $form['color_scheme']['brand_color'] = [
+    '#type' => 'radios',
+    '#title' => t('Theme color'),
+    '#default_value' => theme_get_setting('brand_color'),
+    '#options' => [
+      'azure' => t('Azure'),
+    ],
+    '#description'  => t("For online use, you can choose any color from %url. A color can be chosen freely and can not be claimed by an organization. For online applications, you can choose from a palette of 17 colors. You basically choose one base color with two additional light tones support. These tones may also be used in boxes and tables as a background color.", ['%url' => $link_color_scheme]),
+  ];
+}
+
+/**
+ * Implements hook_preprocess_breadcrumb().
+ */
+function dictu_preprocess_breadcrumb(&$variables) {
+  $request = \Drupal::request();
+  $route_match = \Drupal::routeMatch();
+  $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+  // This variable will avaliable in twig file.
+  $variables['breadcrumb'][] = [
+    'text' => $page_title,
+  ];
+  $variables['#cache']['contexts'][] = 'url';
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function dictu_preprocess_page(&$variables) {
+  $variables['theme_logo'] = theme_get_setting('logo.url');
+  $variables['theme_slogan'] = \Drupal::config('system.site')->get('slogan');
+  $variables['theme_sender_primary'] = strip_tags(theme_get_setting('sender_primary'));
+  $variables['theme_sender_secondary'] = strip_tags(theme_get_setting('sender_secondary'));
+  $variables['theme_sender_breakpoint_class'] = 'hidden-' . theme_get_setting('sender_breakpoint') . '-down';
+  $variables['theme_titlebar'] = strip_tags(theme_get_setting('titlebar'));
+
+  if ($file_array = theme_get_setting('header_bg_picture')) {
+    if (count($file_array) && $file = file_load(reset($file_array))) {
+      $variables['theme_header_bg_picture'] = file_create_url($file->getFileUri());
+    }
+  }
+  $variables['theme_header_bg_picture_width'] = theme_get_setting('header_bg_picture_width');
+  $variables['theme_header_bg_color'] = theme_get_setting('header_bg_color');
+  $variables['theme_brand_logo'] = theme_get_setting('brand_logo');
+  $variables['theme_payoff'] = theme_get_setting('payoff_text');
+
+  // Define default classes for containers.
+  $variables['navbar_attributes'] = [
+    'class' => [
+      'navbar-nav',
+      'navbar-full',
+      'navbar-branded',
+    ],
+    'id' => ['navbar-main'],
+  ];
+
+  if (theme_get_setting('navigation_border')) {
+    $variables['navbar_attributes']['class'][] = 'navbar-border';
+  }
+
+  // Declare region attributes.
+  $variables['navbar_attributes'] = new Attribute($variables['navbar_attributes']);
+
+  // Load color scheme css.
+  $variables['#attached']['library'][] = 'dictu/' . theme_get_setting('brand_color');
+
+  $variables['container_attributes']['class'] = theme_get_setting('chosen_size');
+
+  $variables['container_attributes'] = new Attribute($variables['container_attributes']);
+
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Add icon to search bar.
+ */
+function dictu_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form['#id'] === 'views-exposed-form-search-page-1' || $form['#id'] === 'views-exposed-form-zoeken-page-1') {
+    $form['actions']['submit']['#attributes']['class'][] = 'icon-zoek';
+  }
+  if ($form['#id'] === 'views-exposed-form-actueel-page-1') {
+    $form['actions']['submit']['#attributes']['class'][] = 'icon-zoek';
+    $form['#prefix'] = '<div class="category"><div class="row center-xs"><div class="col-md-8 col-xs-12"';
+    $form['#suffix'] = '</div></div></div></div>';
+  }
+}
+
+/**
+ * Implements hook_preprocess_node__form().
+ */
+function dictu_preprocess_node__form(&$variables) {
+  if ($variables['node']->getType() != "form") {
+    return;
+  }
+
+  $node = $variables['node'];
+  $variables['#attached']['drupalSettings']['dictu']['questionnaire']['form_id'] = $node->get('field_form_id')->value;
+}
+
+/**
+ * Implements hook_preprocess_file_link().
+ *
+ * Display file type and size.
+ */
+function dictu_preprocess_file_link(&$variables) {
+  $file = $variables["file"];
+
+  $file_size = format_size($file->getSize());
+  $file_url = file_create_url($file->getFileUri());
+  $file_date = $file->get('changed')->value;
+  $file_date = format_date($file_date, 'custom', 'j F Y');
+  $file_ext = pathinfo($file_url, PATHINFO_EXTENSION);
+  $file_name = $file->get('filename')->value;
+
+  // Remove the file extention form the filename.
+  $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $file_name);
+  $variables["file_name"] = $withoutExt;
+  $variables["file_size"] = $file_size;
+  $variables["file_ext"] = $file_ext;
+  $variables["file_url"] = $file_url;
+  $variables["file_date"] = $file_date;
+}

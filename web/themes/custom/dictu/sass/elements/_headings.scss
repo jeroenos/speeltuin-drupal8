@@ -1,0 +1,46 @@
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .card-wrapper .card-title, .h4, .h5, .h6 {
+  margin-top: 0.5rem;
+  margin-bottom: 1.0rem;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h1 {
+  font-size: 2.425rem;
+}
+
+h1.title {
+  margin-bottom: 1.5rem;
+}
+
+$base-font-size: 17px;
+$heading-scale: 4; // amount of px headings grow from h6 to h1
+
+//Creates headings 2 trough 5 automatically.
+@for $i from 2 through 5 {
+  h#{$i} {
+    $font-size: $base-font-size + $heading-scale * (4 - $i);
+    font-size: calculateRem($font-size);
+  }
+}
+
+h6 {
+  font-style: italic;
+  font-size: 1rem;
+}
+
+span.intro-text {
+  font-size: 1.313rem;
+  line-height: 1.9rem;
+  margin: 0 0 2rem;
+  display: block;
+}
+
+.intro-text {
+  font-size: 1.313rem;
+  line-height: 1.9rem;
+  margin: 0 0 1rem;
+  display: block;
+}

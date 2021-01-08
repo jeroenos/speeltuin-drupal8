@@ -1,0 +1,25 @@
+
+.services-row {
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+     
+     .services-links {
+         margin-left: 36px;
+         margin-bottom: 10px;
+     }
+     h3 {
+         padding: 0.3em 0 0.3em;
+         border-top: 2px solid #f3f5f6;
+         margin-top: 10px;
+         &:before {
+             content: $icon-pijl-rechts;
+             font-family: 'icons';
+             font-size: 26px;
+             float: left;
+             color: #416d9e;
+             margin-right:10px;
+     }
+
+}
+
+}

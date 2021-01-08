@@ -1,0 +1,109 @@
+#questionnaire {
+
+    // The has-error class is used inconsistently, better to rely on text.
+    .has-error {
+        background: none;
+
+        // EVERY child form element gets a border, even without errors.
+        input,
+        textarea,
+        select {
+            border-color: initial;
+        }
+    }
+    // Every fieldset adds padding, breaking the layout recursively.
+    // Remove fieldset padding except on the first one.
+    fieldset {
+        padding: 0;
+        background: none;
+
+        // Focus background looks hideous with nested fieldsets.
+        &.focused,
+        &.input[type="file"] {
+            background: none;
+        }
+    }
+    .page > fieldset {
+        padding: 10px;
+    }
+
+    .question-text {
+        padding: 10px;
+    }
+
+    .input-file {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .btn {
+            position: static;
+            height: 37px;
+        }
+        input[type="text"] {
+            height: 37px;
+            padding: 5px 10px;
+            width: calc(100% - 85px);
+        }
+    }
+    .parsley-errors-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .parsley-errors-list li:not(:empty),
+    .error,
+    .help-block {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 5px 10px;
+        border: 1px solid $error;
+        border-radius: 5px;
+        background: $error-bg;
+        color: $error;
+        font-weight: normal;
+    }
+
+    input[type="text"],
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    input,
+    textarea {
+        &:focus {
+            box-shadow: 0 0 4px rgba(0,0,0,0.5);
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0px 5px 0;
+
+        .btn {
+            position: static;
+            margin-top: 10px;
+        }
+        .btn-submit,
+        .btn-next {
+            order: 2;
+            &:only-child {
+                // If there's no prev button, align this right.
+                margin: 0 0 0 auto;
+            }
+        }
+    }
+}
+
+.ui-datepicker {
+    a {
+        padding: 5px 10px;
+        &:hover, &:focus {
+            box-shadow: 0 0 4px #888;
+        }
+    }
+}

@@ -1,0 +1,375 @@
+.questionnaire {
+    margin: 0 auto;
+    max-width: 480px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+@media screen and (min-width: 931px) {
+    .questionnaire {
+        padding-bottom: 0px;
+    }
+}
+
+.questionnaire h1 {
+    font-family: Arial;
+    font-size: 22px;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+    padding-bottom: 0px;
+}
+
+.questionnaire .steps {
+    display: table;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.questionnaire ul.steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.questionnaire .steps li {
+    background-color: #f8f8f9;
+    display: table-cell;
+    height: 22px;
+    line-height: 22px;
+    padding-left: 10px;
+    padding-right: 20px;
+    text-align: center;
+    white-space: nowrap;
+    background-image: url(https://digid.nl/assets/sprite-forms-staps-6a711823b27d878f41a5a8d850811197.png);
+    background-repeat: no-repeat;
+    background-position: right -72px;
+}
+
+.questionnaire .steps li.active {
+    background-color: #fada3c;
+    background-position: right -48px;
+    font-weight: bold;
+}
+
+.questionnaire .steps li.active.complete {
+    background-color: #fbf1cb;
+    background-position: right -25px;
+}
+
+.questionnaire .steps li.last {
+    background-position: right -96px;
+}
+
+.questionnaire .steps li span span.sr-only {
+    position: absolute;
+    left: -100000px;
+    top: auto;
+    width: 1px;
+    height: 1 p;
+    overflow: hidden;
+}
+
+.questionnaire .page fieldset {
+    background-color: #f5f5f5;
+    margin-bottom: 5px;
+    padding: 10px 10px;
+    position: relative;
+    overflow: visible;
+}
+
+.questionnaire .page fieldset legend {
+    font-weight: bold;
+    float: left;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+.questionnaire .page input[type="file"] {
+    position: absolute;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    width: 79%;
+    cursor: pointer;
+}
+
+.questionnaire .page .input-file input.for-file {
+    padding-left: 70px;
+    width: 59%;
+/ / height: 33 px;
+}
+
+.questionnaire .page fieldset.focused, .questionnaire .page fieldset.focused input[type="file"] {
+    background-color: #dcdcdc;
+}
+
+.questionnaire .page fieldset label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.questionnaire .page fieldset .checkbox-label, .questionnaire .page fieldset .radio-label {
+    font-weight: normal;
+}
+
+.questionnaire .page fieldset textarea {
+    overflow: auto;
+}
+
+.questionnaire .page fieldset input, .questionnaire .page fieldset textarea, .questionnaire .page fieldset select {
+    outline: 0;
+}
+
+.questionnaire .page fieldset input[type="text"], .questionnaire .page fieldset textarea, .questionnaire .page fieldset select {
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    margin-right: 8px;
+    max-width: 333px;
+    padding: 5px 10px;
+    width: 91%;
+}
+
+.questionnaire .page fieldset .tooltip {
+    -moz-transition: left 0.2s linear;
+    -o-transition: left 0.2s linear;
+    -webkit-transition: left 0.2s linear;
+    transition: left 0.2s linear;
+    background-color: #fce559;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    left: 74%;
+    margin: 15px 0 5px -30px;
+    padding: 10px 15px;
+    position: absolute;
+    top: 6px;
+    visibility: hidden;
+    width: 210px;
+    z-index: 10;
+    display: none;
+    margin-left: 0;
+}
+
+.questionnaire .page fieldset .tooltip:before {
+    border-color: transparent;
+    border-right-color: #fce559;
+    border-style: solid;
+    border-width: 15px;
+    content: '';
+    height: 0;
+    left: -28px;
+    position: absolute;
+    top: 6px;
+    width: 0;
+}
+
+.questionnaire .page fieldset select ~ div.tooltip {
+    top: 0px;
+}
+
+.questionnaire .page fieldset select ~ div.tooltip:before {
+    top: 5px;
+}
+
+.questionnaire .page fieldset .input-file div.tooltip {
+    top: -14px;
+}
+
+.questionnaire .page fieldset input:focus ~ div.tooltip, .questionnaire .page fieldset textarea:focus ~ div.tooltip, .questionnaire .page fieldset .checkbox-label:hover ~ div.tooltip, .questionnaire .page fieldset .radio-label:hover ~ div.tooltip, .questionnaire .page fieldset select:hover ~ div.tooltip {
+    display: block;
+    left: 77%;
+    visibility: visible;
+}
+
+@media screen and (max-width: 767px) {
+    .questionnaire .page fieldset .tooltip:before {
+        border-bottom-color: #fce559;
+        border-right-color: transparent;
+        left: 30px;
+        right: auto;
+        top: -30px;
+    }
+
+    .questionnaire .page fieldset input:focus ~ div.tooltip, .questionnaire .page fieldset textarea:focus ~ div.tooltip, .questionnaire .page fieldset .checkbox-label:hover ~ div.tooltip, .questionnaire .page fieldset .radio-label:hover ~ div.tooltip, .questionnaire .page fieldset select:hover ~ div.tooltip {
+        left: auto;
+        top: auto;
+        width: auto;
+        position: relative;
+    }
+}
+
+.ui-datepicker {
+    background: #fff;
+    border: 1px solid #bbb;
+    padding: 10px;
+    display: none;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    text-align: center;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+    position: absolute;
+    left: 22px;
+    top: 7px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 17px;
+    color: #000;
+}
+
+.ui-datepicker .ui-datepicker-next {
+    position: absolute;
+    right: 22px;
+    top: 7px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 17px;
+    color: #000;
+}
+
+.ui-datepicker .ui-datepicker-calendar {
+    margin-bottom: 0px;
+}
+
+.questionnaire .page footer {
+    padding: 5px 0px;
+    position: relative;
+    overflow: visible;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.questionnaire .btn {
+    background-color: #deebe3;
+    border: 1px solid #000;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    padding: .4em 1em;
+}
+
+.questionnaire .btn.disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.questionnaire .btn:hover {
+    color: #fff;
+    background-color: #666;
+}
+
+.questionnaire .btn.btn-submit, .questionnaire .btn.btn-next {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+
+.questionnaire .btn.btn-prev {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+
+.questionnaire .input-file .btn {
+    position: absolute;
+    padding: 3px 7px;
+    top: 10px;
+    left: 10px;
+    height: 33px;
+}
+
+@media screen\0 {
+    .questionnaire .input-file .btn {
+        padding: 2px 7px 7px 7px;
+        height: 27px;
+    }
+}
+
+.questionnaire .page .error {
+    border: none;
+    background-color: transparent;
+    color: #000;
+    font-weight: bold;
+    background-image: url(skin/message_err-f4668c7569fc829bde58cd19d7434574.png);
+    background-position: 0 5px;
+    background-repeat: no-repeat;
+    min-height: 20px;
+    padding: 5px;
+    padding-left: 30px;
+    width: 75%;
+    margin-top: 1px;
+}
+
+.questionnaire .page fieldset.has-error {
+    background-color: #f2bfbb;
+}
+
+.questionnaire .page fieldset.has-error > label:first-child {
+    color: #960000;
+}
+
+.questionnaire .page fieldset.has-error input, .questionnaire .page fieldset.has-error textarea, .questionnaire .page fieldset.has-error select {
+    border-color: #960000;
+}
+
+.questionnaire .page .option-tooltip {
+    padding-left: 26px;
+    font-size: 9px;
+}
+
+.questionnaire .page .sub-html {
+    margin-top: 10px;
+}
+
+#browser-compatibility-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -80px;
+    width: 500px;
+    padding: 10px 12px;
+    outline: 0;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    background: #fff;
+    color: #222;
+    font-size: 1.1em;
+    text-align: center;
+    z-index: 101;
+}
+
+#browser-compatibility-message .message-container {
+    background-color: #fdf6bb;
+    background-image: url(skin/message_info-a56d6cdd85e46d4c10473c5f92bd6b35.png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 10px;
+    padding-left: 40px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#browser-compatibility-message button {
+    padding: 4px 15px;
+    display: inline;
+}
+
+#browser-compatibility-message-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: #aaa;
+    opacity: .8 !important;
+    top: 0px;
+    left: 0px;
+}
