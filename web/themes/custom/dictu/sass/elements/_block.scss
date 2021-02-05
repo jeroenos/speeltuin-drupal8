@@ -1,0 +1,43 @@
+div.sidebar_block {
+ padding: 20px;
+  background-color: $gray-lightest;
+  border-top: 2px solid $primary-color;
+  margin-bottom: 30px;
+  box-shadow: 0px 1px 0px 0px $shadow-gray;
+  header {
+    //padding: 20px 20px 0 20px;
+    //border-top: 2px solid $primary-color;
+    //background-color: $gray-lightest;
+    //padding-bottom:0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .doc-row {
+    //padding:0 20px 20px 20px;
+    //background-color: $gray-lightest;
+    margin-bottom: 1rem;
+    &:last-child {
+      //margin-bottom: 30px;
+      //box-shadow: 0px 1px 0px 0px $shadow-gray;
+    }
+  }
+  h2 {
+    margin:0;
+  }
+  h4 {
+    margin: 0;
+    display: inline-block;
+    margin-right: 5px;
+    font-size:1.2rem;
+  }
+  .doc_ext {
+    text-transform: uppercase;
+    line-height: 1.2;
+    display: inline-block;
+    color: $gray;
+  }
+  .pub_date {
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.2;
+  }
+}

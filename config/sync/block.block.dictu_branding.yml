@@ -1,0 +1,25 @@
+uuid: d7728acb-0297-4225-b759-54ebeba81a74
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - dictu
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: dictu_branding
+theme: dictu
+region: header
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

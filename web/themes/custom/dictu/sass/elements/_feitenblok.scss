@@ -1,0 +1,11 @@
+.feitenvak a {
+    color: white;
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+}
+
+.bbnumber {
+    font-weight: bold;
+    font-size: 1.5rem;
+}

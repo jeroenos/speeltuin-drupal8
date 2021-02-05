@@ -1,0 +1,22 @@
+.paragraph--type--call-to-action-button {
+  .field--name-field-call-to-action-link {
+    text-align: left;
+    margin-bottom: 30px;
+    a {
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      background-color: $primary-color;
+      color: #FFF;
+      -webkit-transition: all 0.5s; /* Safari */
+      transition: all 0.5s;
+      span.mailto {
+        display:none;
+      }
+      &:hover {
+        background-color: darken($primary-color, 5%);
+        text-decoration: none;
+      }
+    }
+
+  }
+}

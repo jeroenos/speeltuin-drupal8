@@ -1,0 +1,14 @@
+.slick__arrow {
+  top: 100%;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.slick-arrow:before {
+  transition: .5s;
+  color: $primary-color;// #39870c;
+}
+
+.slick-arrow:hover::before {
+  color: darken($primary-color, 10%);
+}

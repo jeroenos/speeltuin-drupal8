@@ -1,0 +1,20 @@
+uuid: 7eec0d05-70cb-4d9a-a340-cdb718aad206
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dictu
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: dictu_local_actions
+theme: dictu
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

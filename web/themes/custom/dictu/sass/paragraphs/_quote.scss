@@ -1,0 +1,14 @@
+.paragraph--type--citaat {
+  .field--name-field-quote {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    p:before {
+      content: ' " ';
+    }
+    p:after {
+      content: ' " ';
+    }
+  }
+}

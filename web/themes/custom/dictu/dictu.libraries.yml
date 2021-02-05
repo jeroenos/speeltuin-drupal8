@@ -1,0 +1,117 @@
+# global styling:
+global:
+  css:
+    theme:
+      stylesheets/flexboxgrid.min.css: {}
+  js:
+    js/jquery-ui-1.10.3.custom.min.js: {}
+    js/script.js: {}
+    js/herobanner.js: {}
+    js/main-menu.js: {}
+    js/popup.js: {}
+
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.ui
+    
+questionnaire:
+  js:
+    js/Questionnaire.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.ui
+    - core/drupalSettings
+
+
+# color schemes:
+azure:
+  css:
+    theme:
+      compiled/css/azure.css: {}
+
+brown:
+  css:
+    theme:
+      compiled/css/brown.css: {}
+
+dark-blue:
+  css:
+    theme:
+      compiled/css/dark-blue.css: {}
+
+dark-brown:
+  css:
+    theme:
+      compiled/css/dark-brown.css: {}
+
+dark-green:
+  css:
+    theme:
+      compiled/css/dark-green.css: {}
+
+dark-yellow:
+  css:
+    theme:
+      compiled/css/dark-yellow.css: {}
+
+green:
+  css:
+    theme:
+      compiled/css/green.css: {}
+
+light-blue:
+  css:
+    theme:
+      compiled/css/light-blue.css: {}
+
+mint-green:
+  css:
+    theme:
+      compiled/css/mint-green.css: {}
+
+moss-green:
+  css:
+    theme:
+      compiled/css/moss-green.css: {}
+
+orange:
+  css:
+    theme:
+      compiled/css/orange.css: {}
+
+pink:
+  css:
+    theme:
+      compiled/css/pink.css: {}
+
+purple:
+  css:
+    theme:
+      compiled/css/purple.css: {}
+
+red:
+  css:
+    theme:
+      compiled/css/red.css: {}
+
+ruby:
+  css:
+    theme:
+      compiled/css/ruby.css: {}
+
+violet:
+  css:
+    theme:
+      compiled/css/violet.css: {}
+
+yellow:
+  css:
+    theme:
+      compiled/css/yellow.css: {}
+
+sidebar:
+  css:
+    theme:
+      compiled/css/sidebar.css: {}

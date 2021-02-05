@@ -1,0 +1,55 @@
+div.views-field-field-tabstructuur {
+  ul {
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid #CCC;
+    margin-bottom: 20px;
+    li {
+      display: block;
+      background-color: #eaeaea;
+      margin: 5px;
+      margin-bottom: 0;
+      img {
+        display: none;
+      }
+      div {
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+      a {
+        color: #000;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $break-m) {
+    ul {
+      li {
+        transition: 0.5s all;
+        display: inline-block;
+        width: 150px;
+        height: 125px;
+        position: relative;
+        &:hover {
+          background-color: darken(#FCFCFC, 5%);
+        }
+        img {
+          width: 50px;
+          height: 50px;
+          text-align: center;
+          display: inline-block;
+          margin-top: 20px;
+        }
+        .field--name-field-titel {
+          margin-top: 80px;
+        }
+        .field--name-field-icoon+.field--name-field-titel {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+}

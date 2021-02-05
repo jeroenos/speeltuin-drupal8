@@ -1,0 +1,121 @@
+/* two col row */
+ul.as-item-list {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: 30px;
+      overflow: hidden;
+      .views-field-title {
+        width:100%;
+        background-color:$gray-lightest;
+        height: 100%;
+      }
+    }
+}
+.img-as {
+  @media screen and (min-width: $break-l) {
+    min-height: 300px;
+    overflow: hidden;
+    position: relative;
+  }
+  img {
+    @media screen and (min-width: $break-l) {
+      position: absolute;
+      min-width: 700px;
+      width: 100%;
+    }
+  }
+}
+.container-as {
+    background-color: #f8f8f8;
+    height:100%;
+    margin-bottom: 10px;
+    h3 {
+      display:block;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      @media screen and (min-width: $break-m) {
+        display: inline-block;
+        line-height: 2;
+        text-align:left;
+      }
+    }
+}
+.as-footer-block {
+    padding: 10px 15px 0px 15px;
+    h3 {
+      @media screen and (min-width: $break-l) {
+        width:calc(100% - 150px);
+        margin-bottom: 0px;
+        vertical-align: middle;
+      }
+    }
+}
+.button-ct {
+  @media screen and (min-width: $break-l) {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+div#block-views-block-advanched-shortcuts-as-col-2-block {
+    padding: 25px 0;
+}
+
+
+/* 3 col row */
+.wrapper-as.col-3-as ul.as-item-list li {
+    display: block;
+    overflow: hidden;
+    .as-image-col-3 {
+      background-color: #f8f8f8;
+    }
+    .as-footer-block  {
+      height:100%;
+      padding: 5px 15px 10px 15px;
+      h3 {
+        width: 100%;
+        margin-bottom: 0px;
+        vertical-align: middle;
+        display:block;
+      }
+      p {
+        margin:0px;
+      }
+    }
+    .views-field-title {
+      width: 100%;
+      background-color: #f8f8f8;
+      height:100%;
+    }
+}
+
+
+/* 3 col row as */
+.views-field.views-field-field-shortcut-image {
+    display: inline-block;
+    margin-right: 10px;
+    width: auto !important;
+    vertical-align: top;
+  .field-content {
+      line-height: 0px;
+  }
+  display:inline-block;
+  margin-right:15px;
+}
+
+.as-footer-block-alt {
+  h3 {
+      font-size: 20px;
+      margin-bottom: 0;
+  }
+}
+
+.as-alt-wrapper {
+  margin-top: 30px;
+  .col-4>div {
+    display: inline-block;
+    width: calc(100% - 125px);
+  }
+}

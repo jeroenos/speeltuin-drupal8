@@ -1,0 +1,22 @@
+.field--name-field-sidebar-sidebar.content-item {
+    margin-bottom: 40px;
+    .accordion-head {
+        .field--name-field-titel {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        &:after {
+            content: '\f107';
+            top: 12px;
+    }
+}
+>.paragraph {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 70px;
+}

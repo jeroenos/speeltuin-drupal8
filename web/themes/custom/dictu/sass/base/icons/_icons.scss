@@ -1,0 +1,1014 @@
+@import "variables";
+
+// Icons
+//
+// This is a selection of al icons made for the "rijkshuisstijl".
+//
+// Markup: icons.twig
+//
+// .icon-groep-mensen-torso   - groep mensen torso
+// .icon-klantencontactcenter   - klantencontactcenter
+// .icon-servicedesk-telefonie  - servicedesk telefonie
+// .icon-servicedesk-ict  - servicedesk ict
+// .icon-vind-je-collega  - vind je collega
+// .icon-aanmelden-bezoek   - aanmelden bezoek
+// .icon-meldpunt-incidenten  - meldpunt incidenten
+// .icon-pijl-links   - pijl links
+// .icon-pijl-beneden   - pijl beneden
+// .icon-pijl-rechts  - pijl rechts
+// .icon-pijl-boven   - pijl boven
+// .icon-kaart  - kaart
+// .icon-filter   - filter
+// .icon-locatie-marker   - locatie marker
+// .icon-oog  - oog
+// .icon-kaart-lagen  - kaart lagen
+// .icon-brede-blik   - brede blik
+// .icon-maatwerk   - maatwerk
+// .icon-rijkspas   - rijkspas
+// .icon-facts-and-figures  - facts and figures
+// .icon-planning   - planning
+// .icon-actueel  - actueel
+// .icon-ster   - ster
+// .icon-bel  - bel
+// .icon-routevlag  - routevlag
+// .icon-hart   - hart
+// .icon-raamwerk   - raamwerk
+// .icon-verbetering-proces   - verbetering proces
+// .icon-verbinding   - verbinding
+// .icon-som-der-delen  - som der delen
+// .icon-gereedschap  - gereedschap
+// .icon-start  - start
+// .icon-rekenmachine   - rekenmachine
+// .icon-publiek  - publiek
+// .icon-gemeenschappelijk-doel   - gemeenschappelijk doel
+// .icon-alarmering-functionarissen   - alarmering functionarissen
+// .icon-proces   - proces
+// .icon-keten  - keten
+// .icon-balie  - balie
+// .icon-consult  - consult
+// .icon-uit-aanknop  - uit aanknop
+// .icon-activiteit   - activiteit
+// .icon-ketting    - ketting
+// .icon-afschaling   - afschaling
+// .icon-zandloper  - zandloper
+// .icon-boeket   - boeket
+// .icon-kantoorbenodigdheden   - kantoorbenodigdheden
+// .icon-automaten  - automaten
+// .icon-adresboek  - adresboek
+// .icon-kalender   - kalender
+// .icon-info   - info
+// .icon-hulp   - hulp
+// .icon-home   - home
+// .icon-contact  - contact
+// .icon-settings   - settings
+// .icon-printer  - printer
+// .icon-computer   - computer
+// .icon-laptop   - laptop
+// .icon-klok   - klok
+// .icon-winkelwagen  - winkelwagen
+// .icon-email  - email
+// .icon-externe-link   - externe link
+// .icon-nieuws   - nieuws
+// .icon-rss  - rss
+// .icon-vraag-en-antwoord    - vraag en antwoord
+// .icon-afspelen   - afspelen
+// .icon-pause  - pause
+// .icon-stop   - stop
+// .icon-audio    - audio
+// .icon-formulier  - formulier
+// .icon-weblogbericht    - weblogbericht
+// .icon-overig   - overig
+// .icon-communicatie   - communicatie
+// .icon-informatiemanagement   - informatiemanagement
+// .icon-media  - media
+// .icon-dataverkeer  - dataverkeer
+// .icon-ict    - ict
+// .icon-klachten   - klachten
+// .icon-delen    - delen
+// .icon-upload   - upload
+// .icon-download-CSV-bestand   - download CSV bestand
+// .icon-download-geoJSON-bestand   - download geoJSON bestand
+// .icon-maak-eigen-kaart   - maak eigen kaart
+// .icon-voeg-iconenset-toe   - voeg iconenset toe
+// .icon-buzzer   - buzzer
+// .icon-foto-toevoegen   - foto toevoegen
+// .icon-ga-naar-www    - ga naar www
+// .icon-gallery  - gallery
+// .icon-instellingen   - instellingen
+// .icon-naslag-internet  - naslag internet
+// .icon-nieuws-toevoegen   - nieuws toevoegen
+// .icon-video-camera   - video camera
+// .icon-video-toevoegen  - video toevoegen
+// .icon-video  - video
+// .icon-www  - www
+// .icon-volgorde   - volgorde
+// .icon-usb-lader  - usb lader
+// .icon-samenhang-van-documenten   - samenhang van documenten
+// .icon-kwaliteit    - kwaliteit
+// .icon-conferentie-of-event   - conferentie of event
+// .icon-videovergaderen  - videovergaderen
+// .icon-electronische-paraaf   - electronische paraaf
+// .icon-digitaal-archief   - digitaal archief
+// .icon-fysiek-archief   - fysiek archief
+// .icon-smartphone   - smartphone
+// .icon-tablet   - tablet
+// .icon-hybride-laptop   - hybride laptop
+// .icon-online-veiligheid    - online veiligheid
+// .icon-games    - games
+// .icon-digitale-uitwisseling    - digitale uitwisseling
+// .icon-netwerk    - netwerk
+// .icon-gegevens   - gegevens
+// .icon-dashboardmonitor   - dashboardmonitor
+// .icon-woordenboek    - woordenboek
+// .icon-chip   - chip
+// .icon-server   - server
+// .icon-postzak    - postzak
+// .icon-tolk   - tolk
+// .icon-interculturele-communicatie    - interculturele communicatie
+// .icon-invulformulier   - invulformulier
+// .icon-gum  - gum
+// .icon-digitaliseren-documenten   - digitaliseren documenten
+// .icon-repro    - repro
+// .icon-vergaderservice  - vergaderservice
+// .icon-externe-vergaderruimte   - externe vergaderruimte
+// .icon-narrowcasting    - narrowcasting
+// .icon-bewerken    - bewerken
+// .icon-downloaden    - downloaden
+// .icon-klaarzetten   - klaarzetten
+// .icon-menu    - menu
+// .icon-terug   - terug
+// .icon-user    - user
+// .icon-verwijderen   - verwijderen
+// .icon-zoek    - zoek
+// .icon-hashtag   - hashtag
+// .icon-kruis   - kruis
+// .icon-list   - list
+// .icon-th   - th
+// .icon-blanco   - blanco
+// .icon-facebook   - facebook
+// .icon-googleplus   - googleplus
+// .icon-linked-in    - linked in
+// .icon-phone    - phone
+// .icon-pintrest   - pintrest
+// .icon-twitter    - twitter
+// .icon-plus   - plus
+// .icon-min   - minus
+// .icon-chevron-up   - chevron omhoog
+// .icon-chevron-down   - chevron omlaag
+// .icon-caret-left   - caret links
+// .icon-caret-right   - caret rechts
+// .icon-caret-up   - caret omhoog
+// .icon-caret-down   - caret omlaag
+// .icon-angle-left   - angle omhoog
+// .icon-angle-right   - angle rechts
+// .icon-angle-up   - angle omhoog
+// .icon-angle-down   - angle omlaag
+// .icon-midden-en-kleinbedrijf - icon midden en kleinbedrijf
+// .icon-ondernemen - icon ondernemen
+// .icon-ondernemingen - icon ondernemingen
+// .icon-handel - icon handel
+//
+// Style guide: atoms.icons
+
+
+
+.icon,
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: 'icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  vertical-align: top;
+  // Better Font Rendering.
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  &[class^="icon-"],
+  &[class*=" icon-"] {
+    display: inline-block;
+    line-height: 1rem;
+  }
+}
+
+.icon-groep-mensen-torso {
+  &:before {
+    content: $icon-groep-mensen-torso;
+  }
+}
+.icon-klantencontactcenter {
+  &:before {
+    content: $icon-klantencontactcenter;
+  }
+}
+.icon-servicedesk-telefonie {
+  &:before {
+    content: $icon-servicedesk-telefonie;
+  }
+}
+.icon-servicedesk-ict {
+  &:before {
+    content: $icon-servicedesk-ict;
+  }
+}
+.icon-vind-je-collega {
+  &:before {
+    content: $icon-vind-je-collega;
+  }
+}
+.icon-aanmelden-bezoek {
+  &:before {
+    content: $icon-aanmelden-bezoek;
+  }
+}
+.icon-meldpunt-incidenten {
+  &:before {
+    content: $icon-meldpunt-incidenten;
+  }
+}
+.icon-pijl-links {
+  &:before {
+    content: $icon-pijl-links;
+  }
+}
+.icon-pijl-beneden {
+  &:before {
+    content: $icon-pijl-beneden;
+  }
+}
+.icon-pijl-rechts {
+  &:before {
+    content: $icon-pijl-rechts;
+  }
+}
+.icon-pijl-boven {
+  &:before {
+    content: $icon-pijl-boven;
+  }
+}
+.icon-kaart {
+  &:before {
+    content: $icon-kaart;
+  }
+}
+.icon-filter {
+  &:before {
+    content: $icon-filter;
+  }
+}
+.icon-locatie-marker {
+  &:before {
+    content: $icon-locatie-marker;
+  }
+}
+.icon-oog {
+  &:before {
+    content: $icon-oog;
+  }
+}
+.icon-kaart-lagen {
+  &:before {
+    content: $icon-kaart-lagen;
+  }
+}
+.icon-brede-blik {
+  &:before {
+    content: $icon-brede-blik;
+  }
+}
+.icon-maatwerk {
+  &:before {
+    content: $icon-maatwerk;
+  }
+}
+.icon-rijkspas {
+  &:before {
+    content: $icon-rijkspas;
+  }
+}
+.icon-facts-and-figures {
+  &:before {
+    content: $icon-facts-and-figures;
+  }
+}
+.icon-planning {
+  &:before {
+    content: $icon-planning;
+  }
+}
+.icon-actueel {
+  &:before {
+    content: $icon-actueel;
+  }
+}
+.icon-ster {
+  &:before {
+    content: $icon-ster;
+  }
+}
+.icon-bel {
+  &:before {
+    content: $icon-bel;
+  }
+}
+.icon-routevlag {
+  &:before {
+    content: $icon-routevlag;
+  }
+}
+.icon-hart {
+  &:before {
+    content: $icon-hart;
+  }
+}
+.icon-raamwerk {
+  &:before {
+    content: $icon-raamwerk;
+  }
+}
+.icon-verbetering-proces {
+  &:before {
+    content: $icon-verbetering-proces;
+  }
+}
+.icon-verbinding {
+  &:before {
+    content: $icon-verbinding;
+  }
+}
+.icon-som-der-delen {
+  &:before {
+    content: $icon-som-der-delen;
+  }
+}
+.icon-gereedschap {
+  &:before {
+    content: $icon-gereedschap;
+  }
+}
+.icon-start {
+  &:before {
+    content: $icon-start;
+  }
+}
+.icon-rekenmachine {
+  &:before {
+    content: $icon-rekenmachine;
+  }
+}
+.icon-publiek {
+  &:before {
+    content: $icon-publiek;
+  }
+}
+.icon-gemeenschappelijk-doel {
+  &:before {
+    content: $icon-gemeenschappelijk-doel;
+  }
+}
+.icon-alarmering-functionarissen {
+  &:before {
+    content: $icon-alarmering-functionarissen;
+  }
+}
+.icon-proces {
+  &:before {
+    content: $icon-proces;
+  }
+}
+.icon-keten {
+  &:before {
+    content: $icon-keten;
+  }
+}
+.icon-balie {
+  &:before {
+    content: $icon-balie;
+  }
+}
+.icon-consult {
+  &:before {
+    content: $icon-consult;
+  }
+}
+.icon-uit-aanknop {
+  &:before {
+    content: $icon-uit-aanknop;
+  }
+}
+.icon-activiteit {
+  &:before {
+    content: $icon-activiteit;
+  }
+}
+.icon-ketting {
+  &:before {
+    content: $icon-ketting;
+  }
+}
+.icon-afschaling {
+  &:before {
+    content: $icon-afschaling;
+  }
+}
+.icon-zandloper {
+  &:before {
+    content: $icon-zandloper;
+  }
+}
+.icon-boeket {
+  &:before {
+    content: $icon-boeket;
+  }
+}
+.icon-kantoorbenodigdheden {
+  &:before {
+    content: $icon-kantoorbenodigdheden;
+  }
+}
+.icon-automaten {
+  &:before {
+    content: $icon-automaten;
+  }
+}
+.icon-adresboek {
+  &:before {
+    content: $icon-adresboek;
+  }
+}
+.icon-kalender {
+  &:before {
+    content: $icon-kalender;
+  }
+}
+.icon-info {
+  &:before {
+    content: $icon-info;
+  }
+}
+.icon-hulp {
+  &:before {
+    content: $icon-hulp;
+  }
+}
+.icon-home {
+  &:before {
+    content: $icon-home;
+  }
+}
+.icon-contact {
+  &:before {
+    content: $icon-contact;
+  }
+}
+.icon-settings {
+  &:before {
+    content: $icon-settings;
+  }
+}
+.icon-printer {
+  &:before {
+    content: $icon-printer;
+  }
+}
+.icon-computer {
+  &:before {
+    content: $icon-computer;
+  }
+}
+.icon-laptop {
+  &:before {
+    content: $icon-laptop;
+  }
+}
+.icon-klok {
+  &:before {
+    content: $icon-klok;
+  }
+}
+.icon-winkelwagen {
+  &:before {
+    content: $icon-winkelwagen;
+  }
+}
+.icon-email {
+  &:before {
+    content: $icon-email;
+  }
+}
+.icon-externe-link {
+  &:before {
+    content: $icon-externe-link;
+  }
+}
+.icon-nieuws {
+  &:before {
+    content: $icon-nieuws;
+  }
+}
+.icon-rss {
+  &:before {
+    content: $icon-rss;
+  }
+}
+.icon-vraag-en-antwoord {
+  &:before {
+    content: $icon-vraag-en-antwoord;
+  }
+}
+.icon-afspelen {
+  &:before {
+    content: $icon-afspelen;
+  }
+}
+.icon-pause {
+  &:before {
+    content: $icon-pause;
+  }
+}
+.icon-stop {
+  &:before {
+    content: $icon-stop;
+  }
+}
+.icon-audio {
+  &:before {
+    content: $icon-audio;
+  }
+}
+.icon-formulier {
+  &:before {
+    content: $icon-formulier;
+  }
+}
+.icon-weblogbericht {
+  &:before {
+    content: $icon-weblogbericht;
+  }
+}
+.icon-overig {
+  &:before {
+    content: $icon-overig;
+  }
+}
+.icon-communicatie {
+  &:before {
+    content: $icon-communicatie;
+  }
+}
+.icon-informatiemanagement {
+  &:before {
+    content: $icon-informatiemanagement;
+  }
+}
+.icon-media {
+  &:before {
+    content: $icon-media;
+  }
+}
+.icon-dataverkeer {
+  &:before {
+    content: $icon-dataverkeer;
+  }
+}
+.icon-ict {
+  &:before {
+    content: $icon-ict;
+  }
+}
+.icon-klachten {
+  &:before {
+    content: $icon-klachten;
+  }
+}
+.icon-delen {
+  &:before {
+    content: $icon-delen;
+  }
+}
+.icon-upload {
+  &:before {
+    content: $icon-upload;
+  }
+}
+.icon-download-CSV-bestand {
+  &:before {
+    content: $icon-download-CSV-bestand;
+  }
+}
+.icon-download-geoJSON-bestand {
+  &:before {
+    content: $icon-download-geoJSON-bestand;
+  }
+}
+.icon-maak-eigen-kaart {
+  &:before {
+    content: $icon-maak-eigen-kaart;
+  }
+}
+.icon-voeg-iconenset-toe {
+  &:before {
+    content: $icon-voeg-iconenset-toe;
+  }
+}
+.icon-buzzer {
+  &:before {
+    content: $icon-buzzer;
+  }
+}
+.icon-foto-toevoegen {
+  &:before {
+    content: $icon-foto-toevoegen;
+  }
+}
+.icon-ga-naar-www {
+  &:before {
+    content: $icon-ga-naar-www;
+  }
+}
+.icon-gallery {
+  &:before {
+    content: $icon-gallery;
+  }
+}
+.icon-instellingen {
+  &:before {
+    content: $icon-instellingen;
+  }
+}
+.icon-naslag-internet {
+  &:before {
+    content: $icon-naslag-internet;
+  }
+}
+.icon-nieuws-toevoegen {
+  &:before {
+    content: $icon-nieuws-toevoegen;
+  }
+}
+.icon-video-camera {
+  &:before {
+    content: $icon-video-camera;
+  }
+}
+.icon-video-toevoegen {
+  &:before {
+    content: $icon-video-toevoegen;
+  }
+}
+.icon-video {
+  &:before {
+    content: $icon-video;
+  }
+}
+.icon-www {
+  &:before {
+    content: $icon-www;
+  }
+}
+.icon-volgorde {
+  &:before {
+    content: $icon-volgorde;
+  }
+}
+.icon-usb-lader {
+  &:before {
+    content: $icon-usb-lader;
+  }
+}
+.icon-samenhang-van-documenten {
+  &:before {
+    content: $icon-samenhang-van-documenten;
+  }
+}
+.icon-kwaliteit {
+  &:before {
+    content: $icon-kwaliteit;
+  }
+}
+.icon-conferentie-of-event {
+  &:before {
+    content: $icon-conferentie-of-event;
+  }
+}
+.icon-videovergaderen {
+  &:before {
+    content: $icon-videovergaderen;
+  }
+}
+.icon-electronische-paraaf {
+  &:before {
+    content: $icon-electronische-paraaf;
+  }
+}
+.icon-digitaal-archief {
+  &:before {
+    content: $icon-digitaal-archief;
+  }
+}
+.icon-fysiek-archief {
+  &:before {
+    content: $icon-fysiek-archief;
+  }
+}
+.icon-smartphone {
+  &:before {
+    content: $icon-smartphone;
+  }
+}
+.icon-tablet {
+  &:before {
+    content: $icon-tablet;
+  }
+}
+.icon-hybride-laptop {
+  &:before {
+    content: $icon-hybride-laptop;
+  }
+}
+.icon-online-veiligheid {
+  &:before {
+    content: $icon-online-veiligheid;
+  }
+}
+.icon-games {
+  &:before {
+    content: $icon-games;
+  }
+}
+.icon-digitale-uitwisseling {
+  &:before {
+    content: $icon-digitale-uitwisseling;
+  }
+}
+.icon-netwerk {
+  &:before {
+    content: $icon-netwerk;
+  }
+}
+.icon-gegevens {
+  &:before {
+    content: $icon-gegevens;
+  }
+}
+.icon-dashboardmonitor {
+  &:before {
+    content: $icon-dashboardmonitor;
+  }
+}
+.icon-woordenboek {
+  &:before {
+    content: $icon-woordenboek;
+  }
+}
+.icon-chip {
+  &:before {
+    content: $icon-chip;
+  }
+}
+.icon-server {
+  &:before {
+    content: $icon-server;
+  }
+}
+.icon-postzak {
+  &:before {
+    content: $icon-postzak;
+  }
+}
+.icon-tolk {
+  &:before {
+    content: $icon-tolk;
+  }
+}
+.icon-interculturele-communicatie {
+  &:before {
+    content: $icon-interculturele-communicatie;
+  }
+}
+.icon-invulformulier {
+  &:before {
+    content: $icon-invulformulier;
+  }
+}
+.icon-gum {
+  &:before {
+    content: $icon-gum;
+  }
+}
+.icon-digitaliseren-documenten {
+  &:before {
+    content: $icon-digitaliseren-documenten;
+  }
+}
+.icon-repro {
+  &:before {
+    content: $icon-repro;
+  }
+}
+.icon-vergaderservice {
+  &:before {
+    content: $icon-vergaderservice;
+  }
+}
+.icon-externe-vergaderruimte {
+  &:before {
+    content: $icon-externe-vergaderruimte;
+  }
+}
+.icon-narrowcasting {
+  &:before {
+    content: $icon-narrowcasting;
+  }
+}
+.icon-bewerken {
+  &:before {
+    content: $icon-bewerken_24px;
+  }
+}
+.icon-downloaden {
+  &:before {
+    content: $icon-downloaden_24px;
+  }
+}
+.icon-klaarzetten {
+  &:before {
+    content: $icon-klaarzetten_24px;
+  }
+}
+.icon-menu {
+  &:before {
+    content: $icon-menu_24px;
+  }
+}
+.icon-terug {
+  &:before {
+    content: $icon-terug_24px;
+  }
+}
+.icon-user {
+  &:before {
+    content: $icon-user_24px;
+  }
+}
+.icon-verwijderen {
+  &:before {
+    content: $icon-verwijderen_24px;
+  }
+}
+.icon-zoek {
+  &:before {
+    content: $icon-zoek_24px;
+  }
+}
+.icon-hashtag {
+  &:before {
+    content: $icon-hashtag_24px;
+  }
+}
+.icon-kruis {
+  &:before {
+    content: $icon-kruis-24px;
+  }
+}
+.icon-list {
+  &:before {
+    content: $icon-list;
+  }
+}
+.icon-th {
+  &:before {
+    content: $icon-th;
+  }
+}
+.icon-blanco {
+  &:before {
+    content: $icon-blanco;
+  }
+}
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;
+  }
+}
+.icon-googleplus {
+  &:before {
+    content: $icon-googleplus;
+  }
+}
+.icon-linked-in {
+  &:before {
+    content: $icon-linkedin;
+  }
+}
+.icon-phone {
+  &:before {
+    content: $icon-phone;
+  }
+}
+.icon-pintrest {
+  &:before {
+    content: $icon-pintrest;
+  }
+}
+.icon-twitter {
+  &:before {
+    content: $icon-twitter;
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus;
+  }
+}
+.icon-min {
+  &:before {
+    content: $icon-min;
+  }
+}
+.icon-min {
+  &:before {
+    content: $icon-min;
+  }
+}
+.icon-chevron-up {
+  &:before {
+    content: $icon-chevron-up;
+  }
+}
+.icon-chevron-down {
+  &:before {
+    content: $icon-chevron-down;
+  }
+}
+.icon-caret-left {
+  &:before {
+    content: $icon-caret-left;
+  }
+}
+.icon-caret-right {
+  &:before {
+    content: $icon-caret-right;
+  }
+}
+.icon-caret-up {
+  &:before {
+    content: $icon-caret-up;
+  }
+}
+.icon-caret-down {
+  &:before {
+    content: $icon-caret-down;
+  }
+}
+.icon-angle-left {
+  &:before {
+    content: $icon-angle-left;
+  }
+}
+.icon-angle-right {
+  &:before {
+    content: $icon-angle-right;
+  }
+}
+.icon-angle-up {
+  &:before {
+    content: $icon-angle-up;
+  }
+}
+.icon-angle-down {
+  &:before {
+    content: $icon-angle-down;
+  }
+}
+.icon-midden-en-kleinbedrijf {
+  &:before {
+    content: $icon-midden-en-kleinbedrijf;
+  }
+}
+.icon-ondernemingen {
+  &:before {
+    content: $icon-ondernemingen;
+  }
+}
+.icon-ondernemen {
+  &:before {
+    content: $icon-ondernemen;
+  }
+}
+.icon-handel {
+  &:before {
+    content: $icon-handel;
+  }
+}
+
+.icon-sluiten:before {
+  content: "\00D7";
+  font-weight: bold;
+  vertical-align: text-top;
+  font-size: 1.1em;
+}

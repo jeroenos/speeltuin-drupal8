@@ -1,0 +1,98 @@
+.storing-wrapper {
+  display: none;
+}
+
+ul.storing-row {
+  list-style: none;
+  padding: 0;
+  a {
+    color: black;
+    text-decoration: none;
+    padding: 30px;
+    background-color: #F8F8F8;
+    -webkit-transition: all 0.5s; /* Safari */
+    transition: all 0.5s;
+    &:hover {
+      background-color: darken(#F8F8F8, 5%);
+    }
+    display: block;
+    &.storing-button {
+      border-left: 3px solid red;
+    }
+    &.onderhoud-button {
+      border-left: 3px solid orange;
+    }
+  }
+
+  h1, h2, h3, h4, h5, .storing-container p {
+    line-height: 1.6;
+    margin-bottom: 0;
+    font-weight:bold;
+  }
+  p.concerns {
+        font-size: 1.0625rem;
+  }
+  .date-styling {
+        font-size: 0.9rem;
+        font-weight:normal;
+  }
+
+}
+
+.storing-modal {
+  border-left: 3px solid red;
+  padding: 30px;
+}
+
+.onderhoud-modal {
+  border-left: 3px solid orange;
+  padding: 30px;
+}
+
+.storing-col, .onderhoud-col {
+  margin-bottom: 30px;
+}
+
+.storing-label-type {
+  float: right;
+  background-color: #ce0606;
+  padding: 10px;
+  display: inline-block;
+  color: white;
+  height: 20px;
+  line-height: initial;
+  margin-right: 10px;
+  p.date-styling {
+    margin-bottom:0;
+  }
+}
+
+.onderhoud-label-type {
+  float: right;
+  background-color: orange;
+  padding: 10px;
+  display: inline-block;
+  color: black;
+  height: 20px;
+  line-height: initial;
+  margin-right: 10px;
+}
+
+span.date-label {
+  width: 150px;
+  display: inline-block;
+}
+
+/*** modal adjustments ***/
+#cboxWrapper {
+  background: none;
+}
+
+#cboxLoadedContent {
+  margin-bottom: 0;
+}
+
+#cboxClose {
+  top: 9px;
+  right: 9px;
+}

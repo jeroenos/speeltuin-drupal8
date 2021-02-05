@@ -1,0 +1,28 @@
+
+{% if header_theme_brand_logo == "0" %}
+<div id="header" class="header {{ modifier_class }}">
+
+  <div class="logo">
+    {% if not is_front %}<a href="{{ front_page }}">{% endif %}
+      <img src="{{ logo_url }}" width="44" height="77" alt="{{ logo_alt_text }}" class="logo-image" />
+    {% if not is_front %}</a>{% endif %}
+    <span class="wordmark">
+      <span class="sender {{ header_sender_breakpoint_class }}">{{ header_sender }}</span>
+      <span class="secondary-sender {{ header_sender_breakpoint_class }}">{{ header_sender_secondary }}</span>
+    </span>
+  </div>
+</div>
+{% else %}
+<div id="header-left" class="header {{ modifier_class }}">
+  <div {{ container_attributes.addClass("logo-container") }}>
+    <div class="logo-left">{% if not is_front %}<a href="{{ front_page }}">{% endif %}
+      <img src="{{ logo_url }}" height="77" alt="{{ logo_alt_text }}" class="logo-image" />
+      {% if not is_front %}</a>{% endif %}
+      <span class="wordmark sr-only">
+        <span class="sender">{{ header_sender }}</span>
+        <span class="secondary-sender">{{ header_sender_secondary }}</span>
+      </span>
+    </div>
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,15 @@
+@import 'base/base';
+
+//$primary-color: $azure;
+//$secondary-color: $azure-light;
+//$tertiary-color: $azure-lightest;
+
+$primary-color: $dark-blue;
+$secondary-color: $dark-blue-light;
+$tertiary-color: $dark-blue-lightest;
+
+@import 'mixins/mixins';
+@import 'modules/modules';
+
+@import 'elements/elements';
+@import 'paragraphs/paragraphs';

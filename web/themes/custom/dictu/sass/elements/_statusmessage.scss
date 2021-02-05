@@ -1,0 +1,27 @@
+.alert {
+    display: block;
+    width: 100%;
+    padding: 30px 15px;
+    margin-bottom: 40px;
+    position:relative;
+}
+.alert-success {
+    border: 1px solid green;
+    border-radius: 10px;
+    background-color: #f3fff3;
+}
+
+.alert-danger {
+    border: 1px solid #af0000;
+    background-color: #f5e4e4;
+}
+
+#close-status-message {
+    position: absolute;
+    right: 18px;
+    top: 0;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 23px;
+}

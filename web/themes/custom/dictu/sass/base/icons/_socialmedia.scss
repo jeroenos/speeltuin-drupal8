@@ -1,0 +1,33 @@
+.social-link {
+    display: inline-block;
+    font-size: 30px;
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    color: #b3b3b3;
+    .fa-facebook {
+      transition:.5s;
+      &:hover {
+        color:#3b5998;
+      }
+    }
+    .fa-twitter {
+      transition:.5s;
+      &:hover {
+        color:#00aced;
+      }
+    }
+    .fa-linkedin {
+      transition:.5s;
+      &:hover {
+        color:#007bb6;
+      }
+    }
+}
+
+.social-media-buttons {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border-top: 1px solid #b3b3b3;
+    border-bottom: 1px solid #b3b3b3;
+}

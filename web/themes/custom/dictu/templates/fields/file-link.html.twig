@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Theme override for a link to a file.
+ *
+ * Available variables:
+ * - attributes: The HTML attributes for the containing element.
+ * - link: A link to the file.
+ *
+ * @see template_preprocess_file_link()
+ */
+#}
+<h4><span><a href="{{file_url}}">{{ file_name }}</a></h4>
+<div class="doc_ext">{{ file_ext|upper }} Document | {{ file_size|upper }}</span></div>
+<div class="pub_date">{{ file_date }}</div>

@@ -1,0 +1,30 @@
+@mixin center-page($website-width) {
+  max-width: $website-width;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin flex-box-col($percentage) {
+-webkit-box-flex: 0;
+-webkit-flex: 0 0 $percentage;
+-ms-flex: 0 0 $percentage;
+flex: 0 0 $percentage;
+max-width: $percentage;
+}
+
+
+@function set-contrast-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000000; // Lighter background, return dark color
+  } @else {
+    @return #ffffff; // Darker background, return light color
+  }
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}

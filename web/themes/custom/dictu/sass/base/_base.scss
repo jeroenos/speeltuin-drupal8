@@ -1,0 +1,145 @@
+@import "compass";
+
+@import 'normalize';
+@import 'variables';
+@import 'colours';
+@import 'fonts';
+@import 'icons/icons';
+@import 'icons/font-awesome/font-awesome';
+@import 'icons/socialmedia.scss';
+
+*, *::before, *::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 17px;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: $main-font;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: $main-txt-color;
+    background-color: #fff;
+    height: 100%;
+    line-height: 1.8em;
+}
+
+html,body,.layout-container,.dialog-off-canvas__main-canvas,.dialog-offcanvas__main-canvas {
+  height:100%;
+}
+
+p {
+    margin: 0 0 1.5rem;
+}
+
+.socialmedia-away {
+  position:absolute;
+  left:-9999px;
+  overflow:hidden;
+}
+
+a {
+  font-family:$main-font;
+}
+
+span {
+  a {
+    font-family:$main-font;
+  }
+}
+
+div#block-dictu-rijkshuisstijl-languageswitcher {
+    display: inline-block;
+  ul {
+    list-style:none;
+    padding: 0;
+    margin:0px;
+    &:hover li {
+      opacity:1;
+    }
+  }
+  li {
+     opacity:0;
+     transition:.5s;
+     position:relative;
+     span.language-link.disabled {
+       padding:9px;
+       position:absolute;
+       border: 1px solid #cecece;
+       width: 100%;
+       background-color: white;
+       z-index: 9;
+        &:before {
+          content:'';
+          background-image:url(../../images/flag_british.svg);
+          width: 30px;
+          height: 30px;
+          display: inline-block;
+          background-size: auto 100%;
+          border-radius: 50%;
+          margin-right: 7px;
+          vertical-align: -9px;
+          background-position-x: 50%;
+        }
+      }
+  }
+  li.is-active {
+    padding: 9px 9px 9px 9px;
+    display:block;
+    opacity:1;
+    a {
+      color:black;
+      text-decoration:none;
+      padding:1px;
+      border:0px;
+      &:hover {
+        background-color: rgba(236, 236, 236, 0);
+      }
+      &:before {
+        content:'';
+        background-image:url(../../images/flag_netherlands.svg);
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        background-size: auto 100%;
+        border-radius: 50%;
+        margin-right: 7px;
+        vertical-align: -9px;
+        background-position-x: 50%;
+      }
+    }
+  }
+}
+
+a.ext {
+  &:after {
+    content:$icon-externe-link;
+    font-family:icons;
+    vertical-align: bottom;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    margin-left: 3px;
+  }
+  span.ext {
+    display:none;
+  }
+}
+
+
+.toolbar-oriented .toolbar-bar {
+  z-index: 99999;
+}
+
+.center-xs, .row {
+  text-align:left;
+}

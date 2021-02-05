@@ -1,0 +1,27 @@
+.breadcrumb {
+      margin: 0 0 5px 0;
+      padding: 5px 0 0 0;
+      list-style: none;
+      height: 40px;
+      line-height: 1.825;
+      font-size: 1rem;
+      color: black;
+      /* padding-left: 15px; */
+      font-weight: bold;
+  a {
+    font-weight:normal;
+    color:black;
+  }
+}
+
+.breadcrumb-item {
+    float: left;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    color: black;
+    content: "›";
+}
