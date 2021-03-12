@@ -229,15 +229,15 @@
         "billboardjs/billboard": "1.6.2",
         "c3js/c3": "0.4.18",
         "chartjs/chartjs": "2.7.2",
-        "composer/installers": "^1.7",
-        "cweagans/composer-patches": "^1.6.5",
+         "drupal/core-composer-scaffold": "*",
+        "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "d3/d3": "3.5.17",
         "d3v4/d3": "4.9.1",
-        "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/core": "^8.8.x-dev",
         "drupal/charts": "^3.1",
         "drupal/clientside_validation": "^2.0@RC",
         "drupal/console": "^1.0.2",
-        "drupal/core": "^8.7.0",
         "drupal/datalayer": "^1.0@beta",
         "drupal/easychart": "^3.4",
         "drupal/entity_print": "^2.2",
@@ -265,11 +265,11 @@
         "highcharts/highcharts": "6.1.0",
         "highcharts/more": "6.1.0",
         "mikehaertl/phpwkhtmltopdf": "~2.1",
-        "oomphinc/composer-installers-extender": "^1.1",
+        "oomphinc/composer-installers-extender": "^2.0",
         "tecnickcom/tcpdf": "~6",
         "vlucas/phpdotenv": "^2.4",
         "webmozart/path-util": "^2.3",
-        "wikimedia/composer-merge-plugin": "^1.4",
+        "wikimedia/composer-merge-plugin": "^2.0",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
@@ -320,10 +320,9 @@
             "drush/Commands/{$name}": ["type:drupal-drush"]
         },
         "drupal-scaffold": {
-            "initial": {
-                ".editorconfig": "../.editorconfig",
-                ".gitattributes": "../.gitattributes"
-            }
+            "locations": {
+                           "web-root": "web/"
+                       }
         },
         "installer-types": [
             "bower-asset",
